@@ -1,0 +1,16 @@
+{
+  "name": "block-graph-builder",
+  "version": "1.0.0",
+  "description": "Module for analyzing directory structure and building block diagrams",
+  "main": "block-graph-builder.js",
+  "scripts": {
+    "demo": "node demo.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "jsdom": "^22.0.0"
+  },
+  "keywords": ["d3", "graph", "block", "analysis", "visualization"],
+  "author": "Your Name",
+  "license": "MIT"
+}
