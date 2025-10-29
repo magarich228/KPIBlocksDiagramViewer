@@ -169,7 +169,7 @@ class BlockGraphBuilder {
         <defs>
           <style>
             .node circle { fill: #fff; stroke: steelblue; stroke-width: 3px; }
-            .node text { font: 12px sans-serif; }
+            .node text { font: 15px sans-serif; }
             .link { fill: none; stroke: #ccc; stroke-width: 2px; }
             .node:hover circle { stroke: #ff7f0e; stroke-width: 4px; }
           </style>
@@ -276,7 +276,7 @@ class BlockGraphBuilder {
             transition: all 0.3s ease;
           }
           .node text { 
-            font: 11px sans-serif; 
+            font: 14px sans-serif; 
             pointer-events: none; 
             font-weight: 500;
           }
@@ -428,7 +428,7 @@ class BlockGraphBuilder {
             </div>
           </div>
           <div class="header-toggle" onclick="toggleHeader()">
-            <span class="toggle-icon">▼</span>
+            <span class="toggle-icon">▲</span>
           </div>
         </div>
         <div id="graph-container"></div>
@@ -612,9 +612,9 @@ class BlockGraphBuilder {
               .attr('text-anchor', d => d.x < Math.PI ? 'start' : 'end')
               .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
               .style('font-size', d => {
-                if (d.depth === 0) return '13px';
-                if (d.depth === 1) return '12px';
-                return d.data.isLeaf ? '11px' : '10px';
+                if (d.depth === 0) return '16px';
+                if (d.depth === 1) return '15px';
+                return d.data.isLeaf ? '14px' : '13px';
               })
               .style('font-weight', d => d.depth <= 1 ? 'bold' : 'normal')
               .style('fill', d => d.depth === 0 ? '#2c3e50' : (d.data.isLeaf ? '#e74c3c' : '#34495e'))
@@ -794,9 +794,9 @@ class BlockGraphBuilder {
               .attr('text-anchor', d => d.x < Math.PI ? 'start' : 'end')
               .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
               .style('font-size', d => {
-                if (d.depth === 0) return '13px';
-                if (d.depth === 1) return '12px';
-                return d.data.isLeaf ? '11px' : '10px';
+                if (d.depth === 0) return '16px';
+                if (d.depth === 1) return '15px';
+                return d.data.isLeaf ? '14px' : '13px';
               })
               .style('font-weight', d => d.depth <= 1 ? 'bold' : 'normal')
               .style('fill', d => d.depth === 0 ? '#2c3e50' : (d.data.isLeaf ? '#e74c3c' : '#34495e'))
