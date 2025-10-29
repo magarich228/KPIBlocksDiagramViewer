@@ -1,7 +1,7 @@
 {
   "name": "block-graph-builder",
   "version": "1.0.0",
-  "description": "Module for analyzing directory structure and building block diagrams",
+  "description": "Module for analyzing repository structure and building block diagrams",
   "main": "block-graph-builder.js",
   "scripts": {
     "demo": "node demo.js"
@@ -11,6 +11,6 @@
     "jsdom": "^22.0.0"
   },
   "keywords": ["d3", "graph", "block", "analysis", "visualization"],
-  "author": "Your Name",
+  "author": "KPI Team",
   "license": "MIT"
 }
