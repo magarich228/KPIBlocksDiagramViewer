@@ -8,6 +8,7 @@ class BlockGraphBuilder {
     this.blocks = [];
     this.nodes = [];
     this.links = [];
+    this.baseDir = '';
   }
 
   /**
@@ -45,10 +46,11 @@ class BlockGraphBuilder {
     try {
       const data = yaml.load(content);
       const dirName = path.dirname(filePath);
+      const relativeDir = this.getRelativePath(dirName);
       
       return {
         filePath,
-        directory: dirName,
+        directory: relativeDir,
         name: data.name || 'Unknown',
         part: typeof data.part === 'string' 
           ? data.part.split(',').map(p => p.trim()).filter(p => p)
@@ -221,7 +223,7 @@ class BlockGraphBuilder {
             left: 0;
             right: 0;
             background: white; 
-            padding: 15px 20px; 
+            padding: 8px 15px; 
             border-radius: 0 0 8px 8px; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
@@ -233,21 +235,22 @@ class BlockGraphBuilder {
           }
           .header-toggle {
             position: absolute;
-            bottom: -40px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 40px;
+            width: 70px;
+            height: 30px;
             background: white;
             border: 1px solid #ddd;
             border-top: none;
-            border-radius: 0 0 8px 8px;
+            border-radius: 0 0 6px 6px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1001;
+            font-size: 12px;
           }
           .header-toggle:hover {
             background: #f5f5f5;
@@ -294,32 +297,64 @@ class BlockGraphBuilder {
           }
           .tooltip { 
             position: absolute; 
-            padding: 12px 15px; 
+            padding: 10px 12px; 
             background: rgba(255, 255, 255, 0.98); 
             border: 1px solid #ddd; 
             border-radius: 6px; 
             pointer-events: none; 
-            font-size: 12px;
+            font-size: 11px;
             max-width: 350px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             backdrop-filter: blur(10px);
             z-index: 1000;
           }
+          .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: opacity 0.2s ease;
+          }
+          .header.collapsed .header-content {
+            opacity: 0.3;
+            pointer-events: none;
+          }
+          .header-title {
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+            white-space: nowrap;
+          }
+          .search-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            max-width: 400px;
+          }
+          .search-input {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex: 1;
+            font-size: 12px;
+            min-width: 200px;
+          }
           .controls {
             display: flex;
-            gap: 10px;
-            margin: 15px 0;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
           }
           button {
-            padding: 8px 16px;
+            padding: 6px 12px;
             background: #4a90e2;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 11px;
             transition: all 0.2s ease;
+            white-space: nowrap;
           }
           button:hover {
             background: #357abd;
@@ -328,8 +363,8 @@ class BlockGraphBuilder {
           }
           .stats {
             color: #666;
-            font-size: 12px;
-            margin-left: auto;
+            font-size: 11px;
+            white-space: nowrap;
           }
           .legend {
             display: flex;
@@ -347,36 +382,24 @@ class BlockGraphBuilder {
             height: 12px;
             border-radius: 50%;
           }
-          .search-container {
-            margin: 10px 0;
-          }
-          .search-input {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 250px;
-            font-size: 12px;
-          }
-          .header-content {
-            transition: opacity 0.2s ease;
-          }
-          .header.collapsed .header-content {
-            opacity: 0.3;
-            pointer-events: none;
+          @media (max-width: 1200px) {
+            .header-content {
+              flex-wrap: wrap;
+              gap: 8px;
+            }
+            .header-title {
+              font-size: 14px;
+            }
+            .search-container {
+              max-width: 300px;
+            }
           }
         </style>
       </head>
       <body>
         <div class="header">
           <div class="header-content">
-            <h1 style="margin: 0 0 10px 0; color: #333;">Block Structure Diagram</h1>
-            <div class="controls">
-              <button onclick="resetZoom()">🔍 Сбросить масштаб</button>
-              <button onclick="downloadSVG()">📥 Скачать SVG</button>
-              <div class="stats" id="stats">
-                Узлы: ${nodes.length}, Связи: ${links.length}
-              </div>
-            </div>
+            <h1 class="header-title">Блоки КПИ</h1>            
             <div class="search-container">
               <input type="text" class="search-input" id="searchInput" placeholder="Поиск по имени блока...">
               <button onclick="searchNode()">🔍 Найти</button>
@@ -393,6 +416,14 @@ class BlockGraphBuilder {
               <div class="legend-item">
                 <div class="legend-color" style="background: #2ecc71;"></div>
                 <span>Корневой узел</span>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button onclick="resetZoom()">🔍 Сбросить масштаб</button>
+              <button onclick="downloadSVG()">📥 Скачать SVG</button>
+              <div class="stats" id="stats">
+                Узлы: ${nodes.length}, Связи: ${links.length}
               </div>
             </div>
           </div>
@@ -855,6 +886,7 @@ class BlockGraphBuilder {
   async analyzeDirectory(dirPath, options = {}) {
     try {
       console.log(`Анализируем директорию: ${dirPath}`);
+      this.baseDir = dirPath; // Сохраняем базовую директорию
       
       // Находим все файлы определений блоков
       const definitionFiles = await this.findBlockDefinitionFiles(dirPath);
@@ -893,6 +925,22 @@ class BlockGraphBuilder {
     } catch (error) {
       console.error('Ошибка анализа директории:', error);
       throw error;
+    }
+  }
+
+  /**
+   * Преобразует абсолютный путь в относительный относительно базовой директории
+   */
+  getRelativePath(absolutePath) {
+    if (!this.baseDir) return absolutePath;
+    
+    try {
+      const relativePath = path.relative(this.baseDir, absolutePath);
+      // Форматируем путь для отображения
+      return `.${path.sep}${relativePath.split(path.sep).join(path.sep)}`;
+    } catch (error) {
+      console.warn(`Не удалось преобразовать путь: ${absolutePath}`, error.message);
+      return absolutePath;
     }
   }
 }
