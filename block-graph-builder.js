@@ -45,12 +45,10 @@ class BlockGraphBuilder {
     try {
       const data = yaml.load(content);
       const dirName = path.dirname(filePath);
-      const relativePath = path.relative(process.cwd(), dirName);
       
       return {
         filePath,
         directory: dirName,
-        relativePath,
         name: data.name || 'Unknown',
         part: typeof data.part === 'string' 
           ? data.part.split(',').map(p => p.trim()).filter(p => p)
@@ -104,7 +102,7 @@ class BlockGraphBuilder {
           node.blocks.push({
             name: block.name,
             description: block.description,
-            directory: block.relativePath
+            directory: block.directory
           });
         }
       }
@@ -203,30 +201,70 @@ class BlockGraphBuilder {
       <html>
       <head>
         <meta charset="utf-8">
-        <title>Block Structure Diagram</title>
+        <title>Блоки КПИ</title>
         <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
         <style>
+          * {
+            box-sizing: border-box;
+          }
           body { 
             margin: 0; 
-            padding: 20px; 
+            padding: 0; 
             font-family: Arial, sans-serif; 
             background: #f8f9fa; 
+            height: 100vh;
             overflow: hidden;
           }
           .header { 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             background: white; 
             padding: 15px 20px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
+            border-radius: 0 0 8px 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            transform: translateY(0);
+          }
+          .header.collapsed {
+            transform: translateY(calc(-100% + 0px));
+          }
+          .header-toggle {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 40px;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1001;
+          }
+          .header-toggle:hover {
+            background: #f5f5f5;
+          }
+          .toggle-icon {
+            transition: transform 0.3s ease;
+          }
+          .header.collapsed .toggle-icon {
+            transform: rotate(180deg);
           }
           #graph-container { 
-            width: 100%; 
-            height: calc(100vh - 120px); 
-            border: 1px solid #ddd; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
           }
           .node circle { 
             fill: #fff; 
@@ -319,35 +357,47 @@ class BlockGraphBuilder {
             width: 250px;
             font-size: 12px;
           }
+          .header-content {
+            transition: opacity 0.2s ease;
+          }
+          .header.collapsed .header-content {
+            opacity: 0.3;
+            pointer-events: none;
+          }
         </style>
       </head>
       <body>
         <div class="header">
-          <h1 style="margin: 0 0 10px 0; color: #333;">Block Structure Diagram</h1>
-          <div class="controls">
-            <button onclick="resetZoom()">🔍 Сбросить масштаб</button>
-            <button onclick="downloadSVG()">📥 Скачать SVG</button>
-            <div class="stats" id="stats">
-              Узлы: ${nodes.length}, Связи: ${links.length}
+          <div class="header-content">
+            <h1 style="margin: 0 0 10px 0; color: #333;">Block Structure Diagram</h1>
+            <div class="controls">
+              <button onclick="resetZoom()">🔍 Сбросить масштаб</button>
+              <button onclick="downloadSVG()">📥 Скачать SVG</button>
+              <div class="stats" id="stats">
+                Узлы: ${nodes.length}, Связи: ${links.length}
+              </div>
+            </div>
+            <div class="search-container">
+              <input type="text" class="search-input" id="searchInput" placeholder="Поиск по имени блока...">
+              <button onclick="searchNode()">🔍 Найти</button>
+            </div>
+            <div class="legend">
+              <div class="legend-item">
+                <div class="legend-color" style="background: #ff6b35;"></div>
+                <span>Блок</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background: #4a90e2;"></div>
+                <span>Блок без описания</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background: #2ecc71;"></div>
+                <span>Корневой узел</span>
+              </div>
             </div>
           </div>
-          <div class="search-container">
-            <input type="text" class="search-input" id="searchInput" placeholder="Поиск по имени блока...">
-            <button onclick="searchNode()">🔍 Найти</button>
-          </div>
-          <div class="legend">
-            <div class="legend-item">
-              <div class="legend-color" style="background: #4a90e2;"></div>
-              <span>Группа блоков</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-color" style="background: #ff6b35;"></div>
-              <span>Конечный блок</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-color" style="background: #2ecc71;"></div>
-              <span>Корневой узел</span>
-            </div>
+          <div class="header-toggle" onclick="toggleHeader()">
+            <span class="toggle-icon">▼</span>
           </div>
         </div>
         <div id="graph-container"></div>
@@ -360,6 +410,15 @@ class BlockGraphBuilder {
 
           let svg, zoom, treeLayout, root, treeData;
           let highlightedNode = null;
+          let currentScale = 0.8;
+          let currentTranslate = [0, 0];
+          let isHeaderCollapsed = false;
+
+          function toggleHeader() {
+            const header = document.querySelector('.header');
+            isHeaderCollapsed = !isHeaderCollapsed;
+            header.classList.toggle('collapsed');
+          }
 
           function createRadialTree() {
             const container = document.getElementById('graph-container');
@@ -539,7 +598,10 @@ class BlockGraphBuilder {
             zoom = d3.zoom()
               .scaleExtent([0.1, 3])
               .on('zoom', (event) => {
-                svg.attr('transform', event.transform);
+                const transform = event.transform;
+                currentScale = transform.k;
+                currentTranslate = [transform.x, transform.y];
+                svg.attr('transform', \`translate(\${transform.x},\${transform.y}) scale(\${transform.k})\`);
               });
 
             // Начальная трансформация - центрируем и устанавливаем масштаб
@@ -547,6 +609,9 @@ class BlockGraphBuilder {
               .translate(width / 2, height / 2)
               .scale(0.8);
               
+            currentScale = 0.8;
+            currentTranslate = [width / 2, height / 2];
+            
             d3.select('svg')
               .call(zoom)
               .call(zoom.transform, initialTransform);
@@ -619,6 +684,9 @@ class BlockGraphBuilder {
               .translate(width / 2, height / 2)
               .scale(0.8);
               
+            currentScale = 0.8;
+            currentTranslate = [width / 2, height / 2];
+              
             d3.select('svg').transition().duration(750).call(
               zoom.transform,
               resetTransform
@@ -627,26 +695,89 @@ class BlockGraphBuilder {
           }
 
           function downloadSVG() {
-            const svgElement = d3.select('svg').node();
-            
-            // Создаем клон SVG с правильными размерами
-            const clone = svgElement.cloneNode(true);
-            
-            // Получаем bounding box всех элементов
-            const bbox = svgElement.getBBox();
-            const padding = 50;
-            
-            // Устанавливаем правильные атрибуты для скачивания
-            clone.setAttribute('width', bbox.width + padding * 2);
-            clone.setAttribute('height', bbox.height + padding * 2);
-            clone.setAttribute('viewBox', \`\${bbox.x - padding} \${bbox.y - padding} \${bbox.width + padding * 2} \${bbox.height + padding * 2}\`);
-            
-            // Убираем трансформации с внутренней группы
-            const g = clone.querySelector('g');
-            g.setAttribute('transform', \`translate(\${-bbox.x + padding}, \${-bbox.y + padding})\`);
-            
+            // Создаем новый SVG для скачивания с фиксированными размерами
+            const downloadSvg = d3.create('svg')
+              .attr('width', 2000)
+              .attr('height', 2000)
+              .attr('xmlns', 'http://www.w3.org/2000/svg');
+
+            // Создаем группу и центрируем ее
+            const g = downloadSvg.append('g')
+              .attr('transform', 'translate(1000,1000)');
+
+            // Используем сохраненные данные дерева для рендеринга
+            const treeLayout = d3.tree()
+              .size([2 * Math.PI, 800]) // Фиксированный радиус для скачивания
+              .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth);
+
+            const treeData = treeLayout(root);
+
+            // Функция для вычисления цвета узла
+            const getNodeColor = (d) => {
+              if (d.depth === 0) return '#2ecc71';
+              return d.data.isLeaf ? '#ff6b35' : '#4a90e2';
+            };
+
+            // Функция для вычисления радиуса узла
+            const getNodeRadius = (d) => {
+              if (d.depth === 0) return 10;
+              return d.data.isLeaf ? 6 : 4;
+            };
+
+            // Рисуем связи
+            g.append('g')
+              .selectAll('path')
+              .data(treeData.links())
+              .enter()
+              .append('path')
+              .attr('d', d3.linkRadial()
+                .angle(d => d.x)
+                .radius(d => d.y)
+              )
+              .style('fill', 'none')
+              .style('stroke', '#ccc')
+              .style('stroke-width', 2)
+              .style('opacity', 0.7);
+
+            // Рисуем узлы
+            const node = g.append('g')
+              .selectAll('g')
+              .data(treeData.descendants())
+              .enter()
+              .append('g')
+              .attr('transform', d => \`
+                rotate(\${d.x * 180 / Math.PI - 90})
+                translate(\${d.y},0)
+              \`);
+
+            node.append('circle')
+              .attr('r', getNodeRadius)
+              .style('fill', '#fff')
+              .style('stroke', getNodeColor)
+              .style('stroke-width', 2);
+
+            // Добавляем текст
+            node.append('text')
+              .attr('dy', d => d.x < Math.PI ? '0.31em' : '-0.31em')
+              .attr('x', d => d.x < Math.PI ? 12 : -12)
+              .attr('text-anchor', d => d.x < Math.PI ? 'start' : 'end')
+              .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
+              .style('font-size', d => {
+                if (d.depth === 0) return '13px';
+                if (d.depth === 1) return '12px';
+                return d.data.isLeaf ? '11px' : '10px';
+              })
+              .style('font-weight', d => d.depth <= 1 ? 'bold' : 'normal')
+              .style('fill', d => d.depth === 0 ? '#2c3e50' : (d.data.isLeaf ? '#e74c3c' : '#34495e'))
+              .text(d => d.data.name)
+              .clone(true).lower()
+              .attr('stroke', 'white')
+              .attr('stroke-width', 3)
+              .attr('stroke-linejoin', 'round');
+
+            // Сериализуем и скачиваем
             const serializer = new XMLSerializer();
-            const source = serializer.serializeToString(clone);
+            const source = serializer.serializeToString(downloadSvg.node());
             const blob = new Blob([source], { type: 'image/svg+xml' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
