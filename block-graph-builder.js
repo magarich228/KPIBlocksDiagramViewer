@@ -406,11 +406,11 @@ class BlockGraphBuilder {
             </div>
             <div class="legend">
               <div class="legend-item">
-                <div class="legend-color" style="background: #ff6b35;"></div>
+                <div class="legend-color" style="background: #4a90e2;"></div>
                 <span>Блок</span>
               </div>
               <div class="legend-item">
-                <div class="legend-color" style="background: #4a90e2;"></div>
+                <div class="legend-color" style="background: #87ceeb;"></div>
                 <span>Блок без описания</span>
               </div>
               <div class="legend-item">
@@ -491,7 +491,7 @@ class BlockGraphBuilder {
             // Функция для вычисления цвета узла
             const getNodeColor = (d) => {
               if (d.depth === 0) return '#2ecc71'; // Корневой узел - зеленый
-              return d.data.isLeaf ? '#ff6b35' : '#4a90e2'; // Конечные узлы - оранжевый, группы - синий
+              return d.data.isLeaf ? '#4a90e2' : '#87ceeb'; // Конечные узлы - синий, группы - голубой
             };
 
             // Функция для вычисления радиуса узла
@@ -617,7 +617,7 @@ class BlockGraphBuilder {
                 return d.data.isLeaf ? '14px' : '13px';
               })
               .style('font-weight', d => d.depth <= 1 ? 'bold' : 'normal')
-              .style('fill', d => d.depth === 0 ? '#2c3e50' : (d.data.isLeaf ? '#e74c3c' : '#34495e'))
+              .style('fill', '#000000') // Текст
               .style('opacity', d => d.depth <= 2 || d.data.isLeaf ? 1 : 0.8)
               .text(d => d.data.name)
               .clone(true).lower()
@@ -746,7 +746,7 @@ class BlockGraphBuilder {
             // Функция для вычисления цвета узла
             const getNodeColor = (d) => {
               if (d.depth === 0) return '#2ecc71';
-              return d.data.isLeaf ? '#ff6b35' : '#4a90e2';
+              return d.data.isLeaf ? '#4a90e2' : '#87ceeb';
             };
 
             // Функция для вычисления радиуса узла
@@ -799,7 +799,7 @@ class BlockGraphBuilder {
                 return d.data.isLeaf ? '14px' : '13px';
               })
               .style('font-weight', d => d.depth <= 1 ? 'bold' : 'normal')
-              .style('fill', d => d.depth === 0 ? '#2c3e50' : (d.data.isLeaf ? '#e74c3c' : '#34495e'))
+              .style('fill', '#000000') // Весь текст
               .text(d => d.data.name)
               .clone(true).lower()
               .attr('stroke', 'white')
@@ -854,7 +854,7 @@ class BlockGraphBuilder {
           // Вспомогательные функции для вычисления цвета
           function getNodeColor(d) {
             if (d.depth === 0) return '#2ecc71';
-            return d.data.isLeaf ? '#ff6b35' : '#4a90e2';
+            return d.data.isLeaf ? '#4a90e2' : '#87ceeb';
           }
 
           // Инициализация при загрузке
