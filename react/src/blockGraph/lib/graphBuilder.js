@@ -9,22 +9,24 @@ export class GraphBuilder {
 
     console.log('Building graph from blocks:', blocks);
 
+    // Сначала находим все уникальные пути
+    const allPaths = [];
+    
     blocks.forEach(block => {
       if (block.ignore) return;
-
-      // Строим полный путь: parents -> blockName -> blockPart
       const fullPath = [...block.parents, block.blockName, ...block.blockPart];
-      
-      // Создаем узлы для каждого сегмента в пути
+      allPaths.push(fullPath);
+
       for (let i = 0; i < fullPath.length; i++) {
         const segmentPath = fullPath.slice(0, i + 1).join(' → ');
         const segmentName = fullPath[i];
         
+        // узлы
         if (!nodeMap.has(segmentPath)) {
           const isLeaf = i === fullPath.length - 1;
-          const isBlockNode = i === block.parents.length;
-          const isPartNode = i > block.parents.length;
-          const isRoot = segmentName === 'RGB' && i === 0;
+          const isBlockNode = i >= (fullPath.length - block.blockPart.length - 1);
+          const isPartNode = i > (fullPath.length - block.blockPart.length - 1);
+          const isRoot = i === 0;
           
           const node = {
             id: nodeId++,
@@ -43,22 +45,29 @@ export class GraphBuilder {
           nodeMap.set(segmentPath, node);
           nodes.push(node);
         }
-
-        // Если это конечный узел (блок), добавляем информацию о блоке
-        if (i === fullPath.length - 1) {
-          const node = nodeMap.get(segmentPath);
-          node.blocks.push({
-            name: block.blockName,
-            description: block.description,
-            aspects: block.aspects,
-            directory: block.directory,
-            parents: block.parents,
-            blockPart: block.blockPart
-          });
-        }
       }
+    });
 
-      // Создаем связи между узлами
+    blocks.forEach(block => {
+      if (block.ignore) return;
+      const fullPath = [...block.parents, block.blockName, ...block.blockPart];
+      const segmentPath = fullPath.join(' → ');
+      const node = nodeMap.get(segmentPath);
+      
+      if (node) {
+        node.blocks.push({
+          name: block.blockName,
+          description: block.description,
+          aspects: block.aspects,
+          directory: block.directory,
+          parents: block.parents,
+          blockPart: block.blockPart
+        });
+      }
+    });
+
+    // Создаем связи между узлами
+    allPaths.forEach(fullPath => {
       for (let i = 1; i < fullPath.length; i++) {
         const sourcePath = fullPath.slice(0, i).join(' → ');
         const targetPath = fullPath.slice(0, i + 1).join(' → ');
@@ -94,10 +103,31 @@ export class GraphBuilder {
     }
 
     // Находим корневой узел
-    const rootNode = nodes.find(node => node.isRoot);
-    if (!rootNode) {
+    const rootNodes = nodes.filter(node => node.isRoot);
+    if (rootNodes.length === 0) {
       console.error('No root node found');
       return null;
+    }
+
+    // Если несколько корневых узлов, создаем искусственный корень
+    let rootNode;
+    if (rootNodes.length > 1) {
+      rootNode = {
+        id: -1,
+        name: 'Root',
+        path: 'Root',
+        depth: -1,
+        isLeaf: false,
+        isRoot: true,
+        isBlockNode: false,
+        isPartNode: false,
+        blocks: [],
+        x: 0,
+        y: 0,
+        children: rootNodes
+      };
+    } else {
+      rootNode = rootNodes[0];
     }
 
     // Создаем map для быстрого доступа к узлам по ID
@@ -124,28 +154,6 @@ export class GraphBuilder {
     const hierarchy = buildHierarchy(rootNode);
     console.log('Built hierarchy:', hierarchy);
     return hierarchy;
-  }
-
-  static createRadialTreeLayout(hierarchy, width, height) {
-    if (!hierarchy) {
-      console.error('No hierarchy provided for tree layout');
-      return null;
-    }
-
-    try {
-      const treeLayout = d3.tree()
-        .size([2 * Math.PI, Math.min(width, height) / 2 - 100])
-        .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
-
-      const root = d3.hierarchy(hierarchy);
-      const treeData = treeLayout(root);
-      
-      console.log('Tree data:', treeData);
-      return treeData;
-    } catch (error) {
-      console.error('Error creating tree layout:', error);
-      return null;
-    }
   }
 
   static getNodeColor(node) {

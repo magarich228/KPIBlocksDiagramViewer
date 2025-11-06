@@ -73,7 +73,7 @@ body {
   right: 0;
   bottom: 0;
   background: white;
-  transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .node circle {
@@ -115,7 +115,7 @@ body {
   max-width: 350px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 1002;
   transition: opacity 0.2s ease;
 }
 

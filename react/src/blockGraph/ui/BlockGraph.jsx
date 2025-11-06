@@ -11,14 +11,19 @@ const BlockGraph = ({ data }) => {
   const [tooltip, setTooltip] = useState({ visible: false, node: null, x: 0, y: 0 });
   const [graphData, setGraphData] = useState(null);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // Обновляем размеры контейнера
+  // Размеры контейнера
+  const [dimensions, setDimensions] = useState({ 
+    width: window.innerWidth, 
+    height: window.innerHeight 
+  });
+
+  // Обновляем размеры только при изменении окна
   const updateDimensions = useCallback(() => {
-    if (containerRef.current) {
-      const { clientWidth, clientHeight } = containerRef.current;
-      setDimensions({ width: clientWidth, height: clientHeight });
-    }
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
   }, []);
 
   useEffect(() => {
@@ -30,9 +35,7 @@ const BlockGraph = ({ data }) => {
   }, [data]);
 
   useEffect(() => {
-    updateDimensions();
     window.addEventListener('resize', updateDimensions);
-    
     return () => {
       window.removeEventListener('resize', updateDimensions);
     };
@@ -51,13 +54,12 @@ const BlockGraph = ({ data }) => {
       return;
     }
 
-    const container = containerRef.current;
     const { width, height } = dimensions;
 
     // Очищаем предыдущий граф
-    d3.select(container).selectAll('*').remove();
+    d3.select(containerRef.current).selectAll('*').remove();
 
-    const svg = d3.select(container)
+    const svg = d3.select(containerRef.current)
       .append('svg')
       .attr('width', width)
       .attr('height', height);
@@ -73,11 +75,12 @@ const BlockGraph = ({ data }) => {
     }
 
     // Создаем дерево
-    const treeData = GraphBuilder.createRadialTreeLayout(hierarchy, width, height);
-    if (!treeData) {
-      console.error('Failed to create tree layout');
-      return;
-    }
+    const root = d3.hierarchy(hierarchy);
+    const treeLayout = d3.tree()
+      .size([2 * Math.PI, Math.min(width, height) / 2 - 100])
+      .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+
+    const treeData = treeLayout(root);
 
     // Рисуем связи
     g.append('g')
@@ -109,7 +112,6 @@ const BlockGraph = ({ data }) => {
       .attr('stroke-width', 2)
       .style('cursor', 'pointer')
       .on('mouseover', function(event, d) {
-        // Показываем tooltip
         setTooltip({
           visible: true,
           node: d.data,
@@ -117,7 +119,6 @@ const BlockGraph = ({ data }) => {
           y: event.pageY
         });
 
-        // Подсвечиваем узел
         d3.select(this)
           .style('stroke', '#ff3860')
           .style('stroke-width', 3)
@@ -179,7 +180,6 @@ const BlockGraph = ({ data }) => {
 
   const handleSearch = (searchTerm) => {
     console.log('Search:', searchTerm);
-    // TODO: реализовать поиск
   };
 
   const handleResetZoom = () => {
@@ -198,13 +198,12 @@ const BlockGraph = ({ data }) => {
 
   const handleDownloadSVG = () => {
     console.log('Download SVG');
-    // TODO: реализовать скачивание SVG
   };
 
+  // ПРОСТОЕ РЕШЕНИЕ: убираем любые обновления состояния при сворачивании шапки
   const handleToggleHeader = (collapsed) => {
     setIsHeaderCollapsed(collapsed);
-    // Обновляем размеры после анимации
-    setTimeout(updateDimensions, 300);
+    // НИКАКИХ вызовов updateDimensions или других методов, влияющих на граф
   };
 
   if (!graphData) {
@@ -238,10 +237,6 @@ const BlockGraph = ({ data }) => {
       <div 
         ref={containerRef}
         className="graph-container"
-        style={{ 
-          height: isHeaderCollapsed ? '100vh' : 'calc(100vh - 120px)',
-          top: isHeaderCollapsed ? '0' : '120px'
-        }}
       />
       
       <NodeTooltip
