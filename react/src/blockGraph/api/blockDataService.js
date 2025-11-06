@@ -15,8 +15,8 @@ const mockBlocks = [
     parents: ['RGB'],
     blockName: 'UI',
     blockPart: [],
-    description: 'Пользовательский интерфейс',
-    aspects: 'ui, frontend',
+    description: 'Пользовательский интерфейс системы',
+    aspects: 'ui, frontend, react',
     ignore: false
   },
   {
@@ -26,7 +26,17 @@ const mockBlocks = [
     blockName: 'Components',
     blockPart: [],
     description: 'Библиотека React компонентов',
-    aspects: 'components, react',
+    aspects: 'components, react, ui',
+    ignore: false
+  },
+  {
+    filePath: 'C:\\Users\\k.groshev\\source\\repos\\rgb3\\RGB\\UI\\Components\\Button\\.block-definition.yml',
+    directory: '.\\RGB\\UI\\Components\\Button',
+    parents: ['RGB', 'UI', 'Components'],
+    blockName: 'Button',
+    blockPart: [],
+    description: 'Базовый компонент кнопки',
+    aspects: 'button, component, ui',
     ignore: false
   },
   {
@@ -56,7 +66,17 @@ const mockBlocks = [
     blockName: 'Database',
     blockPart: [],
     description: 'Управление базой данных',
-    aspects: 'database, postgresql',
+    aspects: 'database, postgresql, orm',
+    ignore: false
+  },
+  {
+    filePath: 'C:\\Users\\k.groshev\\source\\repos\\rgb3\\RGB\\API\\Database\\Migrations\\.block-definition.yml',
+    directory: '.\\RGB\\API\\Database\\Migrations',
+    parents: ['RGB', 'API'],
+    blockName: 'Database',
+    blockPart: [ 'Migrations' ],
+    description: 'Миграции базы данных',
+    aspects: 'migrations, database',
     ignore: false
   }
 ];
