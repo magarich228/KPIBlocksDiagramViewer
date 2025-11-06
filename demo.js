@@ -1,4 +1,4 @@
-const BlockGraphBuilder = require('./block-graph-builder');
+const BlockGraphBuilder = require('./block-graph-builder-v2');
 const fs = require('fs');
 const path = require('path');
 
@@ -19,6 +19,7 @@ async function demo() {
   fs.writeFileSync(outputPath, html);
   console.log(`\nДиаграмма сохранена в: ${outputPath}`);
   
+  /*
   // Выводим информацию о блоках
   console.log('\n=== НАЙДЕННЫЕ БЛОКИ ===');
   result.blocks.forEach(block => {
@@ -34,6 +35,7 @@ async function demo() {
       console.log(`🔹 ${node.path}`);
     }
   });
+  */
 }
 
 // Запускаем демо если файл запущен напрямую
