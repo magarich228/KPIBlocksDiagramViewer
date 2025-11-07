@@ -143,14 +143,15 @@ export class GraphBuilder {
 
   static getNodeRadius(node) {
     if (node.isRoot) return 7;
-    if (node.isBlockNode) return 5;
     if (node.isPartNode) return 3;
+    if (node.isBlockNode) return 5;
     return 3;
   }
 
   static getNodeStrokeWidth(node) {
-    if (node.isRoot) return 3;
-    if (node.isBlockNode) return 2.5;
+    console.log(node);
+    if (node.isRoot) return 2;
+    if (node.isBlockNode) return 1.5;
     return 1;
   }
 }

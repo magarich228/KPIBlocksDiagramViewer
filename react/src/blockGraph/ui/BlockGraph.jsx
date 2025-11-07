@@ -62,8 +62,10 @@ const BlockGraph = ({ data }) => {
     if (!hierarchy) return;
 
     const root = d3.hierarchy(hierarchy);
+    
+    // Увеличиваем радиус для более длинных рёбер
     const treeLayout = d3.tree()
-      .size([2 * Math.PI, Math.min(width, height) / 2 - 100])
+      .size([2 * Math.PI, Math.min(width, height) / 2 * 0.9]) // Увеличили радиус до 80% от доступного пространства
       .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
 
     const treeData = treeLayout(root);
@@ -131,11 +133,11 @@ const BlockGraph = ({ data }) => {
       .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
       .text(d => d.data.data.name)
       .style('font-size', d => {
-        if (d.data.data.isRoot) return '14px';
-        if (d.depth <= 1) return '12px';
-        return '10px';
+        if (d.data.data.isRoot) return '12px';
+        if (d.depth <= 1) return '10px';
+        return '8px';
       })
-      .style('font-weight', d => d.depth <= 1 || d.data.data.isBlockNode ? 'bold' : 'normal')
+      .style('font-weight', d => d.depth <= 1 || d.data.data.isBlockNode ? 'normal' : 'normal')
       .style('fill', '#000000')
       .clone(true)
       .lower()
