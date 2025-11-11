@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BlockDataService } from '../api/blockDataService.js';
 import './styles.css';
 
 const GraphControls = ({ 
@@ -6,10 +7,18 @@ const GraphControls = ({
   onResetZoom, 
   onDownloadSVG, 
   stats,
-  onToggleHeader 
+  onToggleHeader,
+  onDataLoaded
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
+  const [fileSystemAvailable, setFileSystemAvailable] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  React.useEffect(() => {
+    // Проверка доступности File System API при монтировании
+    setFileSystemAvailable(BlockDataService.isFileSystemAPISupported());
+  }, []);
 
   const handleSearch = () => {
     onSearch(searchTerm);
@@ -25,6 +34,21 @@ const GraphControls = ({
     const newState = !isHeaderCollapsed;
     setIsHeaderCollapsed(newState);
     onToggleHeader(newState);
+  };
+
+  const handleSelectDirectory = async () => {
+    if (!fileSystemAvailable) return;
+    
+    try {
+      setLoading(true);
+      const data = await BlockDataService.getBlockDefinitions();
+      onDataLoaded(data); // Передача загруженных данных обратно в App
+    } catch (error) {
+      console.error('Error loading directory:', error);
+      // TODO: Уведомление об ошибке
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -64,6 +88,17 @@ const GraphControls = ({
         </div>
 
         <div className="controls">
+          {fileSystemAvailable && (
+            <button 
+              onClick={handleSelectDirectory}
+              disabled={loading}
+              style={{
+                opacity: loading ? 0.6 : 1
+              }}
+            >
+              {loading ? '⏳ Загрузка...' : '📁 Загрузить из файлов'}
+            </button>
+          )}
           <button onClick={onResetZoom}>🔍 Сбросить масштаб</button>
           <button onClick={onDownloadSVG}>📥 Скачать SVG</button>
           <div className="stats" id="stats">

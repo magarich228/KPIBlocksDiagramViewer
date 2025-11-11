@@ -5,7 +5,8 @@ import GraphControls from './GraphControls.jsx';
 import NodeTooltip from './NodeTooltip.jsx';
 import './styles.css';
 
-const BlockGraph = ({ data }) => {
+// Добавляем onDataLoaded в пропсы компонента
+const BlockGraph = ({ data, onDataLoaded }) => {
   const svgRef = useRef();
   const containerRef = useRef();
   const [tooltip, setTooltip] = useState({ visible: false, node: null, x: 0, y: 0 });
@@ -207,6 +208,7 @@ const BlockGraph = ({ data }) => {
         onResetZoom={handleResetZoom}
         onDownloadSVG={handleDownloadSVG}
         onToggleHeader={handleToggleHeader}
+        onDataLoaded={onDataLoaded}
         stats={{
           nodes: graphData.nodes.length,
           links: graphData.links.length
