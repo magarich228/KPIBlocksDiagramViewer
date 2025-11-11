@@ -21,21 +21,41 @@ const NodeTooltip = ({ node, x, y, visible }) => {
   };
 
   const renderBlockInfo = (block, index) => {
+    const hasCatalogData = block.catalogData;
+    
     return (
       <div 
         key={index}
         style={{ 
           margin: '8px 0', 
           padding: '8px', 
-          background: '#f8f9fa', 
+          background: hasCatalogData ? '#fff3cd' : '#f8f9fa', 
           borderRadius: '4px',
           borderLeft: `3px solid ${getNodeColor(nodeData)}`
         }}
       >
         <strong style={{ color: '#333', fontSize: '12px' }}>{block.name}</strong>
         <br />
-        {block.description && (
-          <span style={{ color: '#666', fontSize: '11px' }}>{block.description}</span>
+        
+        {/* Описание из каталога или из блока */}
+        {(block.description || (hasCatalogData && block.catalogData.description)) && (
+          <span style={{ color: '#666', fontSize: '11px' }}>
+            {block.description || block.catalogData.description}
+          </span>
+        )}
+        
+        {/* Русское название из каталога */}
+        {hasCatalogData && block.catalogData.ruFullName && (
+          <div style={{ marginTop: '5px', fontSize: '11px' }}>
+            <strong>Русское название:</strong> {block.catalogData.ruFullName}
+          </div>
+        )}
+        
+        {/* Полное название из каталога */}
+        {hasCatalogData && block.catalogData.fullName && (
+          <div style={{ marginTop: '5px', fontSize: '11px' }}>
+            <strong>Полное название:</strong> {block.catalogData.fullName}
+          </div>
         )}
         
         {block.parents && block.parents.length > 0 && (
@@ -68,7 +88,13 @@ const NodeTooltip = ({ node, x, y, visible }) => {
           </div>
         )}
         <div style={{ marginTop: '5px' }}>
-          <small style={{ color: '#999', fontSize: '10px' }}>{block.directory}</small>
+          <small style={{ 
+            color: hasCatalogData ? '#856404' : '#999', 
+            fontSize: '10px',
+            fontStyle: hasCatalogData ? 'italic' : 'normal'
+          }}>
+            {hasCatalogData ? '📚 Данные из глоссария' : block.directory}
+          </small>
         </div>
       </div>
     );

@@ -2,11 +2,11 @@ import * as yaml from 'js-yaml';
 
 export class BlockDataService {
   static directoryHandle = null;
+  static catalogData = null;
 
   // Запрос разрешения на доступ к директории
   static async requestDirectoryAccess() {
     try {
-      // Пытаемся получить доступ к ранее выбранной директории
       if ('showDirectoryPicker' in window) {
         this.directoryHandle = await window.showDirectoryPicker();
         return true;
@@ -15,6 +15,44 @@ export class BlockDataService {
     } catch (error) {
       console.warn('Ошибка при выборе директории:', error);
       return false;
+    }
+  }
+
+  // Поиск .block-catalog.yml файла
+  static async findBlockCatalogFile(dirHandle, path = '') {
+    try {
+      for await (const entry of dirHandle.values()) {
+        const entryPath = path ? `${path}/${entry.name}` : entry.name;
+        
+        if (entry.kind === 'directory') {
+          const catalog = await this.findBlockCatalogFile(entry, entryPath);
+          if (catalog) return catalog;
+        } else if (entry.kind === 'file' && entry.name === '.block-catalog.yml') {
+          return {
+            handle: entry,
+            path: entryPath
+          };
+        }
+      }
+    } catch (error) {
+      console.warn(`Не удалось прочитать директорию: ${path}`, error.message);
+    }
+    
+    return null;
+  }
+
+  // Парсинг .block-catalog.yml файла
+  static async parseBlockCatalog(fileHandle, filePath) {
+    try {
+      const file = await fileHandle.getFile();
+      const content = await file.text();
+      const data = yaml.load(content);
+      
+      console.log('Loaded catalog data:', data);
+      return data;
+    } catch (error) {
+      console.warn(`Ошибка парсинга catalog файла ${filePath}:`, error.message);
+      return null;
     }
   }
 
@@ -94,6 +132,16 @@ export class BlockDataService {
     }
 
     try {
+      // Сначала ищем catalog файл
+      const catalogFile = await this.findBlockCatalogFile(this.directoryHandle);
+      if (catalogFile) {
+        this.catalogData = await this.parseBlockCatalog(catalogFile.handle, catalogFile.path);
+        console.log('Catalog data loaded:', this.catalogData);
+      } else {
+        console.log('Catalog file not found');
+        this.catalogData = null;
+      }
+
       // Ищем все файлы определений блоков
       const definitionFiles = await this.findBlockDefinitionFiles(this.directoryHandle);
       console.log(`Найдено файлов: ${definitionFiles.length}`);
@@ -114,6 +162,12 @@ export class BlockDataService {
       console.error('Ошибка загрузки блоков:', error);
       throw new Error('Ошибка при чтении файлов: ' + error.message);
     }
+  }
+
+  // Получение данных из каталога для блока
+  static getCatalogDataForBlock(blockName) {
+    if (!this.catalogData || !blockName) return null;
+    return this.catalogData[blockName] || null;
   }
 
   // Mock-данные на случай если File System API недоступен

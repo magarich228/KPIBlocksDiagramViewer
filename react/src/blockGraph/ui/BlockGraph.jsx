@@ -5,7 +5,6 @@ import GraphControls from './GraphControls.jsx';
 import NodeTooltip from './NodeTooltip.jsx';
 import './styles.css';
 
-// Добавляем onDataLoaded в пропсы компонента
 const BlockGraph = ({ data, onDataLoaded }) => {
   const svgRef = useRef();
   const containerRef = useRef();
@@ -64,9 +63,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     const root = d3.hierarchy(hierarchy);
     
-    // Увеличиваем радиус для более длинных рёбер
     const treeLayout = d3.tree()
-      .size([2 * Math.PI, Math.min(width, height) / 2 * 0.9]) // Увеличили радиус до 80% от доступного пространства
+      .size([2 * Math.PI, Math.min(width, height) / 2 * 0.9])
       .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
 
     const treeData = treeLayout(root);

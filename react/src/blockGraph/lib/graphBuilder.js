@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import { BlockDataService } from '../api/blockDataService.js';
 
 export class GraphBuilder {
   static buildGraph(blocks) {
@@ -73,9 +74,7 @@ export class GraphBuilder {
             aspects: block.aspects,
             directory: block.directory,
             parents: block.parents,
-            blockPart: block.blockPart,
-            extend: block.extend,
-            based: block.based
+            blockPart: block.blockPart
           });
         }
       }
@@ -98,6 +97,24 @@ export class GraphBuilder {
               target: targetNode.id
             });
           }
+        }
+      }
+    });
+
+    nodes.forEach(node => {
+      // Только для блоков и групп блоков (не для частей блоков), у которых нет информации
+      if ((node.isBlockNode || !node.isPartNode) && node.blocks.length === 0) {
+        const catalogData = BlockDataService.getCatalogDataForBlock(node.name);
+        if (catalogData) {
+          node.blocks.push({
+            name: node.name,
+            description: catalogData.description || catalogData.ruFullName || '',
+            aspects: '',
+            directory: node.path,
+            parents: [],
+            blockPart: [],
+            catalogData: catalogData
+          });
         }
       }
     });
