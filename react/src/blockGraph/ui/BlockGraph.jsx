@@ -177,7 +177,35 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   };
 
   const handleDownloadSVG = () => {
-    console.log('Download SVG');
+    if (!svgRef.current) return;
+
+    const { width, height } = dimensions;
+    
+    const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    newSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    newSvg.setAttribute('viewBox', `0 0 ${width * 2} ${height * 1.5}`);
+    newSvg.setAttribute('width', width * 2);
+    newSvg.setAttribute('height', height * 2);
+
+    const graphGroup = svgRef.current.g.node().cloneNode(true);
+    
+    graphGroup.setAttribute('transform', `translate(${width},${height})`);
+    
+    newSvg.appendChild(graphGroup);
+
+    const serializer = new XMLSerializer();
+    let svgString = serializer.serializeToString(newSvg);
+    svgString = '<?xml version="1.0" encoding="UTF-8"?>\n' + svgString;
+
+    const blob = new Blob([svgString], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `block-graph-${Date.now()}.svg`;
+    link.click();
+    
+    URL.revokeObjectURL(url);
   };
 
   const handleToggleHeader = (collapsed) => {
