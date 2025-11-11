@@ -53,22 +53,18 @@ const GraphControls = ({
 
   return (
     <div className={`header ${isHeaderCollapsed ? 'collapsed' : ''}`}>
-      <div className="header-content">
+      <div className="header-content" style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
         <h1 className="header-title">Блоки КПИ</h1>
-        
-        <div className="search-container">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Поиск по имени блока..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button onClick={handleSearch}>🔍 Найти</button>
-        </div>
 
-        <div className="legend">
+        <div className="legend" style={{ 
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)'
+        }}>
           <div className="legend-item">
             <div className="legend-color" style={{ background: '#2ecc71' }}></div>
             <span>Корневой узел</span>
@@ -76,10 +72,6 @@ const GraphControls = ({
           <div className="legend-item">
             <div className="legend-color" style={{ background: '#4a90e2' }}></div>
             <span>Блок</span>
-          </div>
-          <div className="legend-item">
-            <div className="legend-color" style={{ background: '#87ceeb' }}></div>
-            <span>Группа блоков без описания</span>
           </div>
           <div className="legend-item">
             <div className="legend-color" style={{ background: '#ff6b35' }}></div>
