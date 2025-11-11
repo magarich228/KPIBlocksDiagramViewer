@@ -56,6 +56,17 @@ const NodeTooltip = ({ node, x, y, visible }) => {
           </div>
         )}
         
+        {block.based && (
+          <div style={{ marginTop: '5px', fontSize: '11px'}}>
+            <strong>Основан на:</strong> {block.based}
+          </div>
+        )}
+
+        {block.extend && (
+          <div style={{ marginTop: '5px', fontSize: '11px'}}>
+            <strong>Расширяет:</strong> {block.extend}
+          </div>
+        )}
         <div style={{ marginTop: '5px' }}>
           <small style={{ color: '#999', fontSize: '10px' }}>{block.directory}</small>
         </div>

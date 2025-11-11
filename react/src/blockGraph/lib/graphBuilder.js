@@ -73,7 +73,9 @@ export class GraphBuilder {
             aspects: block.aspects,
             directory: block.directory,
             parents: block.parents,
-            blockPart: block.blockPart
+            blockPart: block.blockPart,
+            extend: block.extend,
+            based: block.based
           });
         }
       }
@@ -149,7 +151,6 @@ export class GraphBuilder {
   }
 
   static getNodeStrokeWidth(node) {
-    console.log(node);
     if (node.isRoot) return 2;
     if (node.isBlockNode) return 1.5;
     return 1;
