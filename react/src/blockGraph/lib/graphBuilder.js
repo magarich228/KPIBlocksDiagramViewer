@@ -79,7 +79,9 @@ export class GraphBuilder {
             aspects: block.aspects,
             directory: block.directory,
             parents: block.parents,
-            blockPart: block.blockPart
+            blockPart: block.blockPart,
+            based: block.based,
+            extend: block.extend
           });
         }
       }
