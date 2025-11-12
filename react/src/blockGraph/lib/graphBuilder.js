@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import { BlockDataService } from '../api/blockDataService.js';
 
 export class GraphBuilder {
-  static buildGraph(blocks) {
+  static buildGraph(blocks, hideParts = false) {
     const nodes = [];
     const links = [];
     const nodeMap = new Map();
@@ -14,10 +14,13 @@ export class GraphBuilder {
     blocks.forEach(block => {
       if (block.ignore) return;
       
+      // Фильтруем blockPart если нужно скрыть части
+      const effectiveBlockPart = hideParts ? [] : block.blockPart;
+      
       const fullBlockPath = [...block.parents, block.blockName];
       const blockPathStr = fullBlockPath.join(' → ');
       
-      const blockEndPath = [...block.parents, block.blockName, ...block.blockPart];
+      const blockEndPath = [...block.parents, block.blockName, ...effectiveBlockPart];
       const blockEndPathStr = blockEndPath.join(' → ');
       
       blockEndPaths.add(blockEndPathStr);
@@ -36,7 +39,9 @@ export class GraphBuilder {
     blocks.forEach(block => {
       if (block.ignore) return;
 
-      const fullPath = [...block.parents, block.blockName, ...block.blockPart];
+      // Фильтруем blockPart если нужно скрыть части
+      const effectiveBlockPart = hideParts ? [] : block.blockPart;
+      const fullPath = [...block.parents, block.blockName, ...effectiveBlockPart];
       
       for (let i = 0; i < fullPath.length; i++) {
         const segmentPath = fullPath.slice(0, i + 1).join(' → ');
@@ -102,7 +107,6 @@ export class GraphBuilder {
     });
 
     nodes.forEach(node => {
-      // Только для блоков и групп блоков (не для частей блоков), у которых нет информации
       if ((node.isBlockNode || !node.isPartNode) && node.blocks.length === 0) {
         const catalogData = BlockDataService.getCatalogDataForBlock(node.name);
         if (catalogData) {

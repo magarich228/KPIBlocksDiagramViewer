@@ -6,6 +6,7 @@ const GraphControls = ({
   onSearch, 
   onResetZoom, 
   onDownloadSVG, 
+  onToggleParts,
   stats,
   onToggleHeader,
   onDataLoaded
@@ -14,6 +15,7 @@ const GraphControls = ({
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   const [fileSystemAvailable, setFileSystemAvailable] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [partsHidden, setPartsHidden] = useState(false);
 
   React.useEffect(() => {
     // Проверка доступности File System API при монтировании
@@ -34,6 +36,12 @@ const GraphControls = ({
     const newState = !isHeaderCollapsed;
     setIsHeaderCollapsed(newState);
     onToggleHeader(newState);
+  };
+
+  const handleToggleParts = () => {
+    const newState = !partsHidden;
+    setPartsHidden(newState);
+    onToggleParts(newState);
   };
 
   const handleSelectDirectory = async () => {
@@ -93,6 +101,9 @@ const GraphControls = ({
           )}
           <button onClick={onResetZoom}>🔍 Сбросить масштаб</button>
           <button onClick={onDownloadSVG}>📥 Скачать SVG</button>
+          <button onClick={handleToggleParts}>
+            {partsHidden ? '👁️ Показать части' : '👁️ Скрыть части'}
+          </button>
           <div className="stats" id="stats">
             Узлы: {stats.nodes}, Связи: {stats.links}
           </div>

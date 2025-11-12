@@ -15,6 +15,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     width: window.innerWidth, 
     height: window.innerHeight 
   });
+  const [partsHidden, setPartsHidden] = useState(false);
+  const [currentTransform, setCurrentTransform] = useState(null);
 
   const updateDimensions = useCallback(() => {
     setDimensions({
@@ -25,10 +27,10 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      const graph = GraphBuilder.buildGraph(data);
+      const graph = GraphBuilder.buildGraph(data, partsHidden);
       setGraphData(graph);
     }
-  }, [data]);
+  }, [data, partsHidden]);
 
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
@@ -69,21 +71,33 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     const treeData = treeLayout(root);
 
+    // Фильтруем ссылки для скрытых частей
+    const visibleLinks = treeData.links().filter(link => {
+      const sourceIsVisible = !partsHidden || !link.source.data.data.isPartNode;
+      const targetIsVisible = !partsHidden || !link.target.data.data.isPartNode;
+      return sourceIsVisible && targetIsVisible;
+    });
+
     g.append('g')
       .attr('fill', 'none')
       .attr('stroke', '#ccc')
       .attr('stroke-width', 1.5)
       .selectAll('path')
-      .data(treeData.links())
+      .data(visibleLinks)
       .join('path')
       .attr('d', d3.linkRadial()
         .angle(d => d.x)
         .radius(d => d.y)
       );
 
+    // Фильтруем узлы для скрытых частей
+    const visibleNodes = treeData.descendants().filter(d => 
+      !partsHidden || !d.data.data.isPartNode
+    );
+
     const node = g.append('g')
       .selectAll('g')
-      .data(treeData.descendants())
+      .data(visibleNodes)
       .join('g')
       .attr('transform', d => `
         rotate(${d.x * 180 / Math.PI - 90})
@@ -96,7 +110,11 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .attr('stroke', d => GraphBuilder.getNodeColor(d.data.data))
       .attr('stroke-width', d => GraphBuilder.getNodeStrokeWidth(d.data.data))
       .style('cursor', 'pointer')
+      .style('opacity', d => partsHidden && d.data.data.isPartNode ? 0 : 1)
+      .style('display', d => partsHidden && d.data.data.isPartNode ? 'none' : null)
       .on('mouseover', function(event, d) {
+        if (partsHidden && d.data.data.isPartNode) return;
+        
         setTooltip({
           visible: true,
           node: d.data.data,
@@ -138,6 +156,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       })
       .style('font-weight', d => d.depth <= 1 || d.data.data.isBlockNode ? 'normal' : 'normal')
       .style('fill', '#000000')
+      .style('opacity', d => partsHidden && d.data.data.isPartNode ? 0 : 1)
+      .style('display', d => partsHidden && d.data.data.isPartNode ? 'none' : null)
       .clone(true)
       .lower()
       .attr('stroke', 'white')
@@ -150,10 +170,16 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       });
 
     svg.call(zoom);
-    svg.call(
-      zoom.transform,
-      d3.zoomIdentity.translate(width / 2, height / 2).scale(0.8)
-    );
+    
+    // Восстанавливаем предыдущую трансформацию или применяем дефолтную
+    if (currentTransform) {
+      svg.call(zoom.transform, currentTransform);
+    } else {
+      svg.call(
+        zoom.transform,
+        d3.zoomIdentity.translate(width / 2, height / 2).scale(0.8)
+      );
+    }
 
     svgRef.current = { svg, g, zoom, treeData };
   };
@@ -173,6 +199,9 @@ const BlockGraph = ({ data, onDataLoaded }) => {
           zoom.transform,
           d3.zoomIdentity.translate(width / 2, height / 2).scale(0.8)
         );
+      
+      // Сбрасываем сохраненную трансформацию
+      setCurrentTransform(null);
     }
   };
 
@@ -183,7 +212,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     
     const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     newSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    newSvg.setAttribute('viewBox', `0 0 ${width * 2} ${height * 1.5}`);
+    newSvg.setAttribute('viewBox', `0 0 ${width * 2} ${height * 2}`);
     newSvg.setAttribute('width', width * 2);
     newSvg.setAttribute('height', height * 2);
 
@@ -212,6 +241,16 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     setIsHeaderCollapsed(collapsed);
   };
 
+  const handleToggleParts = (hidden) => {
+    // Сохраняем текущую трансформацию перед изменением состояния
+    if (svgRef.current && svgRef.current.svg) {
+      const currentZoom = d3.zoomTransform(svgRef.current.svg.node());
+      setCurrentTransform(currentZoom);
+    }
+    
+    setPartsHidden(hidden);
+  };
+
   if (!graphData) {
     return (
       <div style={{ 
@@ -233,6 +272,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         onSearch={handleSearch}
         onResetZoom={handleResetZoom}
         onDownloadSVG={handleDownloadSVG}
+        onToggleParts={handleToggleParts}
         onToggleHeader={handleToggleHeader}
         onDataLoaded={onDataLoaded}
         stats={{
