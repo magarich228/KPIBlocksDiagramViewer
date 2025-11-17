@@ -49,18 +49,12 @@ const GraphControls = ({
 
   return (
     <div className={`header ${isHeaderCollapsed ? 'collapsed' : ''}`}>
-      <div className="header-content" style={{ 
-        display: 'flex', 
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <h1 className="header-title">Блоки КПИ</h1>
+      <div className="header-content">
+        <div>
+          <h1 className="header-title">Блоки КПИ</h1>
+        </div>
 
-        <div className="legend" style={{ 
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)'
-        }}>
+        <div className="legend">
           <div className="legend-item">
             <div className="legend-color" style={{ background: '#2ecc71' }}></div>
             <span>Корневой узел</span>
