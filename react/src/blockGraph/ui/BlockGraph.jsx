@@ -184,10 +184,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     svgRef.current = { svg, g, zoom, treeData };
   };
 
-  const handleSearch = (searchTerm) => {
-    console.log('Search:', searchTerm);
-  };
-
   const handleResetZoom = () => {
     if (svgRef.current) {
       const { svg, zoom } = svgRef.current;
@@ -269,7 +265,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   return (
     <div className="block-graph-container">
       <GraphControls
-        onSearch={handleSearch}
         onResetZoom={handleResetZoom}
         onDownloadSVG={handleDownloadSVG}
         onToggleParts={handleToggleParts}

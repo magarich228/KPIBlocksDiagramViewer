@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { BlockDataService } from '../api/blockDataService.js';
 import './styles.css';
 
-const GraphControls = ({ 
-  onSearch, 
+const GraphControls = ({
   onResetZoom, 
   onDownloadSVG, 
   onToggleParts,
@@ -11,7 +10,6 @@ const GraphControls = ({
   onToggleHeader,
   onDataLoaded
 }) => {
-  const [searchTerm, setSearchTerm] = useState('');
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   const [fileSystemAvailable, setFileSystemAvailable] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -21,16 +19,6 @@ const GraphControls = ({
     // Проверка доступности File System API при монтировании
     setFileSystemAvailable(BlockDataService.isFileSystemAPISupported());
   }, []);
-
-  const handleSearch = () => {
-    onSearch(searchTerm);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
 
   const handleToggleHeader = () => {
     const newState = !isHeaderCollapsed;

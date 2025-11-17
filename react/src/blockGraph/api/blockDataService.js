@@ -440,15 +440,6 @@ export class BlockDataService {
     ];
   }
 
-  static async searchBlocks(searchTerm) {
-    const blocks = await this.getBlockDefinitions();
-    return blocks.filter(block => 
-      block.blockName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      block.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      block.aspects.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }
-
   // Метод для проверки доступности File System API
   static isFileSystemAPISupported() {
     return 'showDirectoryPicker' in window;

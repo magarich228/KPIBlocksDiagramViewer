@@ -138,23 +138,6 @@ body {
   white-space: nowrap;
 }
 
-.search-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: 1;
-  max-width: 400px;
-}
-
-.search-input {
-  padding: 6px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  flex: 1;
-  font-size: 12px;
-  min-width: 200px;
-}
-
 .controls {
   display: flex;
   align-items: center;
@@ -213,9 +196,5 @@ button:hover {
   
   .header-title {
     font-size: 14px;
-  }
-  
-  .search-container {
-    max-width: 300px;
   }
 }
