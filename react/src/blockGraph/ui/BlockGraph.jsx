@@ -124,7 +124,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
         d3.select(this)
           .style('stroke', '#ff3860')
-          .style('stroke-width', 4)
+          .style('stroke-width', 2.5)
           .style('filter', 'drop-shadow(0 0 6px rgba(255,56,96,0.6))');
       })
       .on('mousemove', function(event) {

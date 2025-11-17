@@ -18,7 +18,6 @@ export class GraphBuilder {
       const effectiveBlockPart = hideParts ? [] : block.blockPart;
       
       const fullBlockPath = [...block.parents, block.blockName];
-      const blockPathStr = fullBlockPath.join(' → ');
       
       const blockEndPath = [...block.parents, block.blockName, ...effectiveBlockPart];
       const blockEndPathStr = blockEndPath.join(' → ');
@@ -48,7 +47,6 @@ export class GraphBuilder {
         const segmentName = fullPath[i];
         
         if (!nodeMap.has(segmentPath)) {
-          const isLeaf = i === fullPath.length - 1;
           const isRoot = i === 0;
           const isBlockNode = allBlockPaths.has(segmentPath);
           const isPartNode = isBlockNode && !isRoot && i >= block.parents.length + 1;
@@ -58,7 +56,6 @@ export class GraphBuilder {
             name: segmentName,
             path: segmentPath,
             depth: i,
-            isLeaf,
             isRoot,
             isBlockNode,
             isPartNode,

@@ -3,7 +3,6 @@ export const BlockType = {
   ROOT: 'root',
   BLOCK: 'block',
   PART: 'part',
-  GROUP: 'group'
 };
 
 export const BlockDefinition = {
@@ -22,7 +21,6 @@ export const GraphNode = {
   name: '',
   path: '',
   depth: 0,
-  isLeaf: false,
   isRoot: false,
   isBlockNode: false,
   isPartNode: false,
