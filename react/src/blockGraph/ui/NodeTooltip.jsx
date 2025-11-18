@@ -1,4 +1,5 @@
 import React from 'react';
+import { NodeType } from '../model/types.js';
 
 const NodeTooltip = ({ node, x, y, visible }) => {
   if (!visible || !node) return null;
@@ -7,17 +8,31 @@ const NodeTooltip = ({ node, x, y, visible }) => {
   const childrenCount = nodeData.children ? nodeData.children.length : 0;
 
   const getNodeType = (data) => {
-    if (data.isRoot) return 'Корневой узел';
-    if (data.isBlockNode) return 'Блок';
-    if (data.isPartNode) return 'Часть блока';
-    return 'Группа блоков';
+    switch (data.type) {
+      case NodeType.SCOPE:
+        return 'Область';
+      case NodeType.BLOCK:
+        return 'Блок';
+      case NodeType.PART:
+        return 'Часть блока';
+      default:
+        return 'Неизвестный тип';
+    }
   };
 
   const getNodeColor = (data) => {
-    if (data.isRoot) return '#2ecc71';
-    if (data.isPartNode) return '#ff6b35';
-    if (data.isBlockNode) return '#4a90e2';
-    return '#87ceeb';
+    switch (data.type) {
+      case NodeType.SCOPE:
+        const scopeColors = ['#1e3a8a', '#3b82f6', '#60a5fa', '#93c5fd'];
+        const depth = Math.min(data.depth, scopeColors.length - 1);
+        return scopeColors[depth];
+      case NodeType.BLOCK:
+        return '#10b981';
+      case NodeType.PART:
+        return '#86efac';
+      default:
+        return '#6b7280';
+    }
   };
 
   const renderBlockInfo = (block, index) => {
@@ -44,23 +59,9 @@ const NodeTooltip = ({ node, x, y, visible }) => {
           </span>
         )}
         
-        {/* Русское название из каталога */}
-        {hasCatalogData && block.catalogData.ruFullName && (
+        {block.scope && (
           <div style={{ marginTop: '5px', fontSize: '11px' }}>
-            <strong>Русское название:</strong> {block.catalogData.ruFullName}
-          </div>
-        )}
-        
-        {/* Полное название из каталога */}
-        {hasCatalogData && block.catalogData.fullName && (
-          <div style={{ marginTop: '5px', fontSize: '11px' }}>
-            <strong>Полное название:</strong> {block.catalogData.fullName}
-          </div>
-        )}
-        
-        {block.parents && block.parents.length > 0 && (
-          <div style={{ marginTop: '5px', fontSize: '11px' }}>
-            <strong>Родители:</strong> {block.parents.join(' → ')}
+            <strong>Область:</strong> {block.scope}
           </div>
         )}
         
@@ -118,6 +119,12 @@ const NodeTooltip = ({ node, x, y, visible }) => {
           Тип: {getNodeType(nodeData)}<br />
           Дочерних узлов: {childrenCount}
         </div>
+        
+        {nodeData.description && (
+          <div style={{ marginTop: '5px', fontSize: '11px' }}>
+            <strong>Описание:</strong> {nodeData.description}
+          </div>
+        )}
         
         <div style={{ marginTop: '8px', borderTop: '1px solid #eee', paddingTop: '8px' }}>
           <strong>Информация о блоке:</strong>

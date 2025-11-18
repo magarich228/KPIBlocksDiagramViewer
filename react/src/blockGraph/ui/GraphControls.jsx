@@ -37,11 +37,11 @@ const GraphControls = ({
     
     try {
       setLoading(true);
-      const data = await BlockDataService.getBlockDefinitions();
-      onDataLoaded(data); // Передача загруженных данных обратно в App
+      const projectData = await BlockDataService.getProjectData();
+      onDataLoaded(projectData);
     } catch (error) {
-      console.error('Error loading directory:', error);
-      // TODO: Уведомление об ошибке
+      console.error('Error loading project:', error);
+      alert(`Ошибка загрузки проекта: ${error.message}`);
     } finally {
       setLoading(false);
     }
@@ -56,15 +56,18 @@ const GraphControls = ({
 
         <div className="legend">
           <div className="legend-item">
-            <div className="legend-color" style={{ background: '#2ecc71' }}></div>
-            <span>Корневой узел</span>
+            <div className="legend-color" style={{ background: '#1e3a8a' }}></div>
+            <div className="legend-color" style={{ background: '#3b82f6' }}></div>
+            <div className="legend-color" style={{ background: '#60a5fa' }}></div>
+            <div className="legend-color" style={{ background: '#93c5fd' }}></div>
+            <span>Область</span>
           </div>
           <div className="legend-item">
-            <div className="legend-color" style={{ background: '#4a90e2' }}></div>
+            <div className="legend-color" style={{ background: '#10b981' }}></div>
             <span>Блок</span>
           </div>
           <div className="legend-item">
-            <div className="legend-color" style={{ background: '#ff6b35' }}></div>
+            <div className="legend-color" style={{ background: '#86efac' }}></div>
             <span>Часть блока</span>
           </div>
         </div>

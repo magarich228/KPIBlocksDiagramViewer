@@ -26,9 +26,15 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   }, []);
 
   useEffect(() => {
-    if (data && data.length > 0) {
+    console.log('BlockGraph: data changed', data);
+
+    if (data && data.blocks && data.blocks.length > 0) {
       const graph = GraphBuilder.buildGraph(data, partsHidden);
       setGraphData(graph);
+    } else {
+      console.warn('BlockGraph: No valid data received');
+
+      setGraphData(null);
     }
   }, [data, partsHidden]);
 
@@ -40,16 +46,28 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   }, [updateDimensions]);
 
   useEffect(() => {
+    console.log('BlockGraph: graphData or dimensions changed', {
+      hasGraphData: !!graphData,
+      nodes: graphData?.nodes?.length || 0,
+      dimensions
+    });
+    
     if (graphData && dimensions.width > 0 && dimensions.height > 0) {
       createRadialTree();
     }
   }, [graphData, dimensions]);
 
   const createRadialTree = () => {
-    if (!graphData || !containerRef.current) return;
+    console.log('Creating radial d3 visualization...');
+    
+    if (!graphData || !containerRef.current) {
+      console.error('Cannot create radial tree: no graphData or container');
+      return;
+    }
 
     const { width, height } = dimensions;
 
+    // Очищаем предыдущий граф
     d3.select(containerRef.current).selectAll('*').remove();
 
     const svg = d3.select(containerRef.current)
@@ -61,7 +79,10 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .attr('transform', `translate(${width / 2},${height / 2})`);
 
     const hierarchy = GraphBuilder.createHierarchy(graphData.nodes, graphData.links);
-    if (!hierarchy) return;
+    if (!hierarchy) {
+      console.error('Cannot create radial tree: hierarchy is null');
+      return;
+    }
 
     const root = d3.hierarchy(hierarchy);
     
@@ -73,11 +94,12 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     // Фильтруем ссылки для скрытых частей
     const visibleLinks = treeData.links().filter(link => {
-      const sourceIsVisible = !partsHidden || !link.source.data.data.isPartNode;
-      const targetIsVisible = !partsHidden || !link.target.data.data.isPartNode;
+      const sourceIsVisible = !partsHidden || link.source.data.type !== 'part';
+      const targetIsVisible = !partsHidden || link.target.data.type !== 'part';
       return sourceIsVisible && targetIsVisible;
     });
 
+    // Рисуем связи
     g.append('g')
       .attr('fill', 'none')
       .attr('stroke', '#ccc')
@@ -92,9 +114,10 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     // Фильтруем узлы для скрытых частей
     const visibleNodes = treeData.descendants().filter(d => 
-      !partsHidden || !d.data.data.isPartNode
+      !partsHidden || d.data.data.type !== 'part'
     );
 
+    // Рисуем узлы
     const node = g.append('g')
       .selectAll('g')
       .data(visibleNodes)
@@ -104,16 +127,17 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         translate(${d.y},0)
       `);
 
+    // Круги узлов
     node.append('circle')
       .attr('r', d => GraphBuilder.getNodeRadius(d.data.data))
       .attr('fill', '#fff')
       .attr('stroke', d => GraphBuilder.getNodeColor(d.data.data))
       .attr('stroke-width', d => GraphBuilder.getNodeStrokeWidth(d.data.data))
       .style('cursor', 'pointer')
-      .style('opacity', d => partsHidden && d.data.data.isPartNode ? 0 : 1)
-      .style('display', d => partsHidden && d.data.data.isPartNode ? 'none' : null)
+      .style('opacity', d => partsHidden && d.data.data.type === 'part' ? 0 : 1)
+      .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null)
       .on('mouseover', function(event, d) {
-        if (partsHidden && d.data.data.isPartNode) return;
+        if (partsHidden && d.data.data.type === 'part') return;
         
         setTooltip({
           visible: true,
@@ -143,6 +167,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
           .style('filter', 'none');
       });
 
+    // Тексты узлов
     node.append('text')
       .attr('dy', '0.31em')
       .attr('x', d => d.x < Math.PI === !d.children ? 6 : -6)
@@ -150,19 +175,20 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
       .text(d => d.data.data.name)
       .style('font-size', d => {
-        if (d.data.data.isRoot) return '12px';
-        if (d.depth <= 1) return '10px';
+        if (d.data.data.type === 'scope') return '10px';
+        //if (d.depth <= 1) return '10px';
         return '8px';
       })
-      .style('font-weight', d => d.depth <= 1 || d.data.data.isBlockNode ? 'normal' : 'normal')
+      .style('font-weight', d => d.depth <= 1 || d.data.data.type === 'block' ? 'normal' : 'normal')
       .style('fill', '#000000')
-      .style('opacity', d => partsHidden && d.data.data.isPartNode ? 0 : 1)
-      .style('display', d => partsHidden && d.data.data.isPartNode ? 'none' : null)
+      .style('opacity', d => partsHidden && d.data.data.type === 'part' ? 0 : 1)
+      .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null)
       .clone(true)
       .lower()
       .attr('stroke', 'white')
       .attr('stroke-width', 3);
 
+    // Настройка зума
     const zoom = d3.zoom()
       .scaleExtent([0.1, 3])
       .on('zoom', (event) => {
@@ -182,6 +208,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     }
 
     svgRef.current = { svg, g, zoom, treeData };
+    console.log('Radial tree visualization created successfully');
   };
 
   const handleResetZoom = () => {
@@ -238,6 +265,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   };
 
   const handleToggleParts = (hidden) => {
+    console.log(`Toggling parts visibility: ${hidden ? 'hidden' : 'visible'}`);
+
     // Сохраняем текущую трансформацию перед изменением состояния
     if (svgRef.current && svgRef.current.svg) {
       const currentZoom = d3.zoomTransform(svgRef.current.svg.node());
@@ -257,7 +286,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         fontSize: '18px',
         color: '#666'
       }}>
-        Построение графа...
+        📊 Построение графа...
       </div>
     );
   }

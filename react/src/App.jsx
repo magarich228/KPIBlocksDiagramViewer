@@ -3,7 +3,7 @@ import BlockGraph, { BlockDataService } from './blockGraph';
 import './blockGraph/ui/styles.css';
 
 function App() {
-  const [blockData, setBlockData] = useState(null);
+  const [projectData, setProjectData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,14 +13,15 @@ function App() {
 
   const loadMockData = () => {
     setLoading(true);
-    const mockData = BlockDataService.getMockBlocks();
-    setBlockData(mockData);
+    const mockData = BlockDataService.getMockProjectData();
+    setProjectData(mockData);
     setLoading(false);
   };
 
   // Callback для обработки загруженных данных
   const handleDataLoaded = (data) => {
-    setBlockData(data);
+    console.log('Received data:', data);
+    setProjectData(data);
   };
 
   if (loading) {
@@ -33,7 +34,7 @@ function App() {
         fontSize: '18px',
         color: '#666'
       }}>
-        Загрузка данных...
+        ⏳ Загрузка данных...
       </div>
     );
   }
@@ -41,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <BlockGraph 
-        data={blockData} 
+        data={projectData} 
         onDataLoaded={handleDataLoaded}
       />
     </div>

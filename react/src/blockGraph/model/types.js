@@ -1,6 +1,6 @@
 // Модели данных для блоков и графа
-export const BlockType = {
-  ROOT: 'root',
+export const NodeType = {
+  SCOPE: 'scope',
   BLOCK: 'block',
   PART: 'part',
 };
@@ -8,12 +8,21 @@ export const BlockType = {
 export const BlockDefinition = {
   filePath: '',
   directory: '',
-  parents: [],
+  scope: '',
   blockName: '',
   blockPart: [],
   description: '',
   aspects: '',
-  ignore: false
+  ignore: false,
+  extend: '',
+  based: ''
+};
+
+export const ScopeDefinition = {
+  path: '',
+  name: '',
+  description: '',
+  children: []
 };
 
 export const GraphNode = {
@@ -21,9 +30,7 @@ export const GraphNode = {
   name: '',
   path: '',
   depth: 0,
-  isRoot: false,
-  isBlockNode: false,
-  isPartNode: false,
+  type: NodeType.BLOCK,
   blocks: [],
   x: 0,
   y: 0
@@ -32,4 +39,10 @@ export const GraphNode = {
 export const GraphLink = {
   source: 0,
   target: 0
+};
+
+export const ProjectData = {
+  scopes: [],
+  blocks: [],
+  catalog: null
 };
