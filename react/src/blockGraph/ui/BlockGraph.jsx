@@ -3,12 +3,14 @@ import * as d3 from 'd3';
 import { GraphBuilder } from '../lib/graphBuilder.js';
 import GraphControls from './GraphControls.jsx';
 import NodeTooltip from './NodeTooltip.jsx';
+import InformationPanel from './InformationPanel.jsx';
 import './styles.css';
 
 const BlockGraph = ({ data, onDataLoaded }) => {
   const svgRef = useRef();
   const containerRef = useRef();
   const [tooltip, setTooltip] = useState({ visible: false, node: null, x: 0, y: 0 });
+  const [informationPanel, setInfo] = useState({node: null, visible: false});
   const [graphData, setGraphData] = useState(null);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   const [dimensions, setDimensions] = useState({ 
@@ -33,7 +35,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       setGraphData(graph);
     } else {
       console.warn('BlockGraph: No valid data received');
-
       setGraphData(null);
     }
   }, [data, partsHidden]);
@@ -127,15 +128,26 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         translate(${d.y},0)
       `);
 
-    // Круги узлов
-    node.append('circle')
+    const circles = node.append('circle')
       .attr('r', d => GraphBuilder.getNodeRadius(d.data.data))
       .attr('fill', '#fff')
       .attr('stroke', d => GraphBuilder.getNodeColor(d.data.data))
       .attr('stroke-width', d => GraphBuilder.getNodeStrokeWidth(d.data.data))
       .style('cursor', 'pointer')
       .style('opacity', d => partsHidden && d.data.data.type === 'part' ? 0 : 1)
-      .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null)
+      .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null);
+
+    // Обработчики для узлов
+    circles
+      .on('click', function(event, d) {
+        event.stopPropagation(); // Доп. предотвращение всплытия на SVG
+        console.log('Circle clicked:', d.data.data.name);
+        
+        setInfo({
+          node: d.data.data,
+          visible: true
+        });
+      })
       .on('mouseover', function(event, d) {
         if (partsHidden && d.data.data.type === 'part') return;
         
@@ -176,7 +188,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .text(d => d.data.data.name)
       .style('font-size', d => {
         if (d.data.data.type === 'scope') return '10px';
-        //if (d.depth <= 1) return '10px';
         return '8px';
       })
       .style('font-weight', d => d.depth <= 1 || d.data.data.type === 'block' ? 'normal' : 'normal')
@@ -187,6 +198,18 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .lower()
       .attr('stroke', 'white')
       .attr('stroke-width', 3);
+
+    // Обработчик клика на SVG (фон) - закрывает панель
+    svg.on('click', function(event) {
+      // Проверка на клик на самом SVG, не на узле
+      if (event.target === this) {
+        console.log('SVG background clicked - closing panel');
+        setInfo({
+          node: null,
+          visible: false
+        });
+      }
+    });
 
     // Настройка зума
     const zoom = d3.zoom()
@@ -315,6 +338,10 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         x={tooltip.x}
         y={tooltip.y}
         visible={tooltip.visible}
+      />
+      <InformationPanel
+        node={informationPanel.node}
+        visible={informationPanel.visible}
       />
     </div>
   );
