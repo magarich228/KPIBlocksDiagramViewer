@@ -2,14 +2,13 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as d3 from 'd3';
 import { GraphBuilder } from '../lib/graphBuilder.js';
 import GraphControls from './GraphControls.jsx';
-import NodeTooltip from './NodeTooltip.jsx';
 import InformationPanel from './InformationPanel.jsx';
 import './styles.css';
+import { NodeType } from '../model/types.js';
 
 const BlockGraph = ({ data, onDataLoaded }) => {
   const svgRef = useRef();
   const containerRef = useRef();
-  const [tooltip, setTooltip] = useState({ visible: false, node: null, x: 0, y: 0 });
   const [selectedNode, setSelectedNode] = useState(null);
   const [relatedNodes, setRelatedNodes] = useState({ based: [], extend: [] });
   const [graphData, setGraphData] = useState(null);
@@ -152,8 +151,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     // Фильтруем ссылки для скрытых частей
     const visibleLinks = treeData.links().filter(link => {
-      const sourceIsVisible = !partsHidden || link.source.data.type !== 'part';
-      const targetIsVisible = !partsHidden || link.target.data.type !== 'part';
+      const sourceIsVisible = !partsHidden || link.source.data.type !== NodeType.PART;
+      const targetIsVisible = !partsHidden || link.target.data.type !== NodeType.PART;
       return sourceIsVisible && targetIsVisible;
     });
 
@@ -211,13 +210,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       })
       .on('mouseover', function(event, d) {
         if (partsHidden && d.data.data.type === 'part') return;
-        
-        setTooltip({
-          visible: true,
-          node: d.data.data,
-          x: event.pageX,
-          y: event.pageY
-        });
 
         // Временно подсвечиваем при наведении, но сохраняем оригинальные стили в данных
         const originalStyles = getNodeStyles(d.data.data);
@@ -227,16 +219,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
           .style('stroke-width', Math.max(originalStyles.strokeWidth, 2.5))
           .style('filter', 'drop-shadow(0 0 6px rgba(255,56,96,0.6))');
       })
-      .on('mousemove', function(event) {
-        setTooltip(prev => ({
-          ...prev,
-          x: event.pageX,
-          y: event.pageY
-        }));
-      })
       .on('mouseout', function(event, d) {
-        setTooltip({ visible: false, node: null, x: 0, y: 0 });
-        
         // Восстанавливаем оригинальные стили
         const originalStyles = getNodeStyles(d.data.data);
         d3.select(this)
@@ -364,6 +347,14 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     setPartsHidden(hidden);
   };
 
+  const handleNodeSelect = (newSelectedNode) => {
+    setSelectedNode(newSelectedNode);
+        
+    // Находим связанные узлы
+    const related = findRelatedNodes(newSelectedNode);
+    setRelatedNodes(related);
+  };
+
   if (!graphData) {
     return (
       <div style={{ 
@@ -398,18 +389,12 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         className="graph-container"
       />
       
-      <NodeTooltip
-        node={tooltip.node}
-        x={tooltip.x}
-        y={tooltip.y}
-        visible={tooltip.visible}
-      />
       <InformationPanel
         node={selectedNode}
         relatedNodes={relatedNodes}
         visible={!!selectedNode}
         graphData={graphData}
-        onNodeSelect={setSelectedNode}
+        onNodeSelect={handleNodeSelect}
       />
     </div>
   );
