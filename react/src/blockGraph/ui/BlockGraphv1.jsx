@@ -1,3 +1,4 @@
+/*
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as d3 from 'd3';
 import { GraphBuilder } from '../lib/graphBuilder.js';
@@ -94,27 +95,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     }
   }, [graphData, dimensions]);
 
-  // Функция для получения стилей узла в зависимости от его состояния
-  const getNodeStyles = (nodeData) => {
-    const isSelected = selectedNode && nodeData === selectedNode;
-    const isBased = relatedNodes.based.includes(nodeData);
-    const isExtend = relatedNodes.extend.includes(nodeData);
-    
-    return {
-      stroke: isSelected ? '#ff3860' : 
-              isBased ? '#8b5cf6' : 
-              isExtend ? '#f59e0b' : 
-              GraphBuilder.getNodeColor(nodeData),
-      strokeWidth: isSelected ? 3 : 
-                  (isBased || isExtend) ? 2.5 : 
-                  GraphBuilder.getNodeStrokeWidth(nodeData),
-      filter: isSelected ? 'drop-shadow(0 0 8px rgba(255,56,96,0.8))' : 
-              isBased ? 'drop-shadow(0 0 6px rgba(139,92,246,0.6))' : 
-              isExtend ? 'drop-shadow(0 0 6px rgba(245,158,11,0.6))' : 
-              'none'
-    };
-  };
-
   const createRadialTree = () => {
     console.log('Creating radial d3 visualization...');
     
@@ -189,18 +169,46 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     const circles = node.append('circle')
       .attr('r', d => GraphBuilder.getNodeRadius(d.data.data))
       .attr('fill', '#fff')
-      .attr('stroke', d => getNodeStyles(d.data.data).stroke)
-      .attr('stroke-width', d => getNodeStyles(d.data.data).strokeWidth)
+      .attr('stroke', d => {
+        // Подсветка выбранного узла и связанных узлов
+        if (selectedNode && d.data.data === selectedNode) {
+          return '#ff3860'; // Красный для выбранного узла
+        } else if (relatedNodes.based.includes(d.data.data)) {
+          return '#8b5cf6'; // Фиолетовый для based узлов
+        } else if (relatedNodes.extend.includes(d.data.data)) {
+          return '#f59e0b'; // Оранжевый для extend узлов
+        }
+        return GraphBuilder.getNodeColor(d.data.data);
+      })
+      .attr('stroke-width', d => {
+        // Увеличиваем толщину для выбранного и связанных узлов
+        if (selectedNode && d.data.data === selectedNode) {
+          return 3;
+        } else if (relatedNodes.based.includes(d.data.data) || relatedNodes.extend.includes(d.data.data)) {
+          return 2.5;
+        }
+        return GraphBuilder.getNodeStrokeWidth(d.data.data);
+      })
       .style('cursor', 'pointer')
       .style('opacity', d => partsHidden && d.data.data.type === 'part' ? 0 : 1)
       .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null)
-      .style('filter', d => getNodeStyles(d.data.data).filter);
+      .style('filter', d => {
+        // Тень для выбранного и связанных узлов
+        if (selectedNode && d.data.data === selectedNode) {
+          return 'drop-shadow(0 0 8px rgba(255,56,96,0.8))';
+        } else if (relatedNodes.based.includes(d.data.data)) {
+          return 'drop-shadow(0 0 6px rgba(139,92,246,0.6))';
+        } else if (relatedNodes.extend.includes(d.data.data)) {
+          return 'drop-shadow(0 0 6px rgba(245,158,11,0.6))';
+        }
+        return 'none';
+      });
 
     // Обработчики для кругов
     circles
       .on('click', function(event, d) {
-        event.stopPropagation(); // Предотвращаем всплытие на SVG и закрытия панели соответственно
-        console.log('Node circle clicked:', d.data.data.name);
+        event.stopPropagation(); // Предотвращаем всплытие на SVG
+        console.log('Circle clicked:', d.data.data.name);
         
         const newSelectedNode = d.data.data;
         setSelectedNode(newSelectedNode);
@@ -219,12 +227,9 @@ const BlockGraph = ({ data, onDataLoaded }) => {
           y: event.pageY
         });
 
-        // Временно подсвечиваем при наведении, но сохраняем оригинальные стили в данных
-        const originalStyles = getNodeStyles(d.data.data);
         d3.select(this)
-          .classed('node-hovered', true)
           .style('stroke', '#ff3860')
-          .style('stroke-width', Math.max(originalStyles.strokeWidth, 2.5))
+          .style('stroke-width', 2.5)
           .style('filter', 'drop-shadow(0 0 6px rgba(255,56,96,0.6))');
       })
       .on('mousemove', function(event) {
@@ -237,13 +242,36 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .on('mouseout', function(event, d) {
         setTooltip({ visible: false, node: null, x: 0, y: 0 });
         
-        // Восстанавливаем оригинальные стили
-        const originalStyles = getNodeStyles(d.data.data);
+        // Восстанавливаем оригинальные стили с учетом выбранного состояния
         d3.select(this)
-          .classed('node-hovered', false)
-          .style('stroke', originalStyles.stroke)
-          .style('stroke-width', originalStyles.strokeWidth)
-          .style('filter', originalStyles.filter);
+          .attr('stroke', () => {
+            if (selectedNode && d.data.data === selectedNode) {
+              return '#ff3860';
+            } else if (relatedNodes.based.includes(d.data.data)) {
+              return '#8b5cf6';
+            } else if (relatedNodes.extend.includes(d.data.data)) {
+              return '#f59e0b';
+            }
+            return GraphBuilder.getNodeColor(d.data.data);
+          })
+          .attr('stroke-width', () => {
+            if (selectedNode && d.data.data === selectedNode) {
+              return 3;
+            } else if (relatedNodes.based.includes(d.data.data) || relatedNodes.extend.includes(d.data.data)) {
+              return 2.5;
+            }
+            return GraphBuilder.getNodeStrokeWidth(d.data.data);
+          })
+          .style('filter', () => {
+            if (selectedNode && d.data.data === selectedNode) {
+              return 'drop-shadow(0 0 8px rgba(255,56,96,0.8))';
+            } else if (relatedNodes.based.includes(d.data.data)) {
+              return 'drop-shadow(0 0 6px rgba(139,92,246,0.6))';
+            } else if (relatedNodes.extend.includes(d.data.data)) {
+              return 'drop-shadow(0 0 6px rgba(245,158,11,0.6))';
+            }
+            return 'none';
+          });
       });
 
     // Тексты узлов
@@ -295,7 +323,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       );
     }
 
-    svgRef.current = { svg, g, zoom, treeData, circles };
+    svgRef.current = { svg, g, zoom, treeData };
     console.log('Radial tree visualization created successfully');
   };
 
@@ -416,3 +444,4 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 };
 
 export default BlockGraph;
+*/

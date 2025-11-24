@@ -58,6 +58,16 @@ class BlockGraphBuilder {
         ? data.blockPart.split('/').filter(part => part.trim() !== '')
         : [];
 
+      // Обрабатываем based - разделяем по запятой и обрезаем пробелы
+      const based = typeof data.based === 'string' 
+        ? data.based.split(',').map(p => p.trim()).filter(p => p)
+        : data.based || [];
+
+      // Обрабатываем extend - разделяем по запятой и обрезаем пробелы
+      const extend = typeof data.extend === 'string' 
+        ? data.extend.split(',').map(p => p.trim()).filter(p => p)
+        : data.extend || [];
+
       return {
         filePath,
         directory: relativeDir,
@@ -66,7 +76,9 @@ class BlockGraphBuilder {
         blockPart: blockPart,
         description: data.description || '',
         aspects: data.aspects || '',
-        ignore: data.ignore || false
+        ignore: data.ignore || false,
+        based: based,
+        extend: extend
       };
     } catch (error) {
       console.warn(`Ошибка парсинга файла ${filePath}:`, error.message);
@@ -124,7 +136,9 @@ class BlockGraphBuilder {
             aspects: block.aspects,
             directory: block.directory,
             parents: block.parents,
-            blockPart: block.blockPart
+            blockPart: block.blockPart,
+            based: block.based,
+            extend: block.extend
           });
         }
       }
@@ -592,6 +606,18 @@ class BlockGraphBuilder {
                         \`<div style="margin-top: 5px;">
                           <strong>Часть:</strong> /\${b.blockPart.join('/')}
                         </div>\` : '';
+
+                      // Информация о based (основа блока)
+                      const basedInfo = b.based && b.based.length > 0 ?
+                        \`<div style="margin-top: 5px;">
+                          <strong>Основан на:</strong> \${b.based.join(', ')}
+                        </div>\` : '';
+
+                      // Информация о extend (расширяющие блоки)
+                      const extendInfo = b.extend && b.extend.length > 0 ?
+                        \`<div style="margin-top: 5px;">
+                          <strong>Расширяет:</strong> \${b.extend.join(', ')}
+                        </div>\` : '';
                       
                       return \`
                         <div style="margin: 8px 0; padding: 8px; background: #f8f9fa; border-radius: 4px; border-left: 3px solid \${getNodeColor(d)};">
@@ -600,6 +626,8 @@ class BlockGraphBuilder {
                           \${parentsInfo}
                           \${partInfo}
                           \${aspectsInfo}
+                          \${basedInfo}
+                          \${extendInfo}
                           <div style="margin-top: 5px;">
                             <small style="color: #999;">\${b.directory}</small>
                           </div>

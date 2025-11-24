@@ -348,7 +348,7 @@ export class BlockDataService {
       ],
       blocks: [
         {
-          filePath: 'RGB\\CSC\\Core\\.block-definition.yml',
+          filePath: 'RGB\\CSC\\Core\\BS\\.block-definition.yml',
           directory: 'RGB\\CSC\\Core',
           scope: '/RGB/CSC/Core',
           blockName: 'BS',
@@ -356,23 +356,35 @@ export class BlockDataService {
           description: 'Внутренние контракты администрирования провайдеров хранилищ бинарных данных',
           aspects: 'Client, Internal',
           ignore: false,
-          extend: 'UC',
+          extend: 'DFTS',
           based: ''
         },
         {
-          filePath: 'RGB\\UP\\Core\\.block-definition.yml',
+          filePath: 'RGB\\UP\\Core\\DFTS\\.block-definition.yml',
           directory: 'RGB\\UP\\Core',
           scope: '/RGB/UP/Core',
-          blockName: 'UC',
+          blockName: 'DFTS',
           blockPart: [],
-          description: 'Универсальные компоненты ядра платформы',
+          description: 'Документарно транзитное хранилище',
           aspects: 'Core, Infrastructure',
           ignore: false,
           extend: '',
           based: ''
         },
         {
-          filePath: 'RGB\\CSC\\Core\\.block-definition.yml',
+          filePath: 'RGB\\CSC\\Core\\Test\\.block-definition.yml',
+          directory: 'RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure',
+          scope: '/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure',
+          blockName: 'TestBlock',
+          blockPart: [ ],
+          description: 'Тестовый блок',
+          aspects: 'Tests',
+          ignore: false,
+          extend: '',
+          based: ''
+        },
+        {
+          filePath: 'RGB\\CSC\\Core\\Test\\Part\\.block-definition.yml',
           directory: 'RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure',
           scope: '/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure',
           blockName: 'TestBlock',
@@ -382,6 +394,30 @@ export class BlockDataService {
           ignore: false,
           extend: '',
           based: 'BS'
+        },
+        {
+          filePath: 'RGB\\CSC\\Core\\Test\\Part\\sub\\.block-definition.yml',
+          directory: 'RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure',
+          scope: '/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure',
+          blockName: 'TestBlock',
+          blockPart: [ 'TestPart1', 'TestSubPart1' ],
+          description: 'Тестовый подпарт блока 1',
+          aspects: 'Internal',
+          ignore: false,
+          extend: '',
+          based: ''
+        },
+        {
+          filePath: 'RGB\\CSC\\Core\\Test\\Part\\sub\\.block-definition.yml',
+          directory: 'RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure',
+          scope: '/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure',
+          blockName: 'TestBlock',
+          blockPart: [ 'TestPart1', 'TestSubPart2' ],
+          description: 'Тестовый подпарт блока 2',
+          aspects: 'Internal',
+          ignore: false,
+          extend: '',
+          based: ''
         }
       ],
       catalog: null

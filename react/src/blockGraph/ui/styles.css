@@ -208,3 +208,271 @@ button:hover {
     font-size: 14px;
   }
 }
+
+
+.information-panel {
+  position: fixed;
+  z-index: 1000;
+  right: 10px;
+  top: 50px;
+  width: 350px;
+  max-height: calc(100vh - 70px);
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.panel-header h3 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #718096;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.close-button:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h4 {
+  margin: 0 0 12px 0;
+  color: #2d3748;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.section h5 {
+  margin: 12px 0 8px 0;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 0;
+}
+
+.info-item label {
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 12px;
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+.info-item span {
+  flex: 1;
+  color: #2d3748;
+  font-size: 12px;
+  text-align: right;
+  word-break: break-word;
+}
+
+.node-name {
+  font-weight: 600;
+  font-size: 13px !important;
+}
+
+.node-path {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: #f7fafc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px !important;
+}
+
+.scope-info {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #4299e1;
+  margin-bottom: 10px;
+}
+
+.block-info {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #10b981;
+  margin-bottom: 10px;
+}
+
+.part-info{
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #86efac;
+  margin-bottom: 10px;
+}
+
+.scope-info .info-item,
+.block-info .info-item,
+.part-info .info-item {
+  padding: 4px 0;
+}
+
+.related-nodes, .child-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.related-node, .child-node {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  background: #f7fafc;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.related-node:hover, .child-node:hover {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+  transform: translateX(2px);
+}
+
+.node-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.clickable-node {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.clickable-node:hover {
+  text-decoration: underline;
+}
+
+.legend-section {
+  background: #fafafc;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #4a5568;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .information-panel {
+    width: 300px;
+    right: 5px;
+    top: 45px;
+  }
+}
+
+/* Стили для скроллбара */
+.information-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.information-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.information-panel::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.information-panel::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.node-hovered {
+  transition: all 0.2s ease;
+}
+
+.node circle {
+  transition: all 0.2s ease;
+}
+
+/* TODO: Убедиться, что ховер-эффекты не конфликтуют с выбранным состоянием */
+.node circle:not(.node-selected):not(.node-based):not(.node-extend):hover {
+  stroke: #ff3860 !important;
+  stroke-width: 2.5 !important;
+  filter: drop-shadow(0 0 6px rgba(255,56,96,0.6)) !important;
+}
+
+.clickable-header {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clickable-header:hover {
+  color: #4a90e2;
+}

@@ -13,7 +13,7 @@ export class GraphBuilder {
       return { nodes, links };
     }
 
-    // Сначала создаем узлы для областей (scopes)
+    // Сначала создаем узлы для областей (.scopes-catalog)
     const createScopeNodes = (scope, parentPath = '', depth = 0) => {
       const scopePath = scope.path;
       
@@ -62,7 +62,7 @@ export class GraphBuilder {
     // Создаем все узлы областей
     scopes.forEach(scope => createScopeNodes(scope));
 
-    // Затем создаем узлы для блоков и их частей
+    // Затем создаем узлы для блоков и их частей (.block-definition файлы)
     blocks.forEach(block => {
       if (!block.scope)
       {
@@ -103,8 +103,9 @@ export class GraphBuilder {
           target: blockNode.id
         });
       } else {
-        // Если узел блока уже существует, добавляем информацию о блоке
         const existingNode = nodeMap.get(blockPath);
+        // Если для блока есть несколько определений - все будут отображены +
+        // Для удобства отображения информации о определениях частей блока
         existingNode.blocks.push(block);
       }
 
@@ -123,7 +124,9 @@ export class GraphBuilder {
               path: partPath,
               depth: blockNode.depth + index + 1,
               type: NodeType.PART,
-              blocks: [],
+              blocks: index === block.blockPart.length - 1 ? //Добавляем в узел информацию о части блока
+                [block] :
+                [],
               x: 0,
               y: 0
             };
