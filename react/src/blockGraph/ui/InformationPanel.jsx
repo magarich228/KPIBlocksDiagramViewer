@@ -261,7 +261,7 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
       )}
 
       {/* Информация о выбранном узле части */}
-      {node.type === NodeType.PART && node.blocks && node.blocks.some(block => block.blockPart && block.blockPart.length > 0) && (
+      {node.type === NodeType.PART && (
         <div className="section">
           <h4>Информация о части</h4>
           {node.blocks
