@@ -29,7 +29,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
   // Функция для поиска связанных узлов
   const findRelatedNodes = useCallback((node) => {
-    if (!node || !graphData) return { based: [], extend: [] };
+    if (!node || !graphData) return { based: [], extend: [], other: [] };
 
     const basedNodes = [];
     const extendNodes = [];
