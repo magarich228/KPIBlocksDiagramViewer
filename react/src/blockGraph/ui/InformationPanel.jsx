@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { NodeType } from '../model/types.js';
 import './styles.css';
+import { GraphBuilder } from '../lib/graphBuilder.js';
 
 const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect }) => {
   if (!node || !visible) return null;
 
-  console.log(node);
   const [showParts, setShowParts] = useState(false);
 
   // Находим дочерние узлы
@@ -23,35 +23,28 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
     }
   };
 
-  const getNodeColor = (nodeData) => {
-    switch (nodeData.type) {
-      case NodeType.SCOPE:
-        const scopeColors = ['#1e3a8a', '#3b82f6', '#60a5fa', '#93c5fd'];
-        const depth = Math.min(nodeData.depth, scopeColors.length - 1);
-        return scopeColors[depth];
-      case NodeType.BLOCK:
-        return '#10b981';
-      case NodeType.PART:
-        return '#86efac';
-      default:
-        return '#6b7280';
-    }
-  };
-
   const handleNodeClick = (clickedNode) => {
-    if (onNodeSelect) {
+    if (onNodeSelect && clickedNode) {
+      console.log('InformationPanel: Node clicked', clickedNode.name);
       onNodeSelect(clickedNode);
     }
   };
 
-  // Функция для переключения показа частей
+  // Функция для поиска узла по имени блока
+  const findNodeByBlockName = (blockName) => {
+    return graphData.nodes.find(node => 
+      node.blocks.some(block => 
+        block.blockName === blockName || block.name === blockName
+      )
+    );
+  };
+
   const toggleShowParts = () => {
     setShowParts(prev => !prev);
   };
 
   return (
     <div className="information-panel">
-      {/* Заголовок панели */}
       <div className="panel-header">
         <h3>Информация о узле</h3>
         <button 
@@ -67,7 +60,7 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
         <div className="info-grid">
           <div className="info-item">
             <label>Название:</label>
-            <span className="node-name" style={{ color: getNodeColor(node) }}>
+            <span className="node-name" style={{ color: GraphBuilder.getNodeColor(node) }}>
               {node.name}
             </span>
           </div>
@@ -136,34 +129,42 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
               {block.based && (
                 <div className="info-item">
                   <label>Основан на:</label>
-                  <span 
-                    className="clickable-node"
-                    style={{ color: '#8b5cf6' }}
-                    onClick={() => {
-                      const basedNode = relatedNodes.based.find(n => 
-                        n.blocks.some(b => b.blockName === block.based || b.name === block.based)
-                      );
-                      if (basedNode) handleNodeClick(basedNode);
-                    }}
-                  >
-                    {block.based}
+                  <span>
+                    {
+                      block.based.split(',').map((based, index) => 
+                        <span
+                          key={`${based}-${index}`} 
+                          className="clickable-node"
+                          style={{ color: '#8b5cf6' }}
+                          onClick={() => {
+                            const basedNode = findNodeByBlockName(based.trim());
+                            if (basedNode) handleNodeClick(basedNode);
+                          }}
+                        >
+                          {based}
+                        </span>)
+                    }
                   </span>
                 </div>
               )}
               {block.extend && (
                 <div className="info-item">
                   <label>Расширяет:</label>
-                  <span 
-                    className="clickable-node"
-                    style={{ color: '#f59e0b' }}
-                    onClick={() => {
-                      const extendNode = relatedNodes.extend.find(n => 
-                        n.blocks.some(b => b.blockName === block.extend || b.name === block.extend)
-                      );
-                      if (extendNode) handleNodeClick(extendNode);
-                    }}
-                  >
-                    {block.extend}
+                  <span>
+                    {
+                      block.extend.split(',').map((extend, index) =>
+                      <span 
+                        key={`${extend}-${index}`}
+                        className="clickable-node"
+                        style={{ color: '#f59e0b' }}
+                        onClick={() => {
+                          const extendNode = findNodeByBlockName(extend.trim());
+                          if (extendNode) handleNodeClick(extendNode);
+                        }}
+                      >
+                        {extend}
+                      </span>)
+                    }
                   </span>
                 </div>
               )}
@@ -208,35 +209,43 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
               )}
               {block.based && (
                 <div className="info-item">
-                  <label>Основана на:</label>
-                  <span 
-                    className="clickable-node"
-                    style={{ color: '#8b5cf6' }}
-                    onClick={() => {
-                      const basedNode = relatedNodes.based.find(n => 
-                        n.blocks.some(b => b.blockName === block.based || b.name === block.based)
-                      );
-                      if (basedNode) handleNodeClick(basedNode);
-                    }}
-                  >
-                    {block.based}
+                  <label>Основан на:</label>
+                  <span>
+                    {
+                      block.based.split(',').map((based, index) => 
+                        <span
+                          key={`${based}-${index}`} 
+                          className="clickable-node"
+                          style={{ color: '#8b5cf6' }}
+                          onClick={() => {
+                            const basedNode = findNodeByBlockName(based.trim());
+                            if (basedNode) handleNodeClick(basedNode);
+                          }}
+                        >
+                          {based}
+                        </span>)
+                    }
                   </span>
                 </div>
               )}
               {block.extend && (
                 <div className="info-item">
                   <label>Расширяет:</label>
-                  <span 
-                    className="clickable-node"
-                    style={{ color: '#f59e0b' }}
-                    onClick={() => {
-                      const extendNode = relatedNodes.extend.find(n => 
-                        n.blocks.some(b => b.blockName === block.extend || b.name === block.extend)
-                      );
-                      if (extendNode) handleNodeClick(extendNode);
-                    }}
-                  >
-                    {block.extend}
+                  <span>
+                    {
+                      block.extend.split(',').map((extend, index) =>
+                      <span 
+                        key={`${extend}-${index}`}
+                        className="clickable-node"
+                        style={{ color: '#f59e0b' }}
+                        onClick={() => {
+                          const extendNode = findNodeByBlockName(extend.trim());
+                          if (extendNode) handleNodeClick(extendNode);
+                        }}
+                      >
+                        {extend}
+                      </span>)
+                    }
                   </span>
                 </div>
               )}
@@ -279,35 +288,43 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
               )}
               {block.based && (
                 <div className="info-item">
-                  <label>Основана на:</label>
-                  <span 
-                    className="clickable-node"
-                    style={{ color: '#8b5cf6' }}
-                    onClick={() => {
-                      const basedNode = relatedNodes.based.find(n => 
-                        n.blocks.some(b => b.blockName === block.based || b.name === block.based)
-                      );
-                      if (basedNode) handleNodeClick(basedNode);
-                    }}
-                  >
-                    {block.based}
+                  <label>Основан на:</label>
+                  <span>
+                    {
+                      block.based.split(',').map((based, index) => 
+                        <span
+                          key={`${based}-${index}`} 
+                          className="clickable-node"
+                          style={{ color: '#8b5cf6' }}
+                          onClick={() => {
+                            const basedNode = findNodeByBlockName(based.trim());
+                            if (basedNode) handleNodeClick(basedNode);
+                          }}
+                        >
+                          {based}
+                        </span>)
+                    }
                   </span>
                 </div>
               )}
               {block.extend && (
                 <div className="info-item">
                   <label>Расширяет:</label>
-                  <span 
-                    className="clickable-node"
-                    style={{ color: '#f59e0b' }}
-                    onClick={() => {
-                      const extendNode = relatedNodes.extend.find(n => 
-                        n.blocks.some(b => b.blockName === block.extend || b.name === block.extend)
-                      );
-                      if (extendNode) handleNodeClick(extendNode);
-                    }}
-                  >
-                    {block.extend}
+                  <span>
+                    {
+                      block.extend.split(',').map((extend, index) =>
+                      <span 
+                        key={`${extend}-${index}`}
+                        className="clickable-node"
+                        style={{ color: '#f59e0b' }}
+                        onClick={() => {
+                          const extendNode = findNodeByBlockName(extend.trim());
+                          if (extendNode) handleNodeClick(extendNode);
+                        }}
+                      >
+                        {extend}
+                      </span>)
+                    }
                   </span>
                 </div>
               )}
@@ -323,7 +340,7 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
       )}
 
       {/* Связанные узлы */}
-      {(relatedNodes.based.length > 0 || relatedNodes.extend.length > 0) && (
+      {(relatedNodes.based.length > 0 || relatedNodes.extend.length > 0 || relatedNodes.other.length > 0) && (
         <div className="section">
           <h4>Связанные узлы</h4>
           {relatedNodes.based.length > 0 && (
@@ -336,7 +353,7 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
                   onClick={() => handleNodeClick(relatedNode)}
                 >
                   <span className="node-bullet" style={{ background: '#8b5cf6' }}></span>
-                  {relatedNode.name} ({getNodeTypeText(relatedNode.type)})
+                  {relatedNode.path} ({getNodeTypeText(relatedNode.type)})
                 </div>
               ))}
             </div>
@@ -351,7 +368,22 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
                   onClick={() => handleNodeClick(relatedNode)}
                 >
                   <span className="node-bullet" style={{ background: '#f59e0b' }}></span>
-                  {relatedNode.name} ({getNodeTypeText(relatedNode.type)})
+                  {relatedNode.path} ({getNodeTypeText(relatedNode.type)})
+                </div>
+              ))}
+            </div>
+          )}
+          {relatedNodes.other.length > 0 &&(
+            <div className="related-nodes">
+              <h5 style={{ color: '#ff57a8' }}>Другие узлы блока:</h5>
+              {relatedNodes.other.map((relatedNode, index) => (
+                <div 
+                  key={index}
+                  className="related-node clickable-node"
+                  onClick={() => handleNodeClick(relatedNode)}
+                >
+                  <span className="node-bullet" style={{ background: '#ff57a8' }}></span>
+                  {relatedNode.path} ({getNodeTypeText(relatedNode.type)})
                 </div>
               ))}
             </div>
@@ -372,7 +404,7 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
               >
                 <span 
                   className="node-bullet" 
-                  style={{ background: getNodeColor(child) }}
+                  style={{ background: GraphBuilder.getNodeColor(child) }}
                 ></span>
                 {child.name} ({getNodeTypeText(child.type)})
               </div>
@@ -388,6 +420,10 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
           <div className="legend-item">
             <span className="legend-color" style={{ background: '#ff3860' }}></span>
             <span>Выбранный узел</span>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: '#ff57a8' }}></span>
+            <span>Другие узлы блока</span>
           </div>
           <div className="legend-item">
             <span className="legend-color" style={{ background: '#8b5cf6' }}></span>

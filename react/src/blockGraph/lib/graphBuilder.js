@@ -64,8 +64,7 @@ export class GraphBuilder {
 
     // Затем создаем узлы для блоков и их частей (.block-definition файлы)
     blocks.forEach(block => {
-      if (!block.scope)
-      {
+      if (!block.scope) {
         console.log(`Skip block-definition of ${block.blockName} with undefined scope.`);
         return;
       }
@@ -75,7 +74,6 @@ export class GraphBuilder {
       
       if (!scopeNode) {
         console.warn(`Scope not found for block: ${block.blockName} (scope: ${scopePath})`);
-        console.warn(nodeMap);
         return; // Пропускаем блоки без соответствующей области. 
         // TODO: проверить и возможно всё равно рисовать их как было раньше
       }
@@ -103,6 +101,7 @@ export class GraphBuilder {
           target: blockNode.id
         });
       } else {
+        // Обновляем существующий узел блока
         const existingNode = nodeMap.get(blockPath);
         // Если для блока есть несколько определений - все будут отображены +
         // Для удобства отображения информации о определениях частей блока
@@ -124,9 +123,7 @@ export class GraphBuilder {
               path: partPath,
               depth: blockNode.depth + index + 1,
               type: NodeType.PART,
-              blocks: index === block.blockPart.length - 1 ? //Добавляем в узел информацию о части блока
-                [block] :
-                [],
+              blocks: index === block.blockPart.length - 1 ? [block] : [],
               x: 0,
               y: 0
             };

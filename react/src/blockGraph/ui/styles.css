@@ -95,15 +95,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.node:hover circle {
-  stroke-width: 3px;
-  filter: drop-shadow(0 0 8px rgba(255,107,53,0.4));
-}
-
-.node:hover ~ .link {
-  stroke-width: 2px;
-}
-
 .tooltip {
   position: fixed;
   padding: 10px 12px;
@@ -456,13 +447,6 @@ button:hover {
 
 .node circle {
   transition: all 0.2s ease;
-}
-
-/* TODO: Убедиться, что ховер-эффекты не конфликтуют с выбранным состоянием */
-.node circle:not(.node-selected):not(.node-based):not(.node-extend):hover {
-  stroke: #ff3860 !important;
-  stroke-width: 2.5 !important;
-  filter: drop-shadow(0 0 6px rgba(255,56,96,0.6)) !important;
 }
 
 .clickable-header {

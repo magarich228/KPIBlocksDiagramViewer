@@ -10,7 +10,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const svgRef = useRef();
   const containerRef = useRef();
   const [selectedNode, setSelectedNode] = useState(null);
-  const [relatedNodes, setRelatedNodes] = useState({ based: [], extend: [] });
+  const [relatedNodes, setRelatedNodes] = useState({ based: [], extend: [], other: [] });
   const [graphData, setGraphData] = useState(null);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   const [dimensions, setDimensions] = useState({ 
@@ -33,34 +33,71 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     const basedNodes = [];
     const extendNodes = [];
+    const otherBlockNodes = [];
 
     // Проходим по всем блокам выбранного узла
     node.blocks.forEach(block => {
-      if (block.based) {
-        // Ищем узлы, на которые ссылается based
-        graphData.nodes.forEach(graphNode => {
-          graphNode.blocks.forEach(graphBlock => {
-            if (graphBlock.blockName === block.based || graphBlock.name === block.based) {
-              basedNodes.push(graphNode);
-            }
-          });
-        });
-      }
+      let basedNodeNames = block.based ? block.based.split(',').map(b => b.trim()) : null;
+      let extendNodeNames = block.extend ? block.extend.split(',').map(b => b.trim()) : null;
 
-      if (block.extend) {
-        // Ищем узлы, которые расширяются
-        graphData.nodes.forEach(graphNode => {
-          graphNode.blocks.forEach(graphBlock => {
-            if (graphBlock.blockName === block.extend || graphBlock.name === block.extend) {
-              extendNodes.push(graphNode);
-            }
-          });
-        });
-      }
+      graphData.nodes.forEach(graphNode => {
+        if (basedNodeNames && basedNodeNames.some(n => graphNode.name === n)) {
+          basedNodes.push(graphNode);
+        }
+
+        if (extendNodeNames && extendNodeNames.some(n => graphNode.name === n)) {
+          extendNodes.push(graphNode);
+        }
+
+        if (graphNode.type === NodeType.BLOCK && graphNode.name === node.name && graphNode != node)
+        {
+          otherBlockNodes.push(graphNode);
+        }
+      });
     });
 
-    return { based: basedNodes, extend: extendNodes };
+    return { 
+      based: [...new Set(basedNodes)], 
+      extend: [...new Set(extendNodes)], 
+      other: [...new Set(otherBlockNodes)] 
+    };
   }, [graphData]);
+
+  // Функция для получения стилей узла
+  const getNodeStyles = useCallback((nodeData) => {
+    if (!nodeData) return {};
+    
+    const isSelected = selectedNode && nodeData.path === selectedNode.path;
+    const isBased = relatedNodes.based.some(n => n.path === nodeData.path);
+    const isExtend = relatedNodes.extend.some(n => n.path === nodeData.path);
+    const isOther = relatedNodes.other.some(n => n.path === nodeData.path);
+    
+    return {
+      stroke: isSelected ? '#ff2e57ff' : 
+              isBased ? '#8b5cf6' : 
+              isExtend ? '#f59e0b' : 
+              isOther ? '#ff57a8' :
+              GraphBuilder.getNodeColor(nodeData),
+      strokeWidth: isSelected ? 3 : 
+                  (isBased || isExtend || isOther) ? 2.5 : 
+                  GraphBuilder.getNodeStrokeWidth(nodeData),
+      filter: isSelected ? 'drop-shadow(0 0 8px rgba(255,56,96,0.8))' : 
+              isBased ? 'drop-shadow(0 0 6px rgba(139,92,246,0.6))' : 
+              isExtend ? 'drop-shadow(0 0 6px rgba(245,158,11,0.6))' : 
+              isOther ? 'drop-shadow(0 0 6px rgba(255, 87, 168, 0.6))' :
+              'none'
+    };
+  }, [selectedNode, relatedNodes]);
+
+  // Обновление стилей узлов при изменении выделения
+  const updateNodeStyles = useCallback(() => {
+    if (!svgRef.current || !svgRef.current.circles) return;
+
+    svgRef.current.circles
+      .attr('stroke', d => getNodeStyles(d.data.data).stroke)
+      .attr('stroke-width', d => getNodeStyles(d.data.data).strokeWidth)
+      .style('filter', d => getNodeStyles(d.data.data).filter);
+  }, [getNodeStyles]);
 
   useEffect(() => {
     console.log('BlockGraph: data changed', data);
@@ -93,26 +130,10 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     }
   }, [graphData, dimensions]);
 
-  // Функция для получения стилей узла в зависимости от его состояния
-  const getNodeStyles = (nodeData) => {
-    const isSelected = selectedNode && nodeData === selectedNode;
-    const isBased = relatedNodes.based.includes(nodeData);
-    const isExtend = relatedNodes.extend.includes(nodeData);
-    
-    return {
-      stroke: isSelected ? '#ff3860' : 
-              isBased ? '#8b5cf6' : 
-              isExtend ? '#f59e0b' : 
-              GraphBuilder.getNodeColor(nodeData),
-      strokeWidth: isSelected ? 3 : 
-                  (isBased || isExtend) ? 2.5 : 
-                  GraphBuilder.getNodeStrokeWidth(nodeData),
-      filter: isSelected ? 'drop-shadow(0 0 8px rgba(255,56,96,0.8))' : 
-              isBased ? 'drop-shadow(0 0 6px rgba(139,92,246,0.6))' : 
-              isExtend ? 'drop-shadow(0 0 6px rgba(245,158,11,0.6))' : 
-              'none'
-    };
-  };
+  // Обновляем стили при изменении выделения
+  useEffect(() => {
+    updateNodeStyles();
+  }, [selectedNode, relatedNodes, updateNodeStyles]);
 
   const createRadialTree = () => {
     console.log('Creating radial d3 visualization...');
@@ -191,43 +212,37 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .attr('stroke', d => getNodeStyles(d.data.data).stroke)
       .attr('stroke-width', d => getNodeStyles(d.data.data).strokeWidth)
       .style('cursor', 'pointer')
-      .style('opacity', d => partsHidden && d.data.data.type === 'part' ? 0 : 1)
-      .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null)
       .style('filter', d => getNodeStyles(d.data.data).filter);
+
+    // Сохраняем circles для последующих обновлений
+    svgRef.current = { svg, g, zoom: null, treeData, circles };
 
     // Обработчики для кругов
     circles
       .on('click', function(event, d) {
-        event.stopPropagation(); // Предотвращаем всплытие на SVG и закрытия панели соответственно
+        event.stopPropagation();
         console.log('Node circle clicked:', d.data.data.name);
         
-        const newSelectedNode = d.data.data;
-        setSelectedNode(newSelectedNode);
-        
-        // Находим связанные узлы
-        const related = findRelatedNodes(newSelectedNode);
-        setRelatedNodes(related);
+        handleNodeSelect(d.data.data);
       })
-      .on('mouseover', function(event, d) {
+      /*.on('mouseover', function(event, d) {
         if (partsHidden && d.data.data.type === 'part') return;
 
-        // Временно подсвечиваем при наведении, но сохраняем оригинальные стили в данных
-        const originalStyles = getNodeStyles(d.data.data);
+        const styles = getNodeStyles(d.data.data);
         d3.select(this)
-          .classed('node-hovered', true)
-          .style('stroke', '#ff3860')
-          .style('stroke-width', Math.max(originalStyles.strokeWidth, 2.5))
-          .style('filter', 'drop-shadow(0 0 6px rgba(255,56,96,0.6))');
+          //.classed('node-hovered', true)
+          //.style('stroke', '#ff3860')
+          //.style('stroke-width', Math.max(parseFloat(styles.strokeWidth), 2.5))
+          //.style('filter', 'drop-shadow(0 0 6px rgba(255,56,96,0.6))');
       })
       .on('mouseout', function(event, d) {
-        // Восстанавливаем оригинальные стили
-        const originalStyles = getNodeStyles(d.data.data);
+        const styles = getNodeStyles(d.data.data);
         d3.select(this)
-          .classed('node-hovered', false)
-          .style('stroke', originalStyles.stroke)
-          .style('stroke-width', originalStyles.strokeWidth)
-          .style('filter', originalStyles.filter);
-      });
+          //.classed('node-hovered', false)
+          //.style('stroke', styles.stroke)
+          //.style('stroke-width', styles.strokeWidth)
+          //.style('filter', styles.filter);
+      });*/
 
     // Тексты узлов
     node.append('text')
@@ -242,8 +257,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       })
       .style('font-weight', d => d.depth <= 1 || d.data.data.type === 'block' ? 'normal' : 'normal')
       .style('fill', '#000000')
-      .style('opacity', d => partsHidden && d.data.data.type === 'part' ? 0 : 1)
-      .style('display', d => partsHidden && d.data.data.type === 'part' ? 'none' : null)
       .clone(true)
       .lower()
       .attr('stroke', 'white')
@@ -255,7 +268,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       if (event.target === this) {
         console.log('SVG background clicked - closing panel');
         setSelectedNode(null);
-        setRelatedNodes({ based: [], extend: [] });
+        setRelatedNodes({ based: [], extend: [], other: [] });
       }
     });
 
@@ -267,6 +280,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       });
 
     svg.call(zoom);
+    svgRef.current.zoom = zoom;
     
     // Восстанавливаем предыдущую трансформацию или применяем дефолтную
     if (currentTransform) {
@@ -278,12 +292,19 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       );
     }
 
-    svgRef.current = { svg, g, zoom, treeData, circles };
     console.log('Radial tree visualization created successfully');
   };
 
+  const handleNodeSelect = (newSelectedNode) => {
+    setSelectedNode(newSelectedNode);
+        
+    // Находим связанные узлы
+    const related = findRelatedNodes(newSelectedNode);
+    setRelatedNodes(related);
+  };
+
   const handleResetZoom = () => {
-    if (svgRef.current) {
+    if (svgRef.current && svgRef.current.svg) {
       const { svg, zoom } = svgRef.current;
       const { width, height } = dimensions;
       
@@ -345,14 +366,6 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     }
     
     setPartsHidden(hidden);
-  };
-
-  const handleNodeSelect = (newSelectedNode) => {
-    setSelectedNode(newSelectedNode);
-        
-    // Находим связанные узлы
-    const related = findRelatedNodes(newSelectedNode);
-    setRelatedNodes(related);
   };
 
   if (!graphData) {

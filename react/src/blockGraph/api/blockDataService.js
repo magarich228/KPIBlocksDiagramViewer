@@ -348,6 +348,18 @@ export class BlockDataService {
       ],
       blocks: [
         {
+          filePath: 'RGB\\UP\\Cluster\\TestBlock\\.block-definition.yml',
+          directory: 'RGB\\UP\\Cluster\\TestBlock\\',
+          scope: '/RGB/UP/Cluster',
+          blockName: 'TestBlock',
+          blockPart: [],
+          description: 'Тест блок кластера',
+          aspects: 'Internal',
+          ignore: false,
+          extend: '',
+          based: ''
+        },
+        {
           filePath: 'RGB\\CSC\\Core\\BS\\.block-definition.yml',
           directory: 'RGB\\CSC\\Core',
           scope: '/RGB/CSC/Core',
@@ -356,7 +368,7 @@ export class BlockDataService {
           description: 'Внутренние контракты администрирования провайдеров хранилищ бинарных данных',
           aspects: 'Client, Internal',
           ignore: false,
-          extend: 'DFTS',
+          extend: 'DFTS, TS',
           based: ''
         },
         {
@@ -372,6 +384,18 @@ export class BlockDataService {
           based: ''
         },
         {
+          filePath: 'RGB\\UP\\Core\\DFTS\\.block-definition.yml',
+          directory: 'RGB\\UP\\Core',
+          scope: '/RGB/UP/Core',
+          blockName: 'TS',
+          blockPart: [],
+          description: 'Транзитное хранилище',
+          aspects: 'Core, Infrastructure',
+          ignore: false,
+          extend: '',
+          based: ''
+        },
+        {
           filePath: 'RGB\\CSC\\Core\\Test\\.block-definition.yml',
           directory: 'RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure',
           scope: '/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure',
@@ -380,7 +404,7 @@ export class BlockDataService {
           description: 'Тестовый блок',
           aspects: 'Tests',
           ignore: false,
-          extend: '',
+          extend: 'TS, DFTS',
           based: ''
         },
         {
