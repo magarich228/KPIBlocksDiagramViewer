@@ -230,16 +230,21 @@ export class BlockDataService {
     
     try {
       for await (const entry of dirHandle.values()) {
-        const entryPath = path ? `${path}/${entry.name}` : entry.name;
-        
-        if (entry.kind === 'directory') {
-          const subFiles = await this.findBlockDefinitionFiles(entry, entryPath);
-          files.push(...subFiles);
-        } else if (entry.kind === 'file' && entry.name === '.block-definition.yml') {
+        if (entry.kind === 'file' && entry.name === '.block-definition.yml') {
+          const entryPath = path ? `${path}/${entry.name}` : entry.name;
           files.push({
             handle: entry,
             path: entryPath
           });
+        } else if (entry.kind === 'directory') {
+          // Пропуск директорий
+          if (['node_modules', '.git', '.vscode', 'dist', 'Build', 'Bin', 'bin', 'obj'].includes(entry.name)) {
+            continue;
+          }
+          
+          const subPath = path ? `${path}/${entry.name}` : entry.name;
+          const subFiles = await this.findBlockDefinitionFiles(entry, subPath);
+          files.push(...subFiles);
         }
       }
     } catch (error) {
