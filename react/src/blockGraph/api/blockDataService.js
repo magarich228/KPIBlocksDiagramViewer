@@ -112,10 +112,7 @@ export class BlockDataService {
       for await (const entry of dirHandle.values()) {
         const entryPath = path ? `${path}/${entry.name}` : entry.name;
         
-        if (entry.kind === 'directory') {
-          const catalog = await this.findScopesCatalogFile(entry, entryPath);
-          if (catalog) return catalog;
-        } else if (entry.kind === 'file' && entry.name === '.scopes-catalog.yml') {
+        if (entry.kind === 'file' && entry.name === '.scopes-catalog.yml') {
           return {
             handle: entry,
             path: entryPath
@@ -204,10 +201,7 @@ export class BlockDataService {
       for await (const entry of dirHandle.values()) {
         const entryPath = path ? `${path}/${entry.name}` : entry.name;
         
-        if (entry.kind === 'directory') {
-          const catalog = await this.findBlockCatalogFile(entry, entryPath);
-          if (catalog) return catalog;
-        } else if (entry.kind === 'file' && entry.name === '.block-catalog.yml') {
+        if (entry.kind === 'file' && entry.name === '.block-catalog.yml') {
           return {
             handle: entry,
             path: entryPath
