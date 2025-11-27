@@ -1,0 +1,23 @@
+kind: pipeline
+type: docker
+name: deploy-kpiblocks
+
+steps:
+  - name: build-react
+    image: node:18-alpine
+    commands:
+      - cd react
+      - npm ci
+      - npm run build
+
+  - name: deploy-to-server
+    image: appleboy/drone-scp
+    settings:
+      host: localhost
+      username: 
+        from_secret: SERVER_USER
+      password: 
+        from_secret: SERVER_PASSWORD
+      target: /var/www/kpiblocks
+      source: react/dist/*
+      rm: true
