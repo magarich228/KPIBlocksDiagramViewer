@@ -2,6 +2,9 @@ kind: pipeline
 type: docker
 name: deploy-kpiblocks
 
+environment:
+  DOCKER_API_VERSION: "1.44"
+
 steps:
   - name: build-react
     image: node:18-alpine
