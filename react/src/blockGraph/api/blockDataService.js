@@ -45,8 +45,8 @@ export class BlockDataService {
       const scopesFile = await this.findScopesCatalogFile(this.directoryHandle);
       if (scopesFile) {
         console.log('Found scopes catalog:', scopesFile.path);
+        
         const scopes = await this.parseScopesCatalog(scopesFile.handle, scopesFile.path);
-        console.log('Parsed scopes:', scopes.length);
         return scopes;
       }
       console.log('No scopes catalog found');

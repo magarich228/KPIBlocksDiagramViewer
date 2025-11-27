@@ -116,7 +116,9 @@ export class GraphBuilder {
         block.blockPart.forEach((partName, index) => {
           const partPath = `${currentPath}/${partName}`;
           
-          if (!nodeMap.has(partPath)) {
+          const existingPartNode = nodeMap.get(partPath);
+
+          if (!existingPartNode) {
             const partNode = {
               id: nodeId++,
               name: partName,
@@ -139,6 +141,16 @@ export class GraphBuilder {
                 target: partNode.id
               });
             }
+            // index === block.blockPart.length - 1:
+            // Добавляем информации о определении части блока в узел только если
+            // полный blockPart совпадает с полным путем узла начиная от узла блока не включая его
+            // например 
+            // в .block-definition.yml blockPart: /BlobStorageProvider/Dal
+            // добавляем block в blocks узла только если путь узла /BlobStorageProvider/Dal
+          } else if (index === block.blockPart.length - 1) {
+            // Т.к. нет гарантии, что узел для данной части блока еще не построен,
+            // то при существовании узла добавляем в него инфу о определении части блока
+            existingPartNode.blocks.push(block);
           }
           
           currentPath = partPath;
