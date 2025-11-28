@@ -1,21 +1,28 @@
 kind: pipeline
-type: docker
+type: ssh
 name: deploy-kpiblocks
 
-volumes:
-  - name: kpiblocksvol
-    host:
-      path: /var/www/kpiblocks
+server:
+  host: 
+    from_secret: SERVER_HOST
+  user: 
+    from_secret: SERVER_USER
+  password: 
+    from_secret: SERVER_PASSWORD
 
 steps:
   - name: build-and-deploy
-    image: node:18-alpine
-    volumes:
-      - name: kpiblocksvol
-        path: /deploy
     commands:
-      - cd react
-      - npm ci
-      - npm run build
-      - cp -r dist/* /deploy/
-      - echo "Deployment completed successfully!"
+    - cd react
+    - npm ci
+    - npm run build
+    - rm -r /var/www/kpiblocks/*
+    - cp -r dist/* /var/www/kpiblocks/
+    - echo "Deployment completed successfully!"
+
+trigger:
+  branch:
+  - master
+  event:
+  - pull_request
+  - push
