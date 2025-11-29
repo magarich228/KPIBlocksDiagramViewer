@@ -11,17 +11,34 @@ server:
     from_secret: SERVER_PASSWORD
 
 steps:
-  - name: build-and-deploy
+  - name: debug-info
     commands:
-    - cd react
-    - npm ci
-    - npm run build
-    - rm -r /var/www/kpiblocks/*
-    - cp -r dist/* /var/www/kpiblocks/
-    - echo "Deployment completed successfully!"
+      - echo "Starting deployment..."
+      - whoami
+      - pwd
+      - ls -la
+
+  - name: build
+    commands:
+      - cd react
+      - echo "Current directory: $(pwd)"
+      - ls -la
+      - npm ci --verbose
+      - npm run build
+
+  - name: deploy
+    commands:
+      - cd react
+      - echo "Contents of dist:"
+      - ls -la dist/
+      - sudo ls -la /var/www/kpiblocks/
+      - sudo rm -rf /var/www/kpiblocks/*
+      - sudo cp -r dist/* /var/www/kpiblocks/
+      - echo "Deployment completed successfully!"
+      - sudo ls -la /var/www/kpiblocks/
 
 trigger:
   branch:
-  - master
+    - master
   event:
-  - push
+    - push
