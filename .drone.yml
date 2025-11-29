@@ -14,27 +14,8 @@ steps:
   - name: debug-info
     commands:
       - echo "Starting deployment..."
-      - whoami
       - pwd
       - ls -la
-
-  - name: build
-    commands:
-      - cd react
-      - ls -la
-      - npm ci --verbose
-      - npm run build
-
-  - name: deploy
-    commands:
-      - cd react
-      - echo "Dist content:"
-      - ls -la dist/
-      - sudo ls -la /var/www/kpiblocks/
-      - sudo rm -rf /var/www/kpiblocks/*
-      - sudo cp -r dist/* /var/www/kpiblocks/
-      - echo "Deployment completed successfully!"
-      - sudo ls -la /var/www/kpiblocks/
 
 trigger:
   branch:
