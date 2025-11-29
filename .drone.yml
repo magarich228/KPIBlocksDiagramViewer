@@ -28,7 +28,7 @@ steps:
   - name: deploy
     commands:
       - cd react
-      - echo "Contents of dist:"
+      - echo "Dist content:"
       - ls -la dist/
       - sudo ls -la /var/www/kpiblocks/
       - sudo rm -rf /var/www/kpiblocks/*
