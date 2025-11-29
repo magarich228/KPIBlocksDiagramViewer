@@ -3,12 +3,9 @@ type: ssh
 name: deploy-kpiblocks
 
 server:
-  host: 
-    from_secret: SERVER_HOST
-  user: 
-    from_secret: SERVER_USER
-  password: 
-    from_secret: SERVER_PASSWORD
+  host: SERVER_HOST
+  user: SERVER_USER
+  password: SERVER_PASSWORD
 
 steps:
   - name: debug-info
