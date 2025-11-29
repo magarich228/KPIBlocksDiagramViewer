@@ -21,7 +21,6 @@ steps:
   - name: build
     commands:
       - cd react
-      - echo "Current directory: $(pwd)"
       - ls -la
       - npm ci --verbose
       - npm run build
