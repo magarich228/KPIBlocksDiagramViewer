@@ -10,7 +10,7 @@ server:
 steps:
   - name: debug-info
     commands:
-      - echo "Starting deployment..."
+      - echo "Starting deployment"
       - pwd
       - ls -la
 
