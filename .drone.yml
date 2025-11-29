@@ -18,7 +18,7 @@ steps:
     - npm run build
     - rm -r /var/www/kpiblocks/*
     - cp -r dist/* /var/www/kpiblocks/
-    - echo "Deployment completed successfully!!!"
+    - echo "Deployment completed successfully!"
 
 trigger:
   branch:
