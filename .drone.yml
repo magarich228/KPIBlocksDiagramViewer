@@ -33,7 +33,7 @@ steps:
       - sudo ls -la /var/www/kpiblocks/
       - sudo rm -rf /var/www/kpiblocks/*
       - sudo cp -r dist/* /var/www/kpiblocks/
-      - echo "Deployment completed successfully!!!"
+      - echo "Deployment completed successfully!"
       - sudo ls -la /var/www/kpiblocks/
 
 trigger:
