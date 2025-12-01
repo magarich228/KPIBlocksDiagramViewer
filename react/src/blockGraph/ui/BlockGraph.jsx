@@ -224,25 +224,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         console.log('Node circle clicked:', d.data.data.name);
         
         handleNodeSelect(d.data.data);
-      })
-      /*.on('mouseover', function(event, d) {
-        if (partsHidden && d.data.data.type === 'part') return;
-
-        const styles = getNodeStyles(d.data.data);
-        d3.select(this)
-          //.classed('node-hovered', true)
-          //.style('stroke', '#ff3860')
-          //.style('stroke-width', Math.max(parseFloat(styles.strokeWidth), 2.5))
-          //.style('filter', 'drop-shadow(0 0 6px rgba(255,56,96,0.6))');
-      })
-      .on('mouseout', function(event, d) {
-        const styles = getNodeStyles(d.data.data);
-        d3.select(this)
-          //.classed('node-hovered', false)
-          //.style('stroke', styles.stroke)
-          //.style('stroke-width', styles.strokeWidth)
-          //.style('filter', styles.filter);
-      });*/
+      });
 
     // Тексты узлов
     node.append('text')
@@ -296,6 +278,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   };
 
   const handleNodeSelect = (newSelectedNode) => {
+    console.log("New node selected:");
+    console.log(newSelectedNode);
     setSelectedNode(newSelectedNode);
         
     // Находим связанные узлы
