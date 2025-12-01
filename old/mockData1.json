@@ -1,0 +1,167 @@
+{
+  "scopes": [
+    {
+      "path": "/RGB",
+      "name": "RGB",
+      "description": "Платформа КПИ",
+      "children": [
+        {
+          "path": "/RGB/UP",
+          "name": "UP",
+          "description": "Universal Platform - Универсальная часть платформы",
+          "children": [
+            {
+              "path": "/RGB/UP/Core",
+              "name": "Core",
+              "description": "Core - Основная часть платформы, набор базовых блоков",
+              "children": []
+            },
+            {
+              "path": "/RGB/UP/Cluster",
+              "name": "Cluster",
+              "description": "Cluster - Блоки организации кластеров",
+              "children": []
+            }
+          ]
+        },
+        {
+          "path": "/RGB/CSC",
+          "name": "CSC",
+          "description": "Common System Components - Общесистемные компоненты",
+          "children": [
+            {
+              "path": "/RGB/CSC/Core",
+              "name": "Core",
+              "description": "Core - Основная часть платформы, набор базовых блоков",
+              "children": [
+                {
+                  "path": "/RGB/CSC/Core/GenericPlatform",
+                  "name": "GenericPlatform",
+                  "description": "Generic Platform - Обобщенная часть платформы",
+                  "children": [
+                    {
+                      "path": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure",
+                      "name": "EntitiesInfrastructure",
+                      "description": "Entities Infrastructure - инфраструктура сущностей",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "filePath": "RGB\\UP\\Cluster\\TestBlock\\.block-definition.yml",
+      "directory": "RGB\\UP\\Cluster\\TestBlock\\",
+      "scope": "/RGB/UP/Cluster",
+      "blockName": "TestBlock",
+      "blockPart": [],
+      "description": "Тест блок кластера",
+      "aspects": "Internal",
+      "ignore": false,
+      "extend": "",
+      "based": ""
+    },
+    {
+      "filePath": "RGB\\CSC\\Core\\BS\\.block-definition.yml",
+      "directory": "RGB\\CSC\\Core",
+      "scope": "/RGB/CSC/Core",
+      "blockName": "BS",
+      "blockPart": [
+        "AdminPack",
+        "Contract"
+      ],
+      "description": "Внутренние контракты администрирования провайдеров хранилищ бинарных данных",
+      "aspects": "Client, Internal",
+      "ignore": false,
+      "extend": "DFTS, TS",
+      "based": ""
+    },
+    {
+      "filePath": "RGB\\UP\\Core\\DFTS\\.block-definition.yml",
+      "directory": "RGB\\UP\\Core",
+      "scope": "/RGB/UP/Core",
+      "blockName": "DFTS",
+      "blockPart": [],
+      "description": "Документарно транзитное хранилище",
+      "aspects": "Core, Infrastructure",
+      "ignore": false,
+      "extend": "",
+      "based": ""
+    },
+    {
+      "filePath": "RGB\\UP\\Core\\DFTS\\.block-definition.yml",
+      "directory": "RGB\\UP\\Core",
+      "scope": "/RGB/UP/Core",
+      "blockName": "TS",
+      "blockPart": [],
+      "description": "Транзитное хранилище",
+      "aspects": "Core, Infrastructure",
+      "ignore": false,
+      "extend": "",
+      "based": ""
+    },
+    {
+      "filePath": "RGB\\CSC\\Core\\Test\\.block-definition.yml",
+      "directory": "RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure",
+      "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure",
+      "blockName": "TestBlock",
+      "blockPart": [],
+      "description": "Тестовый блок",
+      "aspects": "Tests",
+      "ignore": false,
+      "extend": "TS, DFTS",
+      "based": ""
+    },
+    {
+      "filePath": "RGB\\CSC\\Core\\Test\\Part\\.block-definition.yml",
+      "directory": "RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure",
+      "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure",
+      "blockName": "TestBlock",
+      "blockPart": [
+        "TestPart1"
+      ],
+      "description": "Тестовый парт блока",
+      "aspects": "Tests",
+      "ignore": false,
+      "extend": "",
+      "based": "BS"
+    },
+    {
+      "filePath": "RGB\\CSC\\Core\\Test\\Part\\sub\\.block-definition.yml",
+      "directory": "RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure",
+      "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure",
+      "blockName": "TestBlock",
+      "blockPart": [
+        "TestPart1",
+        "TestSubPart1"
+      ],
+      "description": "Тестовый подпарт блока 1",
+      "aspects": "Internal",
+      "ignore": false,
+      "extend": "",
+      "based": ""
+    },
+    {
+      "filePath": "RGB\\CSC\\Core\\Test\\Part\\sub\\.block-definition.yml",
+      "directory": "RGB\\CSC\\Core\\GenericPlatform\\EntitiesInfrastructure",
+      "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure",
+      "blockName": "TestBlock",
+      "blockPart": [
+        "TestPart1",
+        "TestSubPart2"
+      ],
+      "description": "Тестовый подпарт блока 2",
+      "aspects": "Internal",
+      "ignore": false,
+      "extend": "",
+      "based": ""
+    }
+  ],
+  "catalog": null
+}
