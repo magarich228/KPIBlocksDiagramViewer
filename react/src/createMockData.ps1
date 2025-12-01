@@ -163,7 +163,9 @@ foreach ($file in $blockFiles) {
 
 # Формируем итоговый объект
 $result = @{
-    scopes = $scopesTree
+    scopes = $scopesTree -is [System.Array] ?
+        $scopesTree :
+        @( $scopesTree )
     blocks = $blocks
     catalog = $null
 }

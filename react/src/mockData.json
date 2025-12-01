@@ -2361,76 +2361,78 @@
     }
   ],
   "catalog": null,
-  "scopes": [{
-    "children": [
-      {
-        "children": [
-          {
-            "children": [
-              {
-                "children": [
-                  {
-                    "children": [],
-                    "description": "Entities Infrastructure - инфраструктура сущностей",
-                    "name": "EntitiesInfrastructure",
-                    "path": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
-                  }
-                ],
-                "description": "Generic Platform - Обобщенная часть платформы",
-                "name": "GenericPlatform",
-                "path": "/RGB/CSC/Core/GenericPlatform"
-              }
-            ],
-            "description": "Core - Основная часть платформы, набор базовых блоков",
-            "name": "Core",
-            "path": "/RGB/CSC/Core"
-          },
-          {
-            "children": [],
-            "description": "Application Blocks - Семейство блоков обеспечивающих решение отдельных общесистемных задач",
-            "name": "ABS",
-            "path": "/RGB/CSC/ABS"
-          },
-          {
-            "children": [],
-            "description": "Process Flow - Группа блоков ИИБП",
-            "name": "PF",
-            "path": "/RGB/CSC/PF"
-          }
-        ],
-        "description": "Common System Components - Общесистемные компоненты",
-        "name": "CSC",
-        "path": "/RGB/CSC"
-      },
-      {
-        "children": [
-          {
-            "children": [
-              {
-                "children": [],
-                "description": "Generic Platform - Обобщенная часть платформы",
-                "name": "GenericPlatform",
-                "path": "/RGB/UP/Core/GenericPlatform"
-              }
-            ],
-            "description": "Core - Основная часть платформы, набор базовых блоков",
-            "name": "Core",
-            "path": "/RGB/UP/Core"
-          },
-          {
-            "children": [],
-            "description": "Cluster - Блоки организации кластеров",
-            "name": "Cluster",
-            "path": "/RGB/UP/Cluster"
-          }
-        ],
-        "description": "Universal Platform - Универсальная часть платформы предоставляющая ПП единые централизованные и инфраструктурные сервисы",
-        "name": "UP",
-        "path": "/RGB/UP"
-      }
-    ],
-    "description": "Платформа КПИ",
-    "name": "RGB",
-    "path": "/RGB"
-  }]
+  "scopes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [],
+                      "description": "Entities Infrastructure - инфраструктура сущностей",
+                      "name": "EntitiesInfrastructure",
+                      "path": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
+                    }
+                  ],
+                  "description": "Generic Platform - Обобщенная часть платформы",
+                  "name": "GenericPlatform",
+                  "path": "/RGB/CSC/Core/GenericPlatform"
+                }
+              ],
+              "description": "Core - Основная часть платформы, набор базовых блоков",
+              "name": "Core",
+              "path": "/RGB/CSC/Core"
+            },
+            {
+              "children": [],
+              "description": "Application Blocks - Семейство блоков обеспечивающих решение отдельных общесистемных задач",
+              "name": "ABS",
+              "path": "/RGB/CSC/ABS"
+            },
+            {
+              "children": [],
+              "description": "Process Flow - Группа блоков ИИБП",
+              "name": "PF",
+              "path": "/RGB/CSC/PF"
+            }
+          ],
+          "description": "Common System Components - Общесистемные компоненты",
+          "name": "CSC",
+          "path": "/RGB/CSC"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "description": "Generic Platform - Обобщенная часть платформы",
+                  "name": "GenericPlatform",
+                  "path": "/RGB/UP/Core/GenericPlatform"
+                }
+              ],
+              "description": "Core - Основная часть платформы, набор базовых блоков",
+              "name": "Core",
+              "path": "/RGB/UP/Core"
+            },
+            {
+              "children": [],
+              "description": "Cluster - Блоки организации кластеров",
+              "name": "Cluster",
+              "path": "/RGB/UP/Cluster"
+            }
+          ],
+          "description": "Universal Platform - Универсальная часть платформы предоставляющая ПП единые централизованные и инфраструктурные сервисы",
+          "name": "UP",
+          "path": "/RGB/UP"
+        }
+      ],
+      "description": "Платформа КПИ",
+      "name": "RGB",
+      "path": "/RGB"
+    }
+  ]
 }
