@@ -180,13 +180,13 @@ const BlockGraph = ({ data, onDataLoaded }) => {
 
     const allLinks = treeData.links();
     
-    // Связь должна стать прозрачной, если ОБА ее конца (source и target) прозрачные
+    // Связь должна стать прозрачной, если один из её узлов прозрачный
     const transparentLinks = allLinks.filter(link => {
       const sourceId = link.source.data.data.id;
       const targetId = link.target.data.data.id;
       
-      // Если оба узла прозрачные - связь прозрачная
-      return transparentNodeIds.includes(sourceId) && transparentNodeIds.includes(targetId);
+      // Если один из узлов прозрачный - связь прозрачная
+      return transparentNodeIds.includes(sourceId) || transparentNodeIds.includes(targetId);
     });
 
     svgRef.current.svg.selectAll('circle')
