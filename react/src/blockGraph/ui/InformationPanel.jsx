@@ -43,13 +43,18 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
     setShowParts(prev => !prev);
   };
 
+  const handleClose = () => {
+    // Передаем null для сброса выбора и прозрачности
+    onNodeSelect(null);
+  };
+
   return (
     <div className="information-panel">
       <div className="panel-header">
         <h3>Информация о узле</h3>
         <button 
           className="close-button"
-          onClick={() => onNodeSelect(null)}
+          onClick={handleClose}
         >
           ×
         </button>

@@ -99,6 +99,124 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .style('filter', d => getNodeStyles(d.data.data).filter);
   }, [getNodeStyles]);
 
+  // Функция для получения всех узлов в ветви (от корня до узла и частей)
+  const getBranchNodes = useCallback((node, treeData) => {
+    if (!node || !treeData) return new Set();
+    
+    const branchNodes = new Set();
+    
+    const allNodes = treeData.descendants();
+    const d3Node = allNodes.find(d => d.data.data.id === node.id);
+    
+    if (d3Node) {
+      // Родители узла
+      d3Node.ancestors().forEach(ancestor => {
+        branchNodes.add(ancestor.data.data.id);
+      });
+      
+      // Узел
+      branchNodes.add(node.id);
+
+      const traverseChildren = (currentNode) => {
+        if (!currentNode.children || currentNode.children.length === 0) {
+          return;
+        }
+        
+        currentNode.children.forEach(child => {
+          branchNodes.add(child.data.data.id);
+          
+          traverseChildren(child);
+        });
+      };
+
+      // Добавляем все части блока если выбранный узел типа блок
+      if (node.type === NodeType.BLOCK) {
+        traverseChildren(d3Node);
+      }
+    }
+    
+    return branchNodes;
+  }, []);
+
+  // Функция для обновления прозрачности элементов графа
+  const updateGraphTransparency = useCallback(() => {
+    if (!svgRef.current || !selectedNode) {
+
+      if (svgRef.current) {
+        svgRef.current.svg.selectAll('circle, text, path')
+          .style('opacity', 1);
+      }
+      return;
+    }
+
+    const { treeData } = svgRef.current;
+    if (!treeData) return;
+
+    // Собираем все ID узлов, которые должны остаться непрозрачными
+    const visibleNodeIds = new Set();
+
+    const selectedBranch = getBranchNodes(selectedNode, treeData);
+    selectedBranch.forEach(id => visibleNodeIds.add(id));
+
+    const allRelatedNodes = [
+      ...relatedNodes.based,
+      ...relatedNodes.extend,
+      ...relatedNodes.other
+    ];
+
+    allRelatedNodes.forEach(relatedNode => {
+      const relatedBranch = getBranchNodes(relatedNode, treeData);
+      relatedBranch.forEach(id => visibleNodeIds.add(id));
+    });
+
+    allRelatedNodes.forEach(node => {
+      visibleNodeIds.add(node.id);
+    });
+
+    const allNodes = treeData.descendants();
+    
+    const allNodeIds = allNodes.map(d => d.data.data.id);
+    const transparentNodeIds = allNodeIds.filter(id => !visibleNodeIds.has(id));
+
+    const allLinks = treeData.links();
+    
+    // Связь должна стать прозрачной, если ОБА ее конца (source и target) прозрачные
+    const transparentLinks = allLinks.filter(link => {
+      const sourceId = link.source.data.data.id;
+      const targetId = link.target.data.data.id;
+      
+      // Если оба узла прозрачные - связь прозрачная
+      return transparentNodeIds.includes(sourceId) && transparentNodeIds.includes(targetId);
+    });
+
+    svgRef.current.svg.selectAll('circle')
+      .style('opacity', d => {
+        const nodeId = d.data.data.id;
+        return visibleNodeIds.has(nodeId) ? 1 : 0.2;
+      });
+
+    svgRef.current.svg.selectAll('text')
+      .style('opacity', d => {
+        const nodeId = d.data.data.id;
+        return visibleNodeIds.has(nodeId) ? 1 : 0.2;
+      });
+
+    svgRef.current.svg.selectAll('path')
+      .style('opacity', d => {
+        const sourceId = d.source.data.data.id;
+        const targetId = d.target.data.data.id;
+        
+        // Если связь в списке прозрачных - делаем прозрачной
+        const isTransparentLink = transparentLinks.some(link => 
+          link.source.data.data.id === sourceId && 
+          link.target.data.data.id === targetId
+        );
+        
+        return isTransparentLink ? 0.2 : 1;
+      });
+
+  }, [selectedNode, relatedNodes, getBranchNodes]);
+
   useEffect(() => {
     console.log('BlockGraph: data changed', data);
 
@@ -135,6 +253,12 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     updateNodeStyles();
   }, [selectedNode, relatedNodes, updateNodeStyles]);
 
+  // Обновляем useEffect для вызова функции прозрачности
+  useEffect(() => {
+    updateGraphTransparency();
+  }, [selectedNode, relatedNodes, updateGraphTransparency]);
+
+  // Обновляем createRadialTree для сохранения treeData в svgRef
   const createRadialTree = () => {
     console.log('Creating radial d3 visualization...');
     
@@ -214,8 +338,15 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .style('cursor', 'pointer')
       .style('filter', d => getNodeStyles(d.data.data).filter);
 
-    // Сохраняем circles для последующих обновлений
-    svgRef.current = { svg, g, zoom: null, treeData, circles };
+    // Сохраняем circles и svg для последующих обновлений
+    svgRef.current = { 
+      ...svgRef.current, 
+      svg, 
+      g, 
+      zoom: null, 
+      treeData, 
+      circles 
+    };
 
     // Обработчики для кругов
     circles
@@ -244,13 +375,14 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       .attr('stroke', 'white')
       .attr('stroke-width', 3);
 
-    // Обработчик клика на SVG (фон) - закрывает панель
+    // Обработчик клика на SVG (фон) - закрывает панель и сбрасывает прозрачность
     svg.on('click', function(event) {
       // Проверяем, был ли клик на самом SVG (не на узле)
       if (event.target === this) {
-        console.log('SVG background clicked - closing panel');
+        console.log('SVG background clicked - closing panel and resetting transparency');
         setSelectedNode(null);
         setRelatedNodes({ based: [], extend: [], other: [] });
+        // Прозрачность сбросится в updateGraphTransparency
       }
     });
 
@@ -275,8 +407,16 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     }
 
     console.log('Radial tree visualization created successfully');
+    
+    // Обновляем прозрачность если есть выбранный узел
+    if (selectedNode) {
+      setTimeout(() => {
+        updateGraphTransparency();
+      }, 100);
+    }
   };
 
+  // Обновляем handleNodeSelect для вызова updateGraphTransparency
   const handleNodeSelect = (newSelectedNode) => {
     console.log("New node selected:");
     console.log(newSelectedNode);
@@ -285,6 +425,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     // Находим связанные узлы
     const related = findRelatedNodes(newSelectedNode);
     setRelatedNodes(related);
+    // Прозрачность обновится автоматически в useEffect
   };
 
   const handleResetZoom = () => {
