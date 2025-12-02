@@ -129,8 +129,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
         });
       };
 
-      // Добавляем все части блока если выбранный узел типа блок
-      if (node.type === NodeType.BLOCK) {
+      // Добавляем все дочерние узлы если выбранный узел типа блок или часть блока
+      if (node.type !== NodeType.SCOPE) {
         traverseChildren(d3Node);
       }
     }
