@@ -1,5 +1,6 @@
 import * as yaml from 'js-yaml';
 import mockData from '../../mockData.json'
+import { spiderApi } from './spiderApi';
 
 export class BlockDataService {
   static directoryHandle = null;
@@ -7,7 +8,18 @@ export class BlockDataService {
   // Основной метод получения всех данных проекта
   static async getProjectData() {
     console.log('Starting project data loading...');
+
+    // Тест RN API
+    /*const response = await spiderApi.spider('C:\\Users\\k.groshev\\source\\repos\\rgb3\\', 'feature/documentation/IMP-3064-blocks-markup-new-format');
     
+    const data = {
+      scopes: response.scopes,
+      blocks: response.blocks,
+      catalog: null
+    };
+
+    return data;*/
+
     if (!this.isFileSystemAPISupported()) {
       console.log('File System API not supported, using mock data');
       return this.getMockProjectData();

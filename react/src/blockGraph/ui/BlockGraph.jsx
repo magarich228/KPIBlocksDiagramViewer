@@ -13,19 +13,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const [relatedNodes, setRelatedNodes] = useState({ based: [], extend: [], other: [] });
   const [graphData, setGraphData] = useState(null);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
-  const [dimensions, setDimensions] = useState({ 
-    width: window.innerWidth, 
-    height: window.innerHeight 
-  });
   const [partsHidden, setPartsHidden] = useState(false);
   const [currentTransform, setCurrentTransform] = useState(null);
-
-  const updateDimensions = useCallback(() => {
-    setDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight
-    });
-  }, []);
 
   // Функция для поиска связанных узлов
   const findRelatedNodes = useCallback((node) => {
@@ -230,23 +219,15 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   }, [data, partsHidden]);
 
   useEffect(() => {
-    window.addEventListener('resize', updateDimensions);
-    return () => {
-      window.removeEventListener('resize', updateDimensions);
-    };
-  }, [updateDimensions]);
-
-  useEffect(() => {
-    console.log('BlockGraph: graphData or dimensions changed', {
+    console.log('BlockGraph: graphData changed', {
       hasGraphData: !!graphData,
-      nodes: graphData?.nodes?.length || 0,
-      dimensions
+      nodes: graphData?.nodes?.length || 0
     });
     
-    if (graphData && dimensions.width > 0 && dimensions.height > 0) {
+    if (graphData) {
       createRadialTree();
     }
-  }, [graphData, dimensions]);
+  }, [graphData]);
 
   // Обновляем стили при изменении выделения
   useEffect(() => {
@@ -267,7 +248,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       return;
     }
 
-    const { width, height } = dimensions;
+    const width = window.outerWidth;
+    const height = window.outerHeight;
 
     // Очищаем предыдущий граф
     d3.select(containerRef.current).selectAll('*').remove();
@@ -370,10 +352,10 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       })
       .style('font-weight', d => d.depth <= 1 || d.data.data.type === 'block' ? 'normal' : 'normal')
       .style('fill', '#000000')
-      .clone(true)
-      .lower()
-      .attr('stroke', 'white')
-      .attr('stroke-width', 3);
+      //.clone(true)
+      .lower();
+      //.attr('stroke', 'white')
+      //.attr('stroke-width', 3);
 
     // Обработчик клика на SVG (фон) - закрывает панель и сбрасывает прозрачность
     svg.on('click', function(event) {
@@ -431,7 +413,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const handleResetZoom = () => {
     if (svgRef.current && svgRef.current.svg) {
       const { svg, zoom } = svgRef.current;
-      const { width, height } = dimensions;
+      const width = window.outerWidth;
+      const height = window.outerHeight;
       
       svg.transition()
         .duration(750)
@@ -448,7 +431,8 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const handleDownloadSVG = () => {
     if (!svgRef.current) return;
 
-    const { width, height } = dimensions;
+    const width = window.outerWidth;
+    const height = window.outerHeight;
     
     const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     newSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
