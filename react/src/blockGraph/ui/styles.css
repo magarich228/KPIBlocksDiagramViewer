@@ -126,6 +126,7 @@ body {
   align-items: center;
   gap: 15px;
   transition: opacity 0.2s ease;
+  flex-wrap: wrap;
 }
 
 .header.collapsed .header-content {
@@ -138,13 +139,16 @@ body {
   color: #333;
   font-size: 16px;
   white-space: nowrap;
+  flex-shrink: 0; /* Добавлено */
 }
 
 .controls {
   display: flex;
   align-items: center;
   margin-left: auto;
-  gap: 8px;  
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 button {
@@ -175,6 +179,9 @@ button:hover {
   display: flex;
   gap: 15px;
   font-size: 11px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 200px;
 }
 
 .legend-item {
@@ -419,6 +426,65 @@ button:hover {
     width: 300px;
     right: 5px;
     top: 45px;
+  }
+
+  .header {
+    padding: 6px 10px;
+  }
+  
+  .header-content {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .header-title {
+    font-size: 14px;
+    flex-basis: 100%; /* Заголовок занимает всю ширину */
+    text-align: center;
+  }
+  
+  .legend {
+    flex-basis: 100%; /* Легенда занимает всю ширину */
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .controls {
+    flex-basis: 100%; /* Контролы занимают всю ширину */
+    justify-content: center;
+    margin-left: 0;
+    gap: 6px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-size: 10px;
+    flex-grow: 1; /* Кнопки растягиваются */
+    text-align: center;
+    min-width: 120px; /* Минимальная ширина кнопок */
+  }
+  
+  .stats {
+    flex-basis: 100%; /* Статистика на новой строке */
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    min-width: 100px;
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+  
+  .legend-item {
+    font-size: 10px;
+  }
+  
+  .legend {
+    gap: 8px;
   }
 }
 
