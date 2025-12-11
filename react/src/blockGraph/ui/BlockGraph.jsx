@@ -13,8 +13,19 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const [relatedNodes, setRelatedNodes] = useState({ based: [], extend: [], other: [] });
   const [graphData, setGraphData] = useState(null);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
+  const [dimensions, setDimensions] = useState({ 
+    width: window.outerWidth, 
+    height: window.outerHeight 
+  });
   const [partsHidden, setPartsHidden] = useState(false);
   const [currentTransform, setCurrentTransform] = useState(null);
+
+  const updateDimensions = useCallback(() => {
+    setDimensions({
+      width: window.outerWidth,
+      height: window.outerHeight
+    });
+  }, []);
 
   // Функция для поиска связанных узлов
   const findRelatedNodes = useCallback((node) => {
@@ -219,15 +230,23 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   }, [data, partsHidden]);
 
   useEffect(() => {
-    console.log('BlockGraph: graphData changed', {
+    window.addEventListener('resize', updateDimensions);
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+    };
+  }, [updateDimensions]);
+
+  useEffect(() => {
+    console.log('BlockGraph: graphData or dimensions changed', {
       hasGraphData: !!graphData,
-      nodes: graphData?.nodes?.length || 0
+      nodes: graphData?.nodes?.length || 0,
+      dimensions
     });
     
-    if (graphData) {
+    if (graphData && dimensions.width > 0 && dimensions.height > 0) {
       createRadialTree();
     }
-  }, [graphData]);
+  }, [graphData, dimensions]);
 
   // Обновляем стили при изменении выделения
   useEffect(() => {
@@ -248,8 +267,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       return;
     }
 
-    const width = window.outerWidth;
-    const height = window.outerHeight;
+    const { width, height } = dimensions;
 
     // Очищаем предыдущий граф
     d3.select(containerRef.current).selectAll('*').remove();
@@ -271,7 +289,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     const root = d3.hierarchy(hierarchy);
     
     const treeLayout = d3.tree()
-      .size([2 * Math.PI, Math.min(width, height) / 2 * 0.9])
+      .size([2 * Math.PI, 500])
       .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
 
     const treeData = treeLayout(root);
@@ -413,8 +431,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const handleResetZoom = () => {
     if (svgRef.current && svgRef.current.svg) {
       const { svg, zoom } = svgRef.current;
-      const width = window.outerWidth;
-      const height = window.outerHeight;
+      const { width, height } = dimensions;
       
       svg.transition()
         .duration(750)
@@ -431,8 +448,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
   const handleDownloadSVG = () => {
     if (!svgRef.current) return;
 
-    const width = window.outerWidth;
-    const height = window.outerHeight;
+    const { width, height } = dimensions;
     
     const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     newSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -509,6 +525,7 @@ const BlockGraph = ({ data, onDataLoaded }) => {
       <div 
         ref={containerRef}
         className="graph-container"
+        style={{width: '100vw', height: '100vh'}}
       />
       
       <InformationPanel
