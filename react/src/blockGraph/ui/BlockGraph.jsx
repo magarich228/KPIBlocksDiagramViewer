@@ -452,13 +452,11 @@ const BlockGraph = ({ data, onDataLoaded }) => {
     
     const newSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     newSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    newSvg.setAttribute('viewBox', `0 0 ${width * 2} ${height * 2}`);
-    newSvg.setAttribute('width', width * 2);
-    newSvg.setAttribute('height', height * 2);
+    newSvg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    newSvg.setAttribute('width', width);
+    newSvg.setAttribute('height', height);
 
     const graphGroup = svgRef.current.g.node().cloneNode(true);
-    
-    graphGroup.setAttribute('transform', `translate(${width},${height})`);
     
     newSvg.appendChild(graphGroup);
 
