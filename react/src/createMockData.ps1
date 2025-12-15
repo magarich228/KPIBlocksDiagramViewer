@@ -118,7 +118,13 @@ foreach ($file in $blockFiles) {
         
         # Пропускаем блоки без scope
         if (-not $blockData.scope) {
-            Write-Warning "Пропускаем блок без scope: $($file.FullName)"
+            Write-Error "Блок без scope: $($file.FullName)"
+            continue
+        }
+        
+        # Пропускаем блоки без blockName (пустая строка или null)
+        if ([string]::IsNullOrWhiteSpace($blockData.blockName)) {
+            Write-Warning "Блок без blockName: $($file.FullName)"
             continue
         }
         

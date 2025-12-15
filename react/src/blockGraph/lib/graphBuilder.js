@@ -64,8 +64,8 @@ export class GraphBuilder {
 
     // Затем создаем узлы для блоков и их частей (.block-definition файлы)
     blocks.forEach(block => {
-      if (!block.scope) {
-        console.log(`Skip block-definition of ${block.blockName} with undefined scope.`);
+      if (!block.blockName) {
+        console.log(`Skip block-definition of ${block.blockName} with undefined block name.`);
         return;
       }
 

@@ -18,6 +18,9 @@ export class BlockDataService {
       catalog: null
     };
 
+    console.log("Loaded api data:");
+    console.log(data);
+
     return data;*/
 
     if (!this.isFileSystemAPISupported()) {
@@ -284,7 +287,7 @@ export class BlockDataService {
         filePath: fullPath,
         directory: directory,
         scope: data.scope || '',
-        blockName: data.blockName || 'Unknown',
+        blockName: data.blockName,
         blockPart: blockPart,
         description: data.description || '',
         aspects: data.aspects || '',
