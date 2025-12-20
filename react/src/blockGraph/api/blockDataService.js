@@ -47,6 +47,9 @@ export class BlockDataService {
         catalog: catalog ? 'present' : 'missing'
       });
 
+      // Отсюда беру актуальный mockData
+      //console.log(JSON.stringify({ scopes, blocks, catalog }));
+
       return { scopes, blocks, catalog };
     } catch (error) {
       console.error('Error loading project data:', error);

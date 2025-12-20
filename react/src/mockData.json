@@ -1,2377 +1,2751 @@
 {
   "blocks": [
     {
-      "blockPart": [],
-      "blockName": "BS",
-      "aspects": "",
-      "description": "Сервис доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "aspects": "Contract",
       "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
+      "blockName": "BS",
       "blockPart": [
         "Abstracts"
       ],
-      "blockName": "BS",
-      "aspects": "Contract",
       "description": "Абстракции сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Abstracts\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Abstracts",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Abstracts\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Abstracts\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "AdminPack",
         "Contract"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Внутренние контракты администрирования провайдеров хранилищ бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.AdminPack.Contract\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.AdminPack.Contract",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.AdminPack.Contract\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.AdminPack.Contract\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "AdminPack",
         "Server"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Серверная имплементация администрирования провайдеров хранилищ бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.AdminPack.Server\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.AdminPack.Server",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.AdminPack.Server\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.AdminPack.Server\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "AdminPack",
         "Uc"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Имплементация администрирования провайдеров хранилищ бинарнах данных в части ЕКП (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.AdminPack.Uc\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.AdminPack.Uc",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.AdminPack.Uc\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.AdminPack.Uc\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Bundle"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Внутренняя часть сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Bundle\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Bundle",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Bundle\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Bundle\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "BS",
-      "aspects": "Contract",
       "description": "Контракты сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Contract\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Contract",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Contract\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Contract\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Dal",
         "Oracle"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Реализация Oracle слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.Oracle\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.Oracle",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.Oracle\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.Oracle\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Dal",
         "Oracle",
         "Tests"
       ],
-      "blockName": "BS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования реализации Oracle слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.Oracle.Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.Oracle.Tests",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.Oracle.Tests\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.Oracle.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Dal",
         "PostgreSql"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Реализация PostgreSql слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.PostgreSql\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.PostgreSql",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.PostgreSql\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Dal",
         "PostgreSql",
         "Tests"
       ],
-      "blockName": "BS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования реализации PostgreSql слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.PostgreSql.Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.PostgreSql.Tests",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Dal.PostgreSql.Tests\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Importer"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Прикладная среда для выполнения задач миграции (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Importer\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Importer",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Importer\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Importer\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "BS",
+      "blockName": "DFTS",
       "blockPart": [
         "BlobStorageProvider",
         "Dal"
       ],
-      "blockName": "DFTS",
-      "aspects": "Internal",
       "description": "Реализация PostgreSql слоя Dal BlobStorage провайдера документрано-транзитного хранилища (Document Flow Transition Storage, DFTS)",
-      "based": "BS",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrDfTs.Dal.PostgreSql\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrDfTs.Dal.PostgreSql",
       "extend": "MTR, DF",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrDfTs.Dal.PostgreSql\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrDfTs.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "BS",
+      "blockName": "DFTS",
       "blockPart": [
         "BlobStorageProvider",
         "Dal",
         "Tests"
       ],
-      "blockName": "DFTS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования PostgreSql слоя Dal BlobStorage провайдера документрано-транзитного хранилища (Document Flow Transition Storage, DFTS)",
-      "based": "BS",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrDfTs.Dal.PostgreSql.Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrDfTs.Dal.PostgreSql.Tests",
       "extend": "MTR, DF",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrDfTs.Dal.PostgreSql.Tests\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrDfTs.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "BS",
+      "blockName": "TS",
       "blockPart": [
         "BlobStorageProvider",
         "Dal"
       ],
-      "blockName": "TS",
-      "aspects": "Internal",
       "description": "Реализация PostgreSql слоя Dal BlobStorage провайдера транзитного хранилища (Transition Storage, TS)",
-      "based": "BS",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrTs.Dal.PostgreSql\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrTs.Dal.PostgreSql",
       "extend": "MTR",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrTs.Dal.PostgreSql\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrTs.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "BS",
+      "blockName": "TS",
       "blockPart": [
         "BlobStorageProvider",
         "Dal",
         "Tests"
       ],
-      "blockName": "TS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования PostgreSql слоя Dal BlobStorage провайдера транзитного хранилища (Transition Storage, TS)",
-      "based": "BS",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrTs.Dal.PostgreSql.Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrTs.Dal.PostgreSql.Tests",
       "extend": "MTR",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.MtrTs.Dal.PostgreSql.Tests\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrTs.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers"
       ],
-      "blockName": "BS",
-      "aspects": "Contract",
       "description": "Общие типы для провайдеров хранилищ блока Сервис доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "blockPart": [
-        "BlobStorageProvider"
-      ],
+      "aspects": "Internal",
+      "based": "BS",
       "blockName": "TS",
-      "aspects": "Internal",
-      "description": "Провайдерная реализация BlobStorage транзитного хранилища (Transition Storage, TS)",
-      "based": "BS",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.Mtr\\\\.block-definition.yml",
-      "extend": "MTR",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.Mtr\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
       "blockPart": [
         "BlobStorageProvider"
       ],
-      "blockName": "DFTS",
-      "aspects": "Internal",
-      "description": "Провайдерная реализация BlobStorage документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
-      "based": "BS",
+      "description": "Провайдерная реализация BlobStorage транзитного хранилища (Transition Storage, TS)",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.Mtr",
+      "extend": "MTR",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.Mtr\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.MtrDf\\\\.block-definition.yml",
-      "extend": "MTR, DF",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.MtrDf\\\\",
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "BS",
+      "blockName": "DFTS",
+      "blockPart": [
+        "BlobStorageProvider"
+      ],
+      "description": "Провайдерная реализация BlobStorage документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.MtrDf",
+      "extend": "MTR, DF",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.MtrDf\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "Nfs"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Реализация взаимодействия BS с сетевой файловой системой (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.Nfs\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.Nfs",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.Nfs\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.Nfs\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "S3"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Реализация взаимодействия BS с S3 хранилищем (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.S3\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.S3",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.S3\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.S3\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "S3",
         "Tests"
       ],
-      "blockName": "BS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования реализации взаимодействия BS с S3 хранилищем (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.S3.Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.S3.Tests",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.S3.Tests\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.S3.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "Server"
       ],
-      "blockName": "BS",
-      "aspects": "Contract",
       "description": "Базовая серверная реализация провайдеров хранилищ блока Сервис доступа к хранилищу бинарнах данных построенных поверх БД (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.Server\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.Server",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.Server\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.Server\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "TatlinGrpc"
       ],
-      "blockName": "BS",
-      "aspects": "Internal",
       "description": "Реализация взаимодействия BS с Tatlin Grpc (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.TatlinGrpc\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.TatlinGrpc",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.TatlinGrpc\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.TatlinGrpc\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "TatlinGrpc",
         "Tests"
       ],
-      "blockName": "BS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования реализации взаимодействия BS с Tatlin Grpc (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.TatlinGrpc.Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.TatlinGrpc.Tests",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.TatlinGrpc.Tests\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.TatlinGrpc.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "BS",
       "blockPart": [
         "Providers",
         "TatlinGrpc",
         "Net70Tests"
       ],
-      "blockName": "BS",
-      "aspects": "Tests",
       "description": "Сценарии тестирования реализации взаимодействия BS с Tatlin Grpc (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.TatlinGrpc.Tests.dotnet70\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.TatlinGrpc.Tests.dotnet70",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\BlobStorage\\\\BlobStorage.Providers.TatlinGrpc.Tests.dotnet70\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.TatlinGrpc.Tests.dotnet70\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "blockPart": [],
-      "blockName": "DAL",
       "aspects": "",
-      "description": "Блок Слой доступа к данным (Data Access Layer, DAL)",
       "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\.block-definition.yml",
+      "blockName": "BS",
+      "blockPart": [],
+      "description": "Сервис доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "directory": "Abs4.0/Source/BlobStorage",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\",
+      "filePath": "Abs4.0\\Source\\BlobStorage\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Configuration"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Конфигурирование блока DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Configuration\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Configuration",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Configuration\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Configuration\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "AutoTests"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Элементы автотестирования транзакций блока DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.DalTransaction.AutoTests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Dal2.DalTransaction.AutoTests",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.DalTransaction.AutoTests\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.DalTransaction.AutoTests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "TeradataDbProvider"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "TeradataDb провайдер DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.TeradataDbProvider\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Dal2.TeradataDbProvider",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.TeradataDbProvider\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.TeradataDbProvider\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "TransactionIntegration",
         "Linux"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Интеграция с Linux имплементацией транзакций блока Слой доступа к данным в части Универсальной платформы (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.Up.TransactionIntegration.Linux\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Dal2.Up.TransactionIntegration.Linux",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.Up.TransactionIntegration.Linux\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.Up.TransactionIntegration.Linux\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "TransactionIntegration",
         "Win"
       ],
-      "blockName": "DAL",
-      "aspects": "",
       "description": "Интеграция с Windows имплементацией транзакций блока Слой доступа к данным в части Универсальной платформы (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.Up.TransactionIntegration.Win\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Dal2.Up.TransactionIntegration.Win",
       "extend": "UC",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dal2.Up.TransactionIntegration.Win\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.Up.TransactionIntegration.Win\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Dev"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Изолированная реализация сервиса DAL для тестирования (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dev.Dal2\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Dev.Dal2",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Dev.Dal2\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dev.Dal2\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Implementation"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Имплементация DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Implementation\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Implementation",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Implementation\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Implementation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Library"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Блок Слой доступа к данным (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Library\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Library",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Library\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Library\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "OracleDbProvider"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Oracle провайдер DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\OracleDbProvider\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/OracleDbProvider",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\OracleDbProvider\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\OracleDbProvider\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "OracleDbProvider",
         "Nix"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Oracle провайдер DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\OracleDbProvider.Nix\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/OracleDbProvider.Nix",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\OracleDbProvider.Nix\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\OracleDbProvider.Nix\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "PostgreSqlDbProvider"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "PostgreSql провайдер DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\PostgreSqlDbProvider\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/PostgreSqlDbProvider",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\PostgreSqlDbProvider\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\PostgreSqlDbProvider\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "SqlDbProvider"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "SQL провайдер DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\SqlDbProvider\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/SqlDbProvider",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\SqlDbProvider\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\SqlDbProvider\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Utils"
       ],
-      "blockName": "DAL",
-      "aspects": "Contract",
       "description": "Публичные вспомогательные типы для работы с DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Utilites\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Utilites",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Utilites\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Utilites\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Utils",
         "Nix"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Вспомогательные типы для работы с DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Utilites.Nix\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Source/Utilites.Nix",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Source\\\\Utilites.Nix\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\Source\\Utilites.Nix\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Tests"
       ],
-      "blockName": "DAL",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока Слой доступа к данным (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Dal2\\\\Tests\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Dal2/Tests",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Dal2\\\\Tests\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "csc",
-        "Oracle"
-      ],
-      "blockName": "BS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания Oracle сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
+      "filePath": "Abs4.0\\Source\\Dal2\\Tests\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_blob_storage.oracle\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_blob_storage.oracle\\\\",
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "blockPart": [
-        "DbScripts",
-        "csc",
-        "PostgreSql"
-      ],
-      "blockName": "BS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания PostgreSql сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_blob_storage.postgresql\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_blob_storage.postgresql\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "csc",
-        "PostgreSql"
-      ],
-      "blockName": "DFTS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания PostgreSql сущностей документарно-транзитного хранилища (Document Flow Transition Storage)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_mtr_df_ts.postgresql\\\\.block-definition.yml",
-      "extend": "MTR, DF",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_mtr_df_ts.postgresql\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "csc",
-        "PostgreSql"
-      ],
-      "blockName": "TS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания PostgreSql сущностей транзитного хранилища (Transition Storage)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_mtr_ts.postgresql\\\\.block-definition.yml",
-      "extend": "MTR",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\csc_mtr_ts.postgresql\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "tplt",
-        "Oracle"
-      ],
-      "blockName": "BS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания Oracle сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_blob_storage.oracle\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_blob_storage.oracle\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "tplt",
-        "PostgreSql"
-      ],
-      "blockName": "BS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания PostgreSql сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_blob_storage.postgresql\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_blob_storage.postgresql\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "tplt",
-        "PostgreSql"
-      ],
-      "blockName": "DFTS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания PostgreSql сущностей документарно-транзитного хранилища (Document Flow Transition Storage)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_mtr_df_ts.postgresql\\\\.block-definition.yml",
-      "extend": "MTR, DF",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_mtr_df_ts.postgresql\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [
-        "DbScripts",
-        "tplt",
-        "PostgreSql"
-      ],
-      "blockName": "TS",
-      "aspects": "DBScripts",
-      "description": "SQL-скрипты создания PostgreSql сущностей транзитного хранилища (Transition Storage)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_mtr_ts.postgresql\\\\.block-definition.yml",
-      "extend": "MTR",
-      "directory": "Abs4.0\\\\Source\\\\Database\\\\Source\\\\tplt_mtr_ts.postgresql\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
-      "blockPart": [],
-      "blockName": "MTR",
       "aspects": "",
-      "description": "Блок Многоцелевой репозиторий (Multitarget repository, MTR)",
       "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Mtr\\\\.block-definition.yml",
+      "blockName": "DAL",
+      "blockPart": [],
+      "description": "Блок Слой доступа к данным (Data Access Layer, DAL)",
+      "directory": "Abs4.0/Source/Dal2",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Mtr\\\\",
+      "filePath": "Abs4.0\\Source\\Dal2\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "BS",
+      "blockPart": [
+        "DbScripts",
+        "csc",
+        "Oracle"
+      ],
+      "description": "SQL-скрипты создания Oracle сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "directory": "Abs4.0/Source/Database/Source/csc_blob_storage.oracle",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\csc_blob_storage.oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "BS",
+      "blockPart": [
+        "DbScripts",
+        "csc",
+        "PostgreSql"
+      ],
+      "description": "SQL-скрипты создания PostgreSql сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "directory": "Abs4.0/Source/Database/Source/csc_blob_storage.postgresql",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\csc_blob_storage.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "DFTS",
+      "blockPart": [
+        "DbScripts",
+        "csc",
+        "PostgreSql"
+      ],
+      "description": "SQL-скрипты создания PostgreSql сущностей документарно-транзитного хранилища (Document Flow Transition Storage)",
+      "directory": "Abs4.0/Source/Database/Source/csc_mtr_df_ts.postgresql",
+      "extend": "MTR, DF",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\csc_mtr_df_ts.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "TS",
+      "blockPart": [
+        "DbScripts",
+        "csc",
+        "PostgreSql"
+      ],
+      "description": "SQL-скрипты создания PostgreSql сущностей транзитного хранилища (Transition Storage)",
+      "directory": "Abs4.0/Source/Database/Source/csc_mtr_ts.postgresql",
+      "extend": "MTR",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\csc_mtr_ts.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "BS",
+      "blockPart": [
+        "DbScripts",
+        "tplt",
+        "Oracle"
+      ],
+      "description": "SQL-скрипты создания Oracle сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "directory": "Abs4.0/Source/Database/Source/tplt_blob_storage.oracle",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_blob_storage.oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "BS",
+      "blockPart": [
+        "DbScripts",
+        "tplt",
+        "PostgreSql"
+      ],
+      "description": "SQL-скрипты создания PostgreSql сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "directory": "Abs4.0/Source/Database/Source/tplt_blob_storage.postgresql",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_blob_storage.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "DFTS",
+      "blockPart": [
+        "DbScripts",
+        "tplt",
+        "PostgreSql"
+      ],
+      "description": "SQL-скрипты создания PostgreSql сущностей документарно-транзитного хранилища (Document Flow Transition Storage)",
+      "directory": "Abs4.0/Source/Database/Source/tplt_mtr_df_ts.postgresql",
+      "extend": "MTR, DF",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_mtr_df_ts.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "TS",
+      "blockPart": [
+        "DbScripts",
+        "tplt",
+        "PostgreSql"
+      ],
+      "description": "SQL-скрипты создания PostgreSql сущностей транзитного хранилища (Transition Storage)",
+      "directory": "Abs4.0/Source/Database/Source/tplt_mtr_ts.postgresql",
+      "extend": "MTR",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_mtr_ts.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Integration"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Интеграция блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Mtr\\\\Mtr.Integration\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/Mtr/Mtr.Integration",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Mtr\\\\Mtr.Integration\\\\",
+      "filePath": "Abs4.0\\Source\\Mtr\\Mtr.Integration\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [],
+      "description": "Блок Многоцелевой репозиторий (Multitarget repository, MTR)",
+      "directory": "Abs4.0/Source/Mtr",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Mtr\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "",
+      "based": "",
       "blockName": "NV",
-      "aspects": "",
-      "description": null,
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Navigator\\\\Source\\\\Navigator\\\\.block-definition.yml",
+      "blockPart": [],
+      "description": "",
+      "directory": "Abs4.0/Source/Navigator/Source/Navigator",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Navigator\\\\Source\\\\Navigator\\\\",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Navigator\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "blockPart": [],
+      "aspects": "",
+      "based": "",
       "blockName": "TE",
-      "aspects": "",
-      "description": null,
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\Navigator\\\\Source\\\\Templates.Contract\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\Navigator\\\\Source\\\\Templates.Contract\\\\",
-      "scope": "/RGB/CSC/ABS"
-    },
-    {
       "blockPart": [],
-      "blockName": "RTM",
-      "aspects": "",
-      "description": "Утилита просмотра, импорта и экспорта журналов работы приложений, мониторинга в реальном времени (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\.block-definition.yml",
+      "description": "",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Contract",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Contract\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Tool"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Утилита просмотра, импорта и экспорта журналов работы приложений, мониторинга в реальном времени (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Catalog",
         "Index"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Расширение визуализации индекса каталога (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.CatalogIndex\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.CatalogIndex",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.CatalogIndex\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.CatalogIndex\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Catalog",
         "Log"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Расширение визуализации журнала индекса каталога (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.CatalogLog\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.CatalogLog",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.CatalogLog\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.CatalogLog\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Controls"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Библиотека элементов управления RTM (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Controls\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Controls",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Controls\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Controls\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Extensibility"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Библиотека элементов расширения (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Extensibility\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Extensibility",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Extensibility\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Extensibility\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Monitoring"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Расширение иониторинга (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Monitoring\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Monitoring",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Monitoring\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Monitoring\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Notifications"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Уведомления (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Notifications\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Notifications",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Notifications\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Notifications\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "PowerShell"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Расширение интеграции с PowerShell (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.PowerShell\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.PowerShell",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.PowerShell\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.PowerShell\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Profiling"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Плагин профилирования (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Profiling\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Profiling",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Profiling\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Profiling\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Resources"
       ],
-      "blockName": "RTM",
-      "aspects": "Internal",
       "description": "Ресурсы (Real time monitoring, RTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Resources\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Resources",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Source\\\\RealtimeMonitor.Resources\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Resources\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "RTM",
       "blockPart": [
         "Tests"
       ],
-      "blockName": "RTM",
-      "aspects": "Tests",
       "description": "Сценарии тестирования RTM",
-      "based": "",
-      "ignore": false,
-      "filePath": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Test\\\\.block-definition.yml",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool/Test",
       "extend": "",
-      "directory": "Abs4.0\\\\Source\\\\RealtimeMonitorTool\\\\Test\\\\",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Test\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "blockPart": [
-        "Contract"
-      ],
+      "aspects": "",
+      "based": "",
+      "blockName": "RTM",
+      "blockPart": [],
+      "description": "Утилита просмотра, импорта и экспорта журналов работы приложений, мониторинга в реальном времени (Real time monitoring, RTM)",
+      "directory": "Abs4.0/Source/RealtimeMonitorTool",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Прикладные блоки КПИ - выпуск 4.0 (Application Blocks, ABS)",
+      "directory": "Abs4.0",
+      "extend": "",
+      "filePath": "Abs4.0\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
       "blockName": "CS",
-      "aspects": "Contract",
-      "description": "Контракты блока сервиса работы с кэшем (Cache Service, CS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\Cache\\\\.block-definition.yml",
-      "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\Cache\\\\",
-      "scope": "/RGB/CSC/Core"
-    },
-    {
       "blockPart": [
         "Contract"
       ],
-      "blockName": "LC",
-      "aspects": "Contract",
-      "description": "Контракты блока Логический Каталог (Logical Catalog, LC)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\Catalog\\\\.block-definition.yml",
+      "description": "Контракты блока сервиса работы с кэшем (Cache Service, CS)",
+      "directory": "Core/CorLib/CorLib/Cache",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\Catalog\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\Cache\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "LC",
+      "blockPart": [
+        "Contract"
+      ],
+      "description": "Контракты блока Логический Каталог (Logical Catalog, LC)",
+      "directory": "Core/CorLib/CorLib/Catalog",
+      "extend": "UC",
+      "filePath": "Core\\CorLib\\CorLib\\Catalog\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "LC",
       "blockPart": [
         "Contract",
         "CatalogAddress"
       ],
-      "blockName": "LC",
-      "aspects": "Contract",
       "description": "Контракты блока Логический Каталог (Logical Catalog, LC)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\CatalogAddress\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib/CatalogAddress",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\CatalogAddress\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\CatalogAddress\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "DAL",
-      "aspects": "Contract",
       "description": "Контракты блока DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\Dal2\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib/Dal2",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\Dal2\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\Dal2\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
-      "blockPart": [],
-      "blockName": "DU",
       "aspects": "Contract",
-      "description": "Инфраструктура микроинтеграции по данным между задачами и ПП (Data Unit, DU)",
       "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\GenericPlatform\\\\EntitiesInfrastructure\\\\DataUnits\\\\.block-definition.yml",
+      "blockName": "DU",
+      "blockPart": [],
+      "description": "Инфраструктура микроинтеграции по данным между задачами и ПП (Data Unit, DU)",
+      "directory": "Core/CorLib/CorLib/GenericPlatform/EntitiesInfrastructure/DataUnits",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\GenericPlatform\\\\EntitiesInfrastructure\\\\DataUnits\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\GenericPlatform\\EntitiesInfrastructure\\DataUnits\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Инфраструктура сущностей (EntitiesInfrastructure)",
+      "directory": "Core/CorLib/CorLib/GenericPlatform/EntitiesInfrastructure",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib\\GenericPlatform\\EntitiesInfrastructure\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Обобщенная часть платформы (Generic Platform)",
+      "directory": "Core/CorLib/CorLib/GenericPlatform",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib\\GenericPlatform\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core/GenericPlatform"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Contract",
       "description": "Контракты блока Инструментирование (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\Instrumentation\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib/Instrumentation",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\Instrumentation\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\Instrumentation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Contract",
         "Rtm"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Внутренние контракты блока Инструментирование (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\RealtimeMonitoring\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib/RealtimeMonitoring",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\RealtimeMonitoring\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\RealtimeMonitoring\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "RG",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "RG",
-      "aspects": "Contract",
       "description": "Контракты генератора печатных форм (Report Generator, RG)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\ReportGenerator\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib/ReportGenerator",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\ReportGenerator\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\ReportGenerator\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Transaction"
       ],
-      "blockName": "DAL",
-      "aspects": "Contract",
       "description": "Часть контрактов транзакций блока DAL (Data Access Layer, DAL) TODO уточнить",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib\\\\Transaction\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib/Transaction",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib\\\\Transaction\\\\",
+      "filePath": "Core\\CorLib\\CorLib\\Transaction\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
-      "blockPart": [
-        "Bundle"
-      ],
+      "aspects": "Internal",
+      "based": "",
       "blockName": "CS",
-      "aspects": "Internal",
+      "blockPart": [
+        "Bundle"
+      ],
       "description": "Контракты блока Логический Каталог (Cache Service, CS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Cache\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/Cache",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Cache\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\Cache\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "LC",
       "blockPart": [
         "Bundle"
       ],
-      "blockName": "LC",
-      "aspects": "Internal",
       "description": "Внутренняя часть блока Логический Каталог (Logical Catalog, LC)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Catalog2\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/Catalog2",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Catalog2\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\Catalog2\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Bundle"
       ],
-      "blockName": "DAL",
-      "aspects": "Internal",
       "description": "Внутренняя часть блока DAL (Data Access Layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Dal2\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/Dal2",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Dal2\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\Dal2\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
-      "blockPart": [],
+      "aspects": "Internal",
+      "based": "",
       "blockName": "LC",
-      "aspects": "Internal",
-      "description": "Внутренние контракты блока Логический Каталог в части Обобщенной платформы (Logical Catalog, LC)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\GenericPlatform\\\\Catalog\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\GenericPlatform\\\\Catalog\\\\",
-      "scope": "/RGB/CSC/Core/GenericPlatform"
-    },
-    {
       "blockPart": [],
-      "blockName": "SM",
-      "aspects": "Internal",
-      "description": "Стратегия блока учета и управления сессиями в части обобщенной платформы (Session manager, SM)",
-      "based": "",
+      "description": "Внутренние контракты блока Логический Каталог в части Обобщенной платформы (Logical Catalog, LC)",
+      "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform/Catalog",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\Catalog\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\GenericPlatform\\\\SessionManager\\\\.block-definition.yml",
-      "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\GenericPlatform\\\\SessionManager\\\\",
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "SM",
+      "blockPart": [],
+      "description": "Стратегия блока учета и управления сессиями в части обобщенной платформы (Session manager, SM)",
+      "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform/SessionManager",
+      "extend": "UC",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\SessionManager\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core/GenericPlatform"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "LC",
       "blockPart": [
         "UpIntegration"
       ],
-      "blockName": "LC",
-      "aspects": "Internal",
       "description": "Интеграция блока Логический Каталог с частью Универсальной платформы (Logical Catalog, LC)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\GenericPlatform\\\\UniversalPlatformIntegration\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform/UniversalPlatformIntegration",
       "extend": "",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\GenericPlatform\\\\UniversalPlatformIntegration\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\UniversalPlatformIntegration\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Обобщенная часть платформы (Generic Platform)",
+      "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core/GenericPlatform"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Bundle"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Внутренняя часть блока Инструментирование (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Instrumentation\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/Instrumentation",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\Instrumentation\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\Instrumentation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Bundle",
         "Rtm"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Внутренняя часть блока Инструментирование (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\RealtimeMonitoring\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/RealtimeMonitoring",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\RealtimeMonitoring\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\RealtimeMonitoring\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RG",
       "blockPart": [
         "Bundle"
       ],
-      "blockName": "RG",
-      "aspects": "Internal",
       "description": "Внутренняя часть Генератора печатных форм (Report Generator, RG)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.Bundle\\\\ReportGenerator\\\\.block-definition.yml",
+      "directory": "Core/CorLib/CorLib.Bundle/ReportGenerator",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.Bundle\\\\ReportGenerator\\\\",
+      "filePath": "Core\\CorLib\\CorLib.Bundle\\ReportGenerator\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
-      "blockPart": [],
-      "blockName": "SM",
       "aspects": "Internal",
-      "description": "Блок учета и управления сессиями в части основой платформы (Session manager, SM)",
       "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\CorLib.SessionManager\\\\.block-definition.yml",
+      "blockName": "SM",
+      "blockPart": [],
+      "description": "Блок учета и управления сессиями в части основой платформы (Session manager, SM)",
+      "directory": "Core/CorLib/CorLib.SessionManager",
       "extend": "UC",
-      "directory": "Core\\\\CorLib\\\\CorLib.SessionManager\\\\",
+      "filePath": "Core\\CorLib\\CorLib.SessionManager\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Dpp",
       "blockPart": [
         "Integration"
       ],
-      "blockName": "Dpp",
-      "aspects": "Internal",
       "description": "Интеграция Распределенной платформы обработки в Core (Distributed Processing Platform, Dpp)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Core\\\\CorLib\\\\Dpp.Integration\\\\.block-definition.yml",
+      "directory": "Core/CorLib/Dpp.Integration",
       "extend": "",
-      "directory": "Core\\\\CorLib\\\\Dpp.Integration\\\\",
+      "filePath": "Core\\CorLib\\Dpp.Integration\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
     {
-      "blockPart": [],
-      "blockName": "PF",
       "aspects": "",
-      "description": "Группа блоков ИИБП (Process Flow, PF)",
       "based": "",
-      "ignore": false,
-      "filePath": "Pf\\\\.block-definition.yml",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Основная часть платформы (Common System Components, CSC)",
+      "directory": "Core",
       "extend": "",
-      "directory": "Pf\\\\",
-      "scope": "/RGB/CSC"
+      "filePath": "Core\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DF",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "DF",
-      "aspects": "Contract",
       "description": "Контракты Документооборота",
-      "based": "",
-      "ignore": false,
-      "filePath": "Pf\\\\Source\\\\ProcessFlow\\\\Source\\\\DocumentFlow.Contract\\\\.block-definition.yml",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract",
       "extend": "",
-      "directory": "Pf\\\\Source\\\\ProcessFlow\\\\Source\\\\DocumentFlow.Contract\\\\",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/CSC"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": "PF",
+      "blockPart": [],
+      "description": "Группа блоков ИИБП (Process Flow, PF)",
+      "directory": "Pf",
+      "extend": "",
+      "filePath": "Pf\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RaftCluster",
       "blockPart": [
         "Agent"
       ],
-      "blockName": "RaftCluster",
-      "aspects": "Internal",
       "description": "Агент блока организации Raft-кластера",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Cluster.Agent\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Cluster.Agent",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Cluster.Agent\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Cluster.Agent\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RaftCluster",
       "blockPart": [
         "Agent",
         "Contract"
       ],
-      "blockName": "RaftCluster",
-      "aspects": "Internal",
       "description": "Контракт взаимодействия с кластерным агентом",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Cluster.Agent.Contract\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Cluster.Agent.Contract",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Cluster.Agent.Contract\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Cluster.Agent.Contract\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "SwimCluster",
       "blockPart": [
         "Implementation"
       ],
-      "blockName": "SwimCluster",
-      "aspects": "Internal",
       "description": "Блок организации Mount Infection-Style Protocol кластера (Swim)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Cluster.Swim\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Cluster.Swim",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Cluster.Swim\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Cluster.Swim\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "SwimCluster",
       "blockPart": [
         "Hub"
       ],
-      "blockName": "SwimCluster",
-      "aspects": "Internal",
       "description": "Mount пакет блока организации Mount Infection-Style Protocol кластера (Swim)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Cluster.SwimHub\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Cluster.SwimHub",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Cluster.SwimHub\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Cluster.SwimHub\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "RingCluster",
       "blockPart": [
         "Core"
       ],
-      "blockName": "RingCluster",
-      "aspects": "Contract",
       "description": "Библиотека контрактов блока организации кольцевого кластера (Ring Cluster)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\RingCluster.Core\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/RingCluster.Core",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\RingCluster.Core\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\RingCluster.Core\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "RingCluster",
       "blockPart": [
         "WebExtensions"
       ],
-      "blockName": "RingCluster",
-      "aspects": "Contract",
       "description": "Библиотека интеграции кольцевого кластера в asp.net core (Ring Cluster)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\RingCluster.WebExtensions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/RingCluster.WebExtensions",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\RingCluster.WebExtensions\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\RingCluster.WebExtensions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "SwimCluster",
       "blockPart": [
         "Tests"
       ],
-      "blockName": "SwimCluster",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока SWIM-кластер",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Tests\\\\Cluster.Swim.TestConsole\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Tests/Cluster.Swim.TestConsole",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Tests\\\\Cluster.Swim.TestConsole\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Tests\\Cluster.Swim.TestConsole\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "SwimCluster",
       "blockPart": [
         "Tests",
         "Transport"
       ],
-      "blockName": "SwimCluster",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока SWIM-кластер",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Tests\\\\Cluster.Swim.Transport.Test\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Tests/Cluster.Swim.Transport.Test",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Tests\\\\Cluster.Swim.Transport.Test\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Tests\\Cluster.Swim.Transport.Test\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "SwimCluster",
       "blockPart": [
         "Tests",
         "Host"
       ],
-      "blockName": "SwimCluster",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока SWIM-кластер",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster\\\\Tests\\\\Swim.Host.TestConsole\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster/Tests/Swim.Host.TestConsole",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster\\\\Tests\\\\Swim.Host.TestConsole\\\\",
+      "filePath": "Up\\Blocks\\Cluster\\Tests\\Swim.Host.TestConsole\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Блоки организации кластеров",
+      "directory": "Up/Blocks/Cluster",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Cluster\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Cluster"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "RaftCluster",
       "blockPart": [
         "Agent",
         "Tests"
       ],
-      "blockName": "RaftCluster",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока организации Raft-кластера",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Cluster.Agent.Tests\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Cluster.Agent.Tests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Cluster.Agent.Tests\\\\",
+      "filePath": "Up\\Blocks\\Cluster.Agent.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
     {
-      "blockPart": [],
-      "blockName": "LC",
       "aspects": "Contract",
+      "based": "",
+      "blockName": "LC",
+      "blockPart": [],
       "description": "Контракты блока логический каталог в части Универсальной платформы (Logical Catalog, LC)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\CorLib\\\\CommonComponents.Catalog.Units\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/CorLib/CommonComponents.Catalog.Units",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Core\\\\CorLib\\\\CommonComponents.Catalog.Units\\\\",
+      "filePath": "Up\\Blocks\\Core\\CorLib\\CommonComponents.Catalog.Units\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
       "blockPart": [],
+      "description": "Обобщенная часть платформы (Generic Platform)",
+      "directory": "Up/Blocks/Core/CorLib/CommonComponents.GenericPlatform",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Core\\CorLib\\CommonComponents.GenericPlatform\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core/GenericPlatform"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
       "blockName": "Instrumentation",
-      "aspects": "Internal",
-      "description": "Блок Инструментирование (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\CorLib\\\\CommonComponents.Instrumentation\\\\.block-definition.yml",
-      "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Core\\\\CorLib\\\\CommonComponents.Instrumentation\\\\",
-      "scope": "/RGB/UP/Core"
-    },
-    {
       "blockPart": [],
-      "blockName": "ENV",
-      "aspects": "Internal",
-      "description": "Блок подготовки сред исполнения (Composite Environment, ENV)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\CorLib.Internal\\\\UniversalServices\\\\.block-definition.yml",
+      "description": "Блок Инструментирование (Instrumentation)",
+      "directory": "Up/Blocks/Core/CorLib/CommonComponents.Instrumentation",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Core\\\\CorLib.Internal\\\\UniversalServices\\\\",
+      "filePath": "Up\\Blocks\\Core\\CorLib\\CommonComponents.Instrumentation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "ENV",
+      "blockPart": [],
+      "description": "Блок подготовки сред исполнения (Composite Environment, ENV)",
+      "directory": "Up/Blocks/Core/CorLib.Internal/UniversalServices",
+      "extend": "UC",
+      "filePath": "Up\\Blocks\\Core\\CorLib.Internal\\UniversalServices\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "DAL",
-      "aspects": "Contract",
       "description": "Контракты блока слой доступа к данным (Data access layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Contract\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Dal.Transaction.Contract",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Contract\\\\",
-      "scope": "/RGB/UP/Core"
-    },
-    {
-      "blockPart": [
-        "Linux"
-      ],
-      "blockName": "DAL",
-      "aspects": "Internal",
-      "description": "Блок слоя доступа к данным Linux имплементация транзакций (Data access layer, DAL)",
-      "based": "",
+      "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Contract\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux\\\\",
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DTM",
       "blockPart": [
         "Implementation"
       ],
-      "blockName": "DTM",
-      "aspects": "Internal",
       "description": "Имплементация блока Управление незавершенными распределенными транзакциями (DTM, Distributed Transaction Manager)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux\\\\Dtm\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Dal.Transaction.Linux/Dtm",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux\\\\Dtm\\\\",
+      "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux\\Dtm\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DTM",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "DTM",
-      "aspects": "Internal",
       "description": "Управление незавершенными распределенными транзакциями (DTM, Distributed Transaction Manager)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux\\\\Interface\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Dal.Transaction.Linux/Interface",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux\\\\Interface\\\\",
+      "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux\\Interface\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DAL",
+      "blockPart": [
+        "Linux"
+      ],
+      "description": "Блок слоя доступа к данным Linux имплементация транзакций (Data access layer, DAL)",
+      "directory": "Up/Blocks/Core/Dal.Transaction.Linux",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": "DTM",
       "blockPart": [
         "Rest"
       ],
-      "blockName": "DTM",
-      "aspects": "",
       "description": "Веб интерфейс для администрирования DTM (Distributed Transaction Manager, DTM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux.Rest\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Dal.Transaction.Linux.Rest",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Linux.Rest\\\\",
+      "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux.Rest\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Win"
       ],
-      "blockName": "DAL",
-      "aspects": "Contract",
       "description": "Блок слоя доступа к данным Windows имплементация транзакций (Data access layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Win\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Dal.Transaction.Win",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Dal.Transaction.Win\\\\",
-      "scope": "/RGB/UP/Core"
-    },
-    {
-      "blockPart": [],
-      "blockName": "MTR",
-      "aspects": "Internal",
-      "description": "Multitarget repository",
-      "based": "",
+      "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Win\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\",
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Tests"
       ],
-      "blockName": "MTR",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\Tests\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/Tests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\Tests\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
-      "blockPart": [
-        "Abstractions"
-      ],
+      "aspects": "Contract",
+      "based": "",
       "blockName": "MTR",
-      "aspects": "Contract",
-      "description": "Общие абстракции блока MTR (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Abstractions\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Abstractions\\\\",
-      "scope": "/RGB/UP/Core"
-    },
-    {
       "blockPart": [
         "Abstractions"
       ],
-      "blockName": "DFTS",
-      "aspects": "Contract",
-      "description": "Общие абстракции документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
-      "based": "",
+      "description": "Общие абстракции блока MTR (Multitarget repository, MTR)",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Abstractions",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Abstractions\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Df.Abstractions\\\\.block-definition.yml",
-      "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Df.Abstractions\\\\",
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DFTS",
+      "blockPart": [
+        "Abstractions"
+      ],
+      "description": "Общие абстракции документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Df.Abstractions",
+      "extend": "MTR",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Df.Abstractions\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DFTS",
       "blockPart": [
         "Extensions"
       ],
-      "blockName": "DFTS",
-      "aspects": "Contract",
       "description": "Контракты команд документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Df.Extensions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Df.Extensions",
       "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Df.Extensions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Df.Extensions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DFTS",
       "blockPart": [
         "Plugin"
       ],
-      "blockName": "DFTS",
-      "aspects": "Internal",
       "description": "Имплементация команд документрано-транзитного хранилища (Document Flow Transition Storage, DFTS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Df.Plugin\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Df.Plugin",
       "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Df.Plugin\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Df.Plugin\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Extensions"
       ],
-      "blockName": "MTR",
-      "aspects": "Contract",
       "description": "Расширения для сервиса MTR (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Extensions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Extensions",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Extensions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Extensions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Grpc",
         "Contracts"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Внутренние Protobuf контракты блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Contracts\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Contracts",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Contracts\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Contracts\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Grpc",
         "Provider"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Клиентская имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Provider\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Provider",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Provider\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Provider\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Grpc",
         "Publisher"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Серверная имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Publisher\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Publisher",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Publisher\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Publisher\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Grpc",
         "Shared"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Общая часть имплементации коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Shared\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Shared",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Grpc.Shared\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Shared\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Implementation"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Имплементация блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Implementation\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Implementation",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Implementation\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Implementation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Plugin",
         "Abstractions"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Внутренние абстракции блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Plugin.Abstractions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Plugin.Abstractions",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Plugin.Abstractions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Plugin.Abstractions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Publisher",
         "Abstractions"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Внутренние контракты коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Abstractions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Abstractions",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Abstractions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Abstractions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Publisher",
         "Extensions"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Внутренние контракты-расширения коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Extensions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Extensions",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Extensions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Extensions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Publisher",
         "Hosting",
         "Kestrel"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Hosting.Kestrel\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Hosting.Kestrel",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Hosting.Kestrel\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Hosting.Kestrel\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Publisher",
         "Hosting",
         "UpKestrel"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Hosting.UpKestrel\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Hosting.UpKestrel",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Hosting.UpKestrel\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Hosting.UpKestrel\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
       "blockPart": [
         "Publisher",
         "Implementation"
       ],
-      "blockName": "MTR",
-      "aspects": "Internal",
       "description": "Имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Implementation\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Implementation",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Publisher.Implementation\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Implementation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TS",
       "blockPart": [
         "Abstractions"
       ],
-      "blockName": "TS",
-      "aspects": "Contract",
       "description": "Общие контракты блока Транзитное хранилище (Transition Storage, TS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Abstractions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Abstractions",
       "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Abstractions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Abstractions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TS",
       "blockPart": [
         "Extensions"
       ],
-      "blockName": "TS",
-      "aspects": "Contract",
       "description": "Расширения-контракты команд блока Транзитное хранилище (Transition Storage, TS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Extensions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Extensions",
       "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Extensions\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Extensions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TS",
       "blockPart": [
         "Plugin"
       ],
-      "blockName": "TS",
-      "aspects": "Internal",
       "description": "Модуль блока Транзитное хранилище (Transition Storage, TS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Plugin\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Plugin",
       "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Plugin\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Plugin\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TS",
       "blockPart": [
         "Shared"
       ],
-      "blockName": "TS",
-      "aspects": "Internal",
       "description": "Имплементация команд блока Транзитное хранилище (Transition Storage, TS)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Shared\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Shared",
       "extend": "MTR",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Mtr\\\\UniversalPlatform.Mtr.Ts.Shared\\\\",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Shared\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "MTR",
+      "blockPart": [],
+      "description": "Multitarget repository",
+      "directory": "Up/Blocks/Core/Mtr",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Core\\Mtr\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "ENV",
       "blockPart": [
         "ConsoleTests"
       ],
-      "blockName": "ENV",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока подготовки сред исполнения (Composite Environment, ENV)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Tests\\\\EnviConsoleTest\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Tests/EnviConsoleTest",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Tests\\\\EnviConsoleTest\\\\",
+      "filePath": "Up\\Blocks\\Core\\Tests\\EnviConsoleTest\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "ENV",
       "blockPart": [
         "Benchmarks"
       ],
-      "blockName": "ENV",
-      "aspects": "Tests",
       "description": "Бенчмарки блока подготовки сред исполнения (Composite Environment, ENV)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Tests\\\\EnviTests\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Tests/EnviTests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Tests\\\\EnviTests\\\\",
+      "filePath": "Up\\Blocks\\Core\\Tests\\EnviTests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
-      "blockPart": [
-        "Tests"
-      ],
+      "aspects": "Tests",
+      "based": "",
       "blockName": "TB",
-      "aspects": "Tests",
-      "description": "Сценарии тестирования ТХ1 (Transition Blob, TB, ТХ1)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Tests\\\\TransitionBlob.Tests\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Tests\\\\TransitionBlob.Tests\\\\",
-      "scope": "/RGB/UP/Core"
-    },
-    {
       "blockPart": [
         "Tests"
       ],
-      "blockName": "ENV",
-      "aspects": "Tests",
-      "description": "Сценарии тестирования блока подготовки сред исполнения (Composite Environment, ENV)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Tests\\\\UniversalPlatform.CorLib.Internal.Tests\\\\.block-definition.yml",
+      "description": "Сценарии тестирования ТХ1 (Transition Blob, TB, ТХ1)",
+      "directory": "Up/Blocks/Core/Tests/TransitionBlob.Tests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Tests\\\\UniversalPlatform.CorLib.Internal.Tests\\\\",
+      "filePath": "Up\\Blocks\\Core\\Tests\\TransitionBlob.Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "ENV",
+      "blockPart": [
+        "Tests"
+      ],
+      "description": "Сценарии тестирования блока подготовки сред исполнения (Composite Environment, ENV)",
+      "directory": "Up/Blocks/Core/Tests/UniversalPlatform.CorLib.Internal.Tests",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Core\\Tests\\UniversalPlatform.CorLib.Internal.Tests\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "DAL",
       "blockPart": [
         "Win",
         "Tests"
       ],
-      "blockName": "DAL",
-      "aspects": "Tests",
       "description": "Сценарии тестирования Windows имплементации транзакций блока слой доступа к данным (Data access layer, DAL)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\Tests\\\\UniversalPlatform.Dal.Transaction.Test\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/Tests/UniversalPlatform.Dal.Transaction.Test",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\Tests\\\\UniversalPlatform.Dal.Transaction.Test\\\\",
+      "filePath": "Up\\Blocks\\Core\\Tests\\UniversalPlatform.Dal.Transaction.Test\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
-      "blockPart": [],
-      "blockName": "TB",
       "aspects": "Contract",
-      "description": "Имплементация и публичные расширения блока Транзитное хранилище первого рода (Transition Blob, TB, ТХ1)",
       "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\TransitionBlob\\\\.block-definition.yml",
+      "blockName": "TB",
+      "blockPart": [],
+      "description": "Имплементация и публичные расширения блока Транзитное хранилище первого рода (Transition Blob, TB, ТХ1)",
+      "directory": "Up/Blocks/Core/TransitionBlob",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\TransitionBlob\\\\",
+      "filePath": "Up\\Blocks\\Core\\TransitionBlob\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TB",
       "blockPart": [
         "Integration"
       ],
-      "blockName": "TB",
-      "aspects": "Contract",
       "description": "Библиотека интеграции ТХ1 (Transition Blob, TB)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Core\\\\TransitionBlob.Integration\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Core/TransitionBlob.Integration",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Core\\\\TransitionBlob.Integration\\\\",
+      "filePath": "Up\\Blocks\\Core\\TransitionBlob.Integration\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP/Core"
     },
     {
-      "blockPart": [],
-      "blockName": "Dpp",
       "aspects": "",
-      "description": "Распределенная платформа обработки (Distributed Processing Platform, Dpp)",
       "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\.block-definition.yml",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Основная часть Универсальная платформы (Core)",
+      "directory": "Up/Blocks/Core",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\",
-      "scope": "/RGB/UP"
+      "filePath": "Up\\Blocks\\Core\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP/Core"
     },
     {
-      "blockPart": [
-        "Contracts"
-      ],
-      "blockName": "Dpp",
       "aspects": "Contract",
-      "description": "Контракты распределенной платформы обработки (Distributed Processing Platform, Dpp)",
       "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Contracts\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Contracts\\\\",
-      "scope": "/RGB/UP"
-    },
-    {
-      "blockPart": [
-        "Contracts"
-      ],
       "blockName": "LJE",
-      "aspects": "Contract",
+      "blockPart": [
+        "Contracts"
+      ],
       "description": "Контракты блока компонентов облегченных автоматических заданий распределенной платформы обработки (Light Job Engine, LJE)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Contracts\\\\Job\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Dpp/Dpp.Contracts/Job",
       "extend": "Dpp",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Contracts\\\\Job\\\\",
+      "filePath": "Up\\Blocks\\Dpp\\Dpp.Contracts\\Job\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Dpp",
+      "blockPart": [
+        "Contracts"
+      ],
+      "description": "Контракты распределенной платформы обработки (Distributed Processing Platform, Dpp)",
+      "directory": "Up/Blocks/Dpp/Dpp.Contracts",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Dpp\\Dpp.Contracts\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "RaftCluster",
       "blockPart": [
         "DppIntegration"
       ],
-      "blockName": "RaftCluster",
-      "aspects": "Internal",
       "description": "Интеграция Raft-кластера в платформу распределенной обработки",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Integration.Cluster\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Dpp/Dpp.Integration.Cluster",
       "extend": "Dpp",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Integration.Cluster\\\\",
-      "scope": "/RGB/UP"
-    },
-    {
-      "blockPart": [
-        "Bundle"
-      ],
-      "blockName": "Dpp",
-      "aspects": "Internal",
-      "description": "Внутренняя часть распределенной платформы обработки (Distributed Processing Platform, Dpp)",
-      "based": "",
+      "filePath": "Up\\Blocks\\Dpp\\Dpp.Integration.Cluster\\.block-definition.yml",
       "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Server.Bundle\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Server.Bundle\\\\",
       "scope": "/RGB/UP"
     },
     {
-      "blockPart": [
-        "Bundle"
-      ],
+      "aspects": "Internal",
+      "based": "",
       "blockName": "LJE",
-      "aspects": "Internal",
+      "blockPart": [
+        "Bundle"
+      ],
       "description": "Внутренняя часть блока компонентов автоматических заданий распределенной платформы обработки (Light Job Engine, LJE)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Server.Bundle\\\\Jobs\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Dpp/Dpp.Server.Bundle/Jobs",
       "extend": "Dpp",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Server.Bundle\\\\Jobs\\\\",
+      "filePath": "Up\\Blocks\\Dpp\\Dpp.Server.Bundle\\Jobs\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Dpp",
+      "blockPart": [
+        "Bundle"
+      ],
+      "description": "Внутренняя часть распределенной платформы обработки (Distributed Processing Platform, Dpp)",
+      "directory": "Up/Blocks/Dpp/Dpp.Server.Bundle",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Dpp\\Dpp.Server.Bundle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Dpp",
       "blockPart": [
         "Shared"
       ],
-      "blockName": "Dpp",
-      "aspects": "Internal",
       "description": "Общие типы распределенной платформы обработки (Distributed Processing Platform, Dpp)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Server.Shared\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Dpp/Dpp.Server.Shared",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Dpp.Server.Shared\\\\",
+      "filePath": "Up\\Blocks\\Dpp\\Dpp.Server.Shared\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "Dpp",
       "blockPart": [
         "Tests"
       ],
-      "blockName": "Dpp",
-      "aspects": "Tests",
       "description": "Сценарии тестирования распределенной платформы обработки (Distributed Processing Platform, Dpp)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Dpp\\\\Tests\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Dpp/Tests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Dpp\\\\Tests\\\\",
+      "filePath": "Up\\Blocks\\Dpp\\Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
-      "blockPart": [],
-      "blockName": "Instrumentation",
       "aspects": "",
-      "description": "Сервис предоставляющий единый механизм фиксации различных событий, диагностической информации, счётчиков производительности в ходе выполнения программного кода (Instrumentation)",
       "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\",
-      "scope": "/RGB/UP"
-    },
-    {
+      "blockName": "Dpp",
       "blockPart": [],
-      "blockName": "CM",
-      "aspects": "Internal",
-      "description": "Служебный пакет, позволяющий передавать мониторинговую информацию на сервер ServerGrc.Mrc (Capturing monitor, CM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\CapturingMonitor\\\\.block-definition.yml",
+      "description": "Распределенная платформа обработки (Distributed Processing Platform, Dpp)",
+      "directory": "Up/Blocks/Dpp",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\CapturingMonitor\\\\",
+      "filePath": "Up\\Blocks\\Dpp\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CM",
+      "blockPart": [],
+      "description": "Служебный пакет, позволяющий передавать мониторинговую информацию на сервер ServerGrc.Mrc (Capturing monitor, CM)",
+      "directory": "Up/Blocks/Instrumentation/CapturingMonitor",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Instrumentation\\CapturingMonitor\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CM",
       "blockPart": [
         "Legacy"
       ],
-      "blockName": "CM",
-      "aspects": "Internal",
       "description": "Библиотека поддержки записи логов в формате RTM",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\CapturingMonitor.Legacy\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/CapturingMonitor.Legacy",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\CapturingMonitor.Legacy\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\CapturingMonitor.Legacy\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CM",
       "blockPart": [
         "Library"
       ],
-      "blockName": "CM",
-      "aspects": "Internal",
       "description": "Библиотека для работы с сообщениями инструментирования, сбора статистических данных и распределения конфигурации",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\CapturingMonitor.Library\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/CapturingMonitor.Library",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\CapturingMonitor.Library\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\CapturingMonitor.Library\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Extensions"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Contract",
       "description": "Провайдер логгирования для сервисных коллекций Microsoft",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\Extensions.Logging\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/Extensions.Logging",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\Extensions.Logging\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\Extensions.Logging\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Contract"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Contract",
       "description": "Контракты блока Инструментирования (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\Instrumentation\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/Instrumentation",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\Instrumentation\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\Instrumentation\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Log",
         "Analyzer"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "API управления журналами, источниками, анализом данных",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\LogAnalyzer\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/LogAnalyzer",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\LogAnalyzer\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\LogAnalyzer\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Log",
         "Formatter"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Contract",
       "description": "Библиотека для записи лог-файлов",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\LogFormatter\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/LogFormatter",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\LogFormatter\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\LogFormatter\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Log",
         "Processing"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Contract",
       "description": "Библиотека для записи лог-файлов",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\LogProcessing\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/LogProcessing",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\LogProcessing\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\LogProcessing\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Log",
         "Store"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Contract",
       "description": "Библиотека реализаций провайдеров хранилищ логов",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\LogStore\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/LogStore",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\LogStore\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\LogStore\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Log",
         "Viewer"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Утилита анализа логов",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\LogViewer\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/LogViewer",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\LogViewer\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\LogViewer\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Log",
         "ViewerElectron"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Утилита анализа логов в Electron",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\LogViewerElectron\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/LogViewerElectron",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\LogViewerElectron\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\LogViewerElectron\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Monitoring",
         "Abstractions"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Библиотека абстракций мониторинга",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\Monitoring.Abstractions\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/Monitoring.Abstractions",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\Monitoring.Abstractions\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\Monitoring.Abstractions\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "Instrumentation",
       "blockPart": [
         "Profile"
       ],
-      "blockName": "Instrumentation",
-      "aspects": "Internal",
       "description": "Библиотека профилирования. TODO Пересмотреть, изучить глубже",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\Profile\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Instrumentation/Profile",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\Profile\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\Profile\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
-      "blockPart": [
-        "Tests"
-      ],
+      "aspects": "Tests",
+      "based": "",
       "blockName": "Instrumentation",
-      "aspects": "Tests",
-      "description": "Сценарии тестирования блока Инструментирования (Instrumentation)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Instrumentation\\\\Tests\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Instrumentation\\\\Tests\\\\",
-      "scope": "/RGB/UP"
-    },
-    {
-      "blockPart": [],
-      "blockName": "CoralMount",
-      "aspects": "",
-      "description": "Блок композитный сервис (Coral.Mount)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Mount\\\\.block-definition.yml",
-      "extend": "",
-      "directory": "Up\\\\Blocks\\\\Mount\\\\",
-      "scope": "/RGB/UP"
-    },
-    {
       "blockPart": [
         "Tests"
       ],
-      "blockName": "CoralMount",
-      "aspects": "Tests",
-      "description": "Сценарии тестирования композитного сервиса (Coral.Mount)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Mount\\\\Tests\\\\.block-definition.yml",
+      "description": "Сценарии тестирования блока Инструментирования (Instrumentation)",
+      "directory": "Up/Blocks/Instrumentation/Tests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Mount\\\\Tests\\\\",
+      "filePath": "Up\\Blocks\\Instrumentation\\Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "",
+      "based": "",
+      "blockName": "Instrumentation",
+      "blockPart": [],
+      "description": "Сервис предоставляющий единый механизм фиксации различных событий, диагностической информации, счётчиков производительности в ходе выполнения программного кода (Instrumentation)",
+      "directory": "Up/Blocks/Instrumentation",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Instrumentation\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "CoralMount",
+      "blockPart": [
+        "Tests"
+      ],
+      "description": "Сценарии тестирования композитного сервиса (Coral.Mount)",
+      "directory": "Up/Blocks/Mount/Tests",
+      "extend": "",
+      "filePath": "Up\\Blocks\\Mount\\Tests\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CoralMount",
       "blockPart": [
         "Mount"
       ],
-      "blockName": "CoralMount",
-      "aspects": "Internal",
       "description": "Кроссплатформенный загрузочный модуль композитного сервиса (Coral.Mount)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Mount\\\\UniversalPlatform.Mount\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Mount/UniversalPlatform.Mount",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Mount\\\\UniversalPlatform.Mount\\\\",
+      "filePath": "Up\\Blocks\\Mount\\UniversalPlatform.Mount\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CoralMount",
       "blockPart": [
         "Mount",
         "PackageManager"
       ],
-      "blockName": "CoralMount",
-      "aspects": "Internal",
       "description": "Пакетный менеджер блока композитный сервис (Coral.Mount)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\Mount\\\\UniversalPlatform.Mount.PackageManager\\\\.block-definition.yml",
+      "directory": "Up/Blocks/Mount/UniversalPlatform.Mount.PackageManager",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\Mount\\\\UniversalPlatform.Mount.PackageManager\\\\",
+      "filePath": "Up\\Blocks\\Mount\\UniversalPlatform.Mount.PackageManager\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
-      "blockPart": [],
-      "blockName": "SM",
       "aspects": "",
-      "description": "Блок учета и управления сессиями (Session manager, SM)",
       "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\SessionManager\\\\.block-definition.yml",
+      "blockName": "CoralMount",
+      "blockPart": [],
+      "description": "Блок композитный сервис (Coral.Mount)",
+      "directory": "Up/Blocks/Mount",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\SessionManager\\\\",
+      "filePath": "Up\\Blocks\\Mount\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "SM",
       "blockPart": [
         "Server"
       ],
-      "blockName": "SM",
-      "aspects": "Internal",
       "description": "Сервер сессий, Mount пакет блока учета и управления сессиями (Session manager, SM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\SessionManager\\\\SessionManager\\\\.block-definition.yml",
+      "directory": "Up/Blocks/SessionManager/SessionManager",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\SessionManager\\\\SessionManager\\\\",
+      "filePath": "Up\\Blocks\\SessionManager\\SessionManager\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "SM",
       "blockPart": [
         "Client"
       ],
-      "blockName": "SM",
-      "aspects": "Contract",
       "description": "Клиент сервера сессий",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\SessionManager\\\\SessionManager.Client\\\\.block-definition.yml",
+      "directory": "Up/Blocks/SessionManager/SessionManager.Client",
       "extend": "UC",
-      "directory": "Up\\\\Blocks\\\\SessionManager\\\\SessionManager.Client\\\\",
+      "filePath": "Up\\Blocks\\SessionManager\\SessionManager.Client\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
     },
     {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "SM",
       "blockPart": [
         "Tests"
       ],
-      "blockName": "SM",
-      "aspects": "Tests",
       "description": "Сценарии тестирования блока Учет и управления сессиями (Session manager, SM)",
-      "based": "",
-      "ignore": false,
-      "filePath": "Up\\\\Blocks\\\\SessionManager\\\\Tests\\\\.block-definition.yml",
+      "directory": "Up/Blocks/SessionManager/Tests",
       "extend": "",
-      "directory": "Up\\\\Blocks\\\\SessionManager\\\\Tests\\\\",
+      "filePath": "Up\\Blocks\\SessionManager\\Tests\\.block-definition.yml",
+      "ignore": false,
       "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": "SM",
+      "blockPart": [],
+      "description": "Блок учета и управления сессиями (Session manager, SM)",
+      "directory": "Up/Blocks/SessionManager",
+      "extend": "",
+      "filePath": "Up\\Blocks\\SessionManager\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Универсальная часть платформы (Universal Platform, UP)",
+      "directory": "Up",
+      "extend": "",
+      "filePath": "Up\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/UP"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": null,
+      "blockPart": [],
+      "description": "Платформа КПИ (Компоненты прикладной инфраструктуры, КПИ, RGB)",
+      "directory": "",
+      "extend": "",
+      "filePath": ".block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB"
     }
   ],
+  "catalog": {
+    "ABS": {
+      "description": "Семейство блоков обеспечивающих решение отдельных общесистемных задач",
+      "fullName": null,
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "ABS"
+    },
+    "BS": {
+      "description": "Сервис доступа к хранилищу бинарных данных",
+      "fullName": "Blob Storage",
+      "ruFullName": "Хранилище бинарных объектов",
+      "ruShortName": "ХБО",
+      "shortName": "BS"
+    },
+    "Cluster": {
+      "description": "Блоки организации кластеров",
+      "fullName": "Cluster",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "CM": {
+      "description": "Служебный пакет, позволяющий передавать мониторинговую информацию на сервер ServerGRC.MRC",
+      "fullName": "Capturing monitor",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "CM"
+    },
+    "CoralMount": {
+      "description": "Композитная служба Mount управления работой набора пакетов-приложений (композиции), развернутых на хосте",
+      "fullName": "Coral.Mount",
+      "ruFullName": "Композитный сервис",
+      "ruShortName": null,
+      "shortName": null
+    },
+    "Core": {
+      "description": "Основная часть платформы, набор базовых блоков",
+      "fullName": "Core",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "CS": {
+      "description": "Блок сервиса работы с кэшем",
+      "fullName": "Cache Service",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "CS"
+    },
+    "CSC": {
+      "description": "Общесистемные компоненты",
+      "fullName": "Common System Components",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "CSC"
+    },
+    "CSM": {
+      "description": "Блок распределенной непрерывной машины состояний",
+      "fullName": "Countinues State Machine",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "CSM"
+    },
+    "DAL": {
+      "description": "Блок организации доступа к данным",
+      "fullName": "Data access layer",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "DAL"
+    },
+    "DF": {
+      "description": "Инфраструктура Документооборота",
+      "fullName": "Document Flow",
+      "ruFullName": "Документооборот",
+      "ruShortName": null,
+      "shortName": "DF"
+    },
+    "DFTS": {
+      "description": null,
+      "fullName": "Document Flow Transition Storage",
+      "ruFullName": "Документарно-транзитное хранилище",
+      "ruShortName": null,
+      "shortName": "DFTS"
+    },
+    "Dpp": {
+      "description": "Блок Распределенной платформы обработки",
+      "fullName": "Distributed processing platform",
+      "ruFullName": "Распределенная платформы обработки",
+      "ruShortName": null,
+      "shortName": "Dpp"
+    },
+    "DTM": {
+      "description": "Управление незавершенными распределенными транзакциями",
+      "fullName": null,
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "DTM"
+    },
+    "DU": {
+      "description": "Блок инфраструктуры микроинтеграции по данным между задачами и ПП",
+      "fullName": "Data Unit",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "DU"
+    },
+    "EntitiesInfrastructure": {
+      "description": "Инфраструктура сущностей",
+      "fullName": "Entities Infrastructure",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "GenericPlatform": {
+      "description": "Обобщенная часть платформы",
+      "fullName": "Generic Platform",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "Instrumentation": {
+      "description": "Сервис предоставляющий единый механизм фиксации различных событий, диагностической информации, счётчиков производительности в ходе выполнения программного кода",
+      "fullName": "Instrumentation",
+      "ruFullName": "Инструментирование",
+      "ruShortName": null,
+      "shortName": null
+    },
+    "LC": {
+      "description": "Блок логического каталога",
+      "fullName": "Logical Catalog",
+      "ruFullName": "Логический каталог",
+      "ruShortName": null,
+      "shortName": "LC"
+    },
+    "LJE": {
+      "description": "Блок компонентов облегченных автоматических заданий распределенной платформы обработки",
+      "fullName": "Light job engine",
+      "ruFullName": "Облегченные автоматические задания",
+      "ruShortName": null,
+      "shortName": "LJE"
+    },
+    "MTR": {
+      "description": null,
+      "fullName": "Multitarget repository",
+      "ruFullName": "Многоцелевой репозиторий",
+      "ruShortName": null,
+      "shortName": "MTR"
+    },
+    "NV": {
+      "description": "Блок навигатора предоставляет на клиентском уровне услуги запросной системы",
+      "fullName": "Navigator",
+      "ruFullName": "Навигатор",
+      "ruShortName": null,
+      "shortName": "NV"
+    },
+    "PF": {
+      "description": "Группа блоков Инфраструктуры Исполнения Бизнес Процессов. Обеспечивают исполнение, управление и мониторинг бизнес-процессов ПП",
+      "fullName": "Process Flow",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "PF"
+    },
+    "RaftCluster": {
+      "description": "Блок организации рафт кластера",
+      "fullName": "Raft Clusters",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "RG": {
+      "description": "Предоставляет единый механизм и программную среду печати документов, формируемых прикладными подсистемами",
+      "fullName": "Report Generator",
+      "ruFullName": "Генератор печатных форм",
+      "ruShortName": null,
+      "shortName": "RG"
+    },
+    "RGB": {
+      "description": "Платформа КПИ",
+      "fullName": "RGB",
+      "ruFullName": null,
+      "ruShortName": "КПИ",
+      "shortName": "RGB"
+    },
+    "RingCluster": {
+      "description": "Блок организации кольцевого кластера",
+      "fullName": "Ring Cluster",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "RTM": {
+      "description": "Блок просмотра, импорта и экспорта журналов работы приложений, мониторинга в реальном времени",
+      "fullName": "Real time monitoring",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "RTM"
+    },
+    "SM": {
+      "description": "Блок сервиса учета жизненного цикла сессий",
+      "fullName": "Session manager",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "SM"
+    },
+    "SwimCluster": {
+      "description": "Блок организации SWIM кластера",
+      "fullName": "SWIM Cluster",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": null
+    },
+    "TA": {
+      "description": "Блок работы со справочной информацией",
+      "fullName": "Thes access",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "TA"
+    },
+    "TB": {
+      "description": "Транзитное хранилище первого рода",
+      "fullName": "TransitionBlob",
+      "ruFullName": null,
+      "ruShortName": "ТХ1",
+      "shortName": "TB"
+    },
+    "TE": {
+      "description": "Сервис обработки шаблонов",
+      "fullName": "Templates",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "TE"
+    },
+    "TS": {
+      "description": null,
+      "fullName": "Transition Storage",
+      "ruFullName": "Транзитное хранилище",
+      "ruShortName": null,
+      "shortName": "TS"
+    },
+    "UI": {
+      "description": "Блок сервиса информации о пользователе",
+      "fullName": "User Info",
+      "ruFullName": "Сервис информации о пользователе",
+      "ruShortName": null,
+      "shortName": "UI"
+    },
+    "UP": {
+      "description": "Универсальная часть платформы предоставляющая ПП единые централизованные и инфраструктурные сервисы",
+      "fullName": "Universal Platform",
+      "ruFullName": null,
+      "ruShortName": null,
+      "shortName": "UP"
+    }
+  },
   "scopes": [
     {
       "children": [
@@ -2383,36 +2757,36 @@
                   "children": [
                     {
                       "children": [],
-                      "path": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure",
+                      "description": "Entities Infrastructure - инфраструктура сущностей",
                       "name": "EntitiesInfrastructure",
-                      "description": "Entities Infrastructure - инфраструктура сущностей"
+                      "path": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
                     }
                   ],
-                  "path": "/RGB/CSC/Core/GenericPlatform",
+                  "description": "Generic Platform - Обобщенная часть платформы",
                   "name": "GenericPlatform",
-                  "description": "Generic Platform - Обобщенная часть платформы"
+                  "path": "/RGB/CSC/Core/GenericPlatform"
                 }
               ],
-              "path": "/RGB/CSC/Core",
+              "description": "Core - Основная часть платформы, набор базовых блоков",
               "name": "Core",
-              "description": "Core - Основная часть платформы, набор базовых блоков"
+              "path": "/RGB/CSC/Core"
             },
             {
               "children": [],
-              "path": "/RGB/CSC/ABS",
+              "description": "Application Blocks - Семейство блоков обеспечивающих решение отдельных общесистемных задач",
               "name": "ABS",
-              "description": "Application Blocks - Семейство блоков обеспечивающих решение отдельных общесистемных задач"
+              "path": "/RGB/CSC/ABS"
             },
             {
               "children": [],
-              "path": "/RGB/CSC/PF",
+              "description": "Process Flow - Группа блоков ИИБП",
               "name": "PF",
-              "description": "Process Flow - Группа блоков ИИБП"
+              "path": "/RGB/CSC/PF"
             }
           ],
-          "path": "/RGB/CSC",
+          "description": "Common System Components - Общесистемные компоненты",
           "name": "CSC",
-          "description": "Common System Components - Общесистемные компоненты"
+          "path": "/RGB/CSC"
         },
         {
           "children": [
@@ -2420,31 +2794,30 @@
               "children": [
                 {
                   "children": [],
-                  "path": "/RGB/UP/Core/GenericPlatform",
+                  "description": "Generic Platform - Обобщенная часть платформы",
                   "name": "GenericPlatform",
-                  "description": "Generic Platform - Обобщенная часть платформы"
+                  "path": "/RGB/UP/Core/GenericPlatform"
                 }
               ],
-              "path": "/RGB/UP/Core",
+              "description": "Core - Основная часть платформы, набор базовых блоков",
               "name": "Core",
-              "description": "Core - Основная часть платформы, набор базовых блоков"
+              "path": "/RGB/UP/Core"
             },
             {
               "children": [],
-              "path": "/RGB/UP/Cluster",
+              "description": "Cluster - Блоки организации кластеров",
               "name": "Cluster",
-              "description": "Cluster - Блоки организации кластеров"
+              "path": "/RGB/UP/Cluster"
             }
           ],
-          "path": "/RGB/UP",
+          "description": "Universal Platform - Универсальная часть платформы предоставляющая ПП единые централизованные и инфраструктурные сервисы",
           "name": "UP",
-          "description": "Universal Platform - Универсальная часть платформы предоставляющая ПП единые централизованные и инфраструктурные сервисы"
+          "path": "/RGB/UP"
         }
       ],
-      "path": "/RGB",
+      "description": "Платформа КПИ",
       "name": "RGB",
-      "description": "Платформа КПИ"
+      "path": "/RGB"
     }
-  ],
-  "catalog": null
+  ]
 }
