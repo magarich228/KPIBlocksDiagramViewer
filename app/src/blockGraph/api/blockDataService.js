@@ -157,7 +157,7 @@ export class BlockDataService {
         const scopes = [];
         
         for (const [key, value] of Object.entries(scopesData)) {
-          // Убираем начальный слэш если есть
+          // Удаление начального слэша если есть
           const cleanKey = key.replace(/^\//, '');
           const scopePath = currentPath ? `${currentPath}/${cleanKey}` : `/${cleanKey}`;
           
@@ -170,7 +170,7 @@ export class BlockDataService {
           
           // Рекурсивно парсим дочерние области
           if (value && typeof value === 'object') {
-            // Ищем дочерние элементы (исключаем стандартные поля)
+            // Поиск дочерниъ элементов (исключаем стандартные поля)
             const childKeys = Object.keys(value).filter(k => 
               !['description', 'ignore', 'blockName', 'blockPart', 'aspects', 'parents', 'scope', 'extend', 'based'].includes(k)
             );

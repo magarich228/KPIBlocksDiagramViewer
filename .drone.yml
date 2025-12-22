@@ -20,14 +20,14 @@ steps:
 
   - name: build
     commands:
-      - cd react
+      - cd app
       - ls -la
       - npm ci --verbose
       - npm run build
 
   - name: deploy
     commands:
-      - cd react
+      - cd app
       - echo "Dist content:"
       - ls -la dist/
       - sudo ls -la /var/www/kpiblocks/
