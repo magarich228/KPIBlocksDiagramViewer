@@ -150,7 +150,7 @@
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "aspects": "Internal",
+      "aspects": "Contract",
       "based": "",
       "blockName": "BS",
       "blockPart": [
@@ -445,7 +445,7 @@
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "aspects": "",
+      "aspects": "Internal",
       "based": "",
       "blockName": "DAL",
       "blockPart": [
@@ -680,6 +680,36 @@
     {
       "aspects": "DBScripts",
       "based": "",
+      "blockName": "NAV",
+      "blockPart": [
+        "DBScripts",
+        "Oracle"
+      ],
+      "description": "Sql-скрипты БД Oracle для обраотки и хранения пользовательских списков навигатора (Navigator, NAV)",
+      "directory": "Abs4.0/Source/Database/Source/csc_navigator.oracle",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\csc_navigator.oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "NAV",
+      "blockPart": [
+        "DBScripts",
+        "PostgreSql"
+      ],
+      "description": "Sql-скрипты БД PostgreSql для обраотки и хранения пользовательских списков навигатора (Navigator, NAV)",
+      "directory": "Abs4.0/Source/Database/Source/csc_navigator.postgresql",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Database\\Source\\csc_navigator.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
       "blockName": "BS",
       "blockPart": [
         "DbScripts",
@@ -744,6 +774,60 @@
     {
       "aspects": "Internal",
       "based": "",
+      "blockName": "UI",
+      "blockPart": [
+        "Implementation"
+      ],
+      "description": "Имплементация блока получения информации о пользователе (User Info, UI)",
+      "directory": "Abs4.0/Source/Directory/Source/Directory",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Directory\\Source\\Directory\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "UI",
+      "blockPart": [
+        "Contract"
+      ],
+      "description": "Контракты блока получения информации о пользователе (User Info, UI)",
+      "directory": "Abs4.0/Source/Directory/Source/Directory.Contract",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Directory\\Source\\Directory.Contract\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "UI",
+      "blockPart": [
+        "Proxy"
+      ],
+      "description": "Прокси веб-сервис блока получения информации о пользователе (User Info, UI)",
+      "directory": "Abs4.0/Source/Directory/Source/UserInfoProxy",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Directory\\Source\\UserInfoProxy\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": "UI",
+      "blockPart": [],
+      "description": "Блок получения информации о пользователе (User Info, UI)",
+      "directory": "Abs4.0/Source/Directory/Source",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Directory\\Source\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
       "blockName": "MTR",
       "blockPart": [
         "Integration"
@@ -768,11 +852,13 @@
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "aspects": "",
+      "aspects": "Contract",
       "based": "",
-      "blockName": "NV",
-      "blockPart": [],
-      "description": "",
+      "blockName": "NAV",
+      "blockPart": [
+        "Client"
+      ],
+      "description": "Клиентская часть блока Навигатор (Navigator, NAV)",
       "directory": "Abs4.0/Source/Navigator/Source/Navigator",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Navigator\\.block-definition.yml",
@@ -780,14 +866,198 @@
       "scope": "/RGB/CSC/ABS"
     },
     {
-      "aspects": "",
+      "aspects": "Contract",
       "based": "",
       "blockName": "TE",
-      "blockPart": [],
-      "description": "",
+      "blockPart": [
+        "Contract"
+      ],
+      "description": "Контракты блока шаблонов запросов (Templates Engine, TE)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Contract",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Contract\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Engine"
+      ],
+      "description": "Основная часть движка обработки шаблонов запросов (Templates Engine, TE)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Engine",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Engine\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Navigator"
+      ],
+      "description": "Движок обработки клиентских навигаторных запросов. Сборка содержит enpoint'ы для обработки web-запросов. (Templates Engine, Navigator, TE, NAV)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Navigator",
+        "Dal",
+        "Oracle"
+      ],
+      "description": "Провайдер обработки пользовательских списков для БД Oracle (Templates Engine, Navigator, TE, NAV)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator.Dal.Oracle",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator.Dal.Oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Navigator",
+        "Dal",
+        "PostgreSql"
+      ],
+      "description": "Провайдер обработки пользовательских списков для БД PostgreSql (Templates Engine, Navigator, TE, NAV)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator.Dal.PostgreSql",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Navigator",
+        "Server"
+      ],
+      "description": "Движок исполнения клиентских навигаторных запросов (Templates Engine, Navigator, TE, NAV)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator.Server",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Query"
+      ],
+      "description": "Контракты парсинга шаблонов навигатора, компиляции запросов к БД. Классы по созданию заявок отчетной системы Аналитического навигатора. (Templates Engine, Navigator, Report Generator)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Query",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Query",
+        "Server"
+      ],
+      "description": "Реализация серверной части компиляции шаблонов и исполнения запросов к БД. (Templates Engine, TE)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Query",
+        "Server",
+        "Dal",
+        "Oracle"
+      ],
+      "description": "Oracle провайдер исполнения запросов (Templates Engine, TE)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server.Dal.Oracle",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server.Dal.Oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Query",
+        "Server",
+        "Dal",
+        "PostgreSql"
+      ],
+      "description": "PostgreSql провайдер исполнения запросов (Templates Engine, TE)",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server.Dal.PostgreSql",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "TE",
+      "blockPart": [
+        "Query",
+        "Server",
+        "Dal",
+        "PostgreSql",
+        "Tests"
+      ],
+      "description": "Unit-тесты для проверки работоспособности провайдера PostgreSql.",
+      "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server.Dal.PostgreSql.Tests",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "NAV",
+      "blockPart": [
+        "Tests"
+      ],
+      "description": "Сценарии тестирования Блока навинатор (Navigator, NAV)",
+      "directory": "Abs4.0/Source/Navigator/Tests",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\Tests\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": "NAV",
+      "blockPart": [],
+      "description": "Блок навинатор (Navigator, NAV)",
+      "directory": "Abs4.0/Source/Navigator",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\Navigator\\.block-definition.yml",
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -960,6 +1230,148 @@
       "scope": "/RGB/CSC/ABS"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Contract"
+      ],
+      "description": "Контракты Блока работы со справочной информацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Contract",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Contract\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Controls"
+      ],
+      "description": "UI элементы Блока работы со справочной иформацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Controls",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Controls\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Library"
+      ],
+      "description": "Библиотека общей имплементации Блока работы со справочной информацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Library",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Library\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Library",
+        "Configuration"
+      ],
+      "description": "Конфигурирование библиотеки общей имплементации Блока работы со справочной информацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Library.Configuration",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Library.Configuration\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Local"
+      ],
+      "description": "Имплементация локального сервиса Блока работы со справочной информацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Local",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Local\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Server"
+      ],
+      "description": "Серверная имплементация сервиса доступа к кэшированной справочной информации (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Server",
+        "Contract"
+      ],
+      "description": "Серверные контракты Блока работы со справочной информацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server.Contract",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server.Contract\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Server",
+        "Oracle"
+      ],
+      "description": "Реализация серверного провайдера доступа к данным кэшированной справочной информации в БД Oracle. (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server.Oracle",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server.Oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [
+        "Server",
+        "PostgreSql"
+      ],
+      "description": "Реализация серверного провайдера доступа к данным кэшированной справочной информации в БД PostgreSql. (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server.PostgreSql",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server.PostgreSql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
+      "aspects": "",
+      "based": "",
+      "blockName": "TA",
+      "blockPart": [],
+      "description": "Блок работы со справочной информацией (Thes Access, TA)",
+      "directory": "Abs4.0/Source/ThesAccess/Source",
+      "extend": "",
+      "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/ABS"
+    },
+    {
       "aspects": "",
       "based": "",
       "blockName": null,
@@ -1114,7 +1526,7 @@
       "blockPart": [
         "Transaction"
       ],
-      "description": "Часть контрактов транзакций блока DAL (Data Access Layer, DAL) TODO уточнить",
+      "description": "Часть контрактов транзакций блока DAL (Data Access Layer, DAL)",
       "directory": "Core/CorLib/CorLib/Transaction",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\Transaction\\.block-definition.yml",
@@ -1257,6 +1669,50 @@
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "CSM",
+      "blockPart": [
+        "Server"
+      ],
+      "description": "Распределенная непрерывная машина состояний (Continues state machine, CSM)",
+      "directory": "Core/CorLib/CorLib.Csm.Server",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib.Csm.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CSM",
+      "blockPart": [
+        "Server",
+        "Bundle"
+      ],
+      "description": "Внутренняя часть распределенной непрерывной машины состояний (Continues state machine, CSM)",
+      "directory": "Core/CorLib/CorLib.Csm.Server.Bundle",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib.Csm.Server.Bundle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "CSM",
+      "blockPart": [
+        "Server",
+        "Storage"
+      ],
+      "description": "Имплементация работы с хранилищем распределенной непрерывной машины состояний (Continues state machine, CSM)",
+      "directory": "Core/CorLib/CorLib.Csm.Server.Storage",
+      "extend": "",
+      "filePath": "Core\\CorLib\\CorLib.Csm.Server.Storage\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core"
+    },
+    {
       "aspects": "Internal",
       "based": "",
       "blockName": "SM",
@@ -1265,6 +1721,21 @@
       "directory": "Core/CorLib/CorLib.SessionManager",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.SessionManager\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC/Core"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "CSM",
+      "blockPart": [
+        "Server",
+        "Bundle"
+      ],
+      "description": "PLSQL скрипты блока распределенной непрерывной машины состояний (Continues state machine, CSM)",
+      "directory": "Core/CorLib/Database/csc_csm.oracle",
+      "extend": "",
+      "filePath": "Core\\CorLib\\Database\\csc_csm.oracle\\.block-definition.yml",
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1295,16 +1766,317 @@
       "scope": "/RGB/CSC/Core"
     },
     {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "DBScripts",
+        "Oracle"
+      ],
+      "description": "SQL скрипты блока Документооборот для БД Oracle (Document Flow, DF)",
+      "directory": "Pf/Source/Database/csc_documentflow.oracle",
+      "extend": "",
+      "filePath": "Pf\\Source\\Database\\csc_documentflow.oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "DBScripts",
+        "PostgreSql"
+      ],
+      "description": "SQL скрипты блока Документооборот для БД PostgreSql (Document Flow, DF)",
+      "directory": "Pf/Source/Database/csc_documentflow.postgresql",
+      "extend": "",
+      "filePath": "Pf\\Source\\Database\\csc_documentflow.postgresql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "DBScripts",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "DBScripts",
+        "Csm",
+        "Oracle"
+      ],
+      "description": "Oracle SQL скрипты распределенной машины состояний Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/Database/csc_documentflow_csm.oracle",
+      "extend": "",
+      "filePath": "Pf\\Source\\Database\\csc_documentflow_csm.oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Bundle"
+      ],
+      "description": "Внутренняя часть блока Документооборот (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Bundle",
+        "Client"
+      ],
+      "description": "Клиентская внутренняя часть блока Документооборот (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle.Client",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle.Client\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Bundle",
+        "Configuration"
+      ],
+      "description": "Конфигурирование блока Документооборот (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle.Configuration",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle.Configuration\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Bundle",
+        "Server"
+      ],
+      "description": "Серверная внутренняя часть блока Документооборот (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle.Server",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
       "aspects": "Contract",
       "based": "",
       "blockName": "DF",
       "blockPart": [
         "Contract"
       ],
-      "description": "Контракты Документооборота",
+      "description": "Контракты Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Contract",
+        "Client"
+      ],
+      "description": "Клиентские контракты Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract.Client",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract.Client\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Contract",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Contract",
+        "Server"
+      ],
+      "description": "Серверные контракты Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract.Server",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "CSM",
+      "blockName": "DF",
+      "blockPart": [
+        "Csm"
+      ],
+      "description": "Распределенная машина состояний для Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Csm",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Csm\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Csm",
+        "Bundle"
+      ],
+      "description": "Внутренняя часть распределенной машина состояний для Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Csm.Bundle",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Csm.Bundle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Csm",
+        "Dal",
+        "Oracle"
+      ],
+      "description": "Слой DAL для распределенной машины состояний Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Csm.Dal.Oracle",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Csm.Dal.Oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Dal",
+        "Oracle"
+      ],
+      "description": "Имплеметация слоя DAL блока Документооборот для БД Oracle (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.Oracle",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.Oracle\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Dal",
+        "Oracle",
+        "Tests"
+      ],
+      "description": "Сценарии тестирования слоя DAL блока Документооборот для БД Oracle (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.Oracle.Tests",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.Oracle.Tests\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Dal",
+        "PostgreSql"
+      ],
+      "description": "Имплеметация слоя DAL блока Документооборот для БД PostgreSql (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.PostgreSql",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Tests",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Dal",
+        "PostgreSql",
+        "Tests"
+      ],
+      "description": "Сценарии тестирования слоя DAL блока Документооборот для БД PostgreSql (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.PostgreSql.Tests",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DFTS",
+      "blockPart": [
+        "Dal",
+        "PostgreSql"
+      ],
+      "description": "Слой DAL документарно-транзитного хранилища Документооборота БД PostgreSql (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/Documentflow.MtrDfTs.Dal.PostgreSql",
+      "extend": "",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\Documentflow.MtrDfTs.Dal.PostgreSql\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "DF",
+      "blockName": "DFTS",
+      "blockPart": [
+        "Server",
+        "Bundle"
+      ],
+      "description": "Имплементация транзитного провайдера Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Ts.Bundle.Server",
+      "extend": "MTR",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Ts.Bundle.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "DF",
+      "blockName": "DFTS",
+      "blockPart": [
+        "Server",
+        "Contract"
+      ],
+      "description": "Внутренние контракты транзитного провайдера Документооборота (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Ts.Contract.Server",
+      "extend": "MTR",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Ts.Contract.Server\\.block-definition.yml",
+      "ignore": false,
+      "scope": "/RGB/CSC"
+    },
+    {
+      "aspects": "Internal",
+      "based": "",
+      "blockName": "DF",
+      "blockPart": [
+        "Uc"
+      ],
+      "description": "Набор компонентов ЕКП блока Документооборот (Document Flow, DF)",
+      "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Uc.Bundle",
+      "extend": "UC",
+      "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Uc.Bundle\\.block-definition.yml",
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1581,7 +2353,7 @@
       "scope": "/RGB/UP/Core"
     },
     {
-      "aspects": "",
+      "aspects": "Internal",
       "based": "",
       "blockName": "DTM",
       "blockPart": [
@@ -2605,6 +3377,13 @@
       "ruShortName": null,
       "shortName": null
     },
+    "ENV": {
+      "description": "Блок подготовки сред исполнения",
+      "fullName": "Composite Environment",
+      "ruFullName": null,
+      "ruShortName": "Среды",
+      "shortName": "ENV"
+    },
     "GenericPlatform": {
       "description": "Обобщенная часть платформы",
       "fullName": "Generic Platform",
@@ -2640,12 +3419,12 @@
       "ruShortName": null,
       "shortName": "MTR"
     },
-    "NV": {
+    "NAV": {
       "description": "Блок навигатора предоставляет на клиентском уровне услуги запросной системы",
       "fullName": "Navigator",
       "ruFullName": "Навигатор",
       "ruShortName": null,
-      "shortName": "NV"
+      "shortName": "NAV"
     },
     "PF": {
       "description": "Группа блоков Инфраструктуры Исполнения Бизнес Процессов. Обеспечивают исполнение, управление и мониторинг бизнес-процессов ПП",
