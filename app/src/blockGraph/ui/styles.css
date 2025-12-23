@@ -526,3 +526,144 @@ button:hover {
 .clickable-header:hover {
   color: #4a90e2;
 }
+
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.auth-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-modal h2 {
+  margin: 0 0 10px 0;
+  color: #2d3748;
+  font-size: 24px;
+  text-align: center;
+}
+
+.auth-description {
+  color: #718096;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-input-group label {
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.auth-input {
+  padding: 12px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.auth-error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #fc8181;
+}
+
+.auth-submit {
+  background: #4299e1;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.auth-submit:hover {
+  background: #3182ce;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+.auth-submit:active {
+  transform: translateY(0);
+}
+
+.auth-hint {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+  .auth-modal {
+    padding: 20px;
+    width: 95%;
+  }
+  
+  .auth-modal h2 {
+    font-size: 20px;
+  }
+  
+  .auth-input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .auth-submit {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
