@@ -6,7 +6,7 @@ function App() {
   const [projectData, setProjectData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // TODO: форма ввода ключа доступа
+  // TODO: форма ввода ключа доступа 
   useEffect(() => {
     // Автоматическая загрузка mock-данных при старте
     loadMockData();
