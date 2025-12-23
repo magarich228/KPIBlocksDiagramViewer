@@ -11,29 +11,27 @@ server:
     from_secret: SERVER_PASSWORD
 
 steps:
-  - name: debug-info
+  - name: clone-repository
     commands:
-      - echo "Starting deployment..."
-      - whoami
-      - pwd
-      - ls -la
+      - echo "Cloning repository..."
+      - cd /tmp
+      - rm -rf KPIBlocksDiagramViewer || true
+      - git clone --depth 1 https://github.com/magarich228/KPIBlocksDiagramViewer.git
+      - cd KPIBlocksDiagramViewer
 
   - name: build
     commands:
-      - cd app
-      - ls -la
-      - npm ci --verbose
+      - cd /tmp/KPIBlocksDiagramViewer/app
+      - npm ci
       - npm run build
 
   - name: deploy
     commands:
-      - cd app
-      - echo "Dist content:"
-      - ls -la dist/
-      - sudo ls -la /var/www/kpiblocks/
+      - echo "Deploying to /var/www/kpiblocks..."
+      - sudo mkdir -p /var/www/kpiblocks
       - sudo rm -rf /var/www/kpiblocks/*
-      - sudo cp -r dist/* /var/www/kpiblocks/
-      - echo "Deployment completed successfully!"
+      - sudo cp -r /tmp/KPIBlocksDiagramViewer/app/dist/* /var/www/kpiblocks/
+      - echo "Deployment completed!"
       - sudo ls -la /var/www/kpiblocks/
 
 trigger:
