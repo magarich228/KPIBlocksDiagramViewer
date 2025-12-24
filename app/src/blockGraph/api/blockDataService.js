@@ -47,7 +47,7 @@ export class BlockDataService {
       });
 
       // Отсюда беру актуальный mockData
-      console.log(JSON.stringify({ scopes, blocks, catalog }));
+      // console.log(JSON.stringify({ scopes, blocks, catalog }));
 
       return { scopes, blocks, catalog };
     } catch (error) {
@@ -436,11 +436,11 @@ export class BlockDataService {
       '.svg'
     ];
     
-    for (const ext of excludedExtensions) {
+    /*for (const ext of excludedExtensions) {
       if (lowerName.endsWith(ext)) {
         return false;
       }
-    }
+    }*/
     
     for (const ext of validExtensions) {
       if (lowerName.endsWith(ext)) {
