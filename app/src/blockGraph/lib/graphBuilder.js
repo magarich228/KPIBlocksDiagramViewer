@@ -25,6 +25,8 @@ export class GraphBuilder {
           depth: depth,
           type: NodeType.SCOPE,
           description: scope.description,
+          codeLines: scope.codeLines,
+          filesCount: scope.filesCount,
           blocks: [],
           x: 0,
           y: 0

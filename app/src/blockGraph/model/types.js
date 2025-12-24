@@ -15,13 +15,17 @@ export const BlockDefinition = {
   aspects: '',
   ignore: false,
   extend: '',
-  based: ''
+  based: '',
+  filesCount: null,
+  codeLines: null
 };
 
 export const ScopeDefinition = {
   path: '',
   name: '',
   description: '',
+  filesCount: null,
+  codeLines: null,
   children: []
 };
 

@@ -101,6 +101,18 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
                 <span>{node.description}</span>
               </div>
             )}
+            {node.filesCount && (
+              <div className='info-item'>
+                <label>Файлов:</label>
+                <span>{node.filesCount}</span>
+              </div>
+            )}
+            {node.codeLines && (
+              <div className='info-item'>
+                <label>Строк кода:</label>
+                <span>{node.codeLines}</span>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -177,6 +189,18 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
                 <div className="info-item">
                   <label>Директория:</label>
                   <span>{block.directory}</span>
+                </div>
+              )}
+              {block.filesCount && (
+                <div className='info-item'>
+                  <label>Файлов:</label>
+                  <span>{block.filesCount}</span>
+                </div>
+              )}
+              {block.codeLines && (
+                <div className='info-item'>
+                  <label>Строчек кода:</label>
+                  <span>{block.codeLines}</span>
                 </div>
               )}
             </div>
@@ -260,6 +284,18 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
                   <span>{block.directory}</span>
                 </div>
               )}
+              {block.filesCount && (
+                <div className='info-item'>
+                  <label>Файлов:</label>
+                  <span>{block.filesCount}</span>
+                </div>
+              )}
+              {block.codeLines && (
+                <div className='info-item'>
+                  <label>Строчек кода:</label>
+                  <span>{block.codeLines}</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -337,6 +373,18 @@ const InformationPanel = ({ node, relatedNodes, visible, graphData, onNodeSelect
                 <div className="info-item">
                   <label>Директория:</label>
                   <span>{block.directory}</span>
+                </div>
+              )}
+              {block.filesCount && (
+                <div className='info-item'>
+                  <label>Файлов:</label>
+                  <span>{block.filesCount}</span>
+                </div>
+              )}
+              {block.codeLines && (
+                <div className='info-item'>
+                  <label>Строчек кода:</label>
+                  <span>{block.codeLines}</span>
                 </div>
               )}
             </div>

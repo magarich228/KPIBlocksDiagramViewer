@@ -7,10 +7,12 @@
       "blockPart": [
         "Abstracts"
       ],
+      "codeLines": 5068,
       "description": "Абстракции сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Abstracts",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Abstracts\\.block-definition.yml",
+      "filesCount": 16,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -22,10 +24,12 @@
         "AdminPack",
         "Contract"
       ],
+      "codeLines": 220,
       "description": "Внутренние контракты администрирования провайдеров хранилищ бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.AdminPack.Contract",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.AdminPack.Contract\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -37,10 +41,12 @@
         "AdminPack",
         "Server"
       ],
+      "codeLines": 376,
       "description": "Серверная имплементация администрирования провайдеров хранилищ бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.AdminPack.Server",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.AdminPack.Server\\.block-definition.yml",
+      "filesCount": 4,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -52,10 +58,12 @@
         "AdminPack",
         "Uc"
       ],
+      "codeLines": 6137,
       "description": "Имплементация администрирования провайдеров хранилищ бинарнах данных в части ЕКП (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.AdminPack.Uc",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.AdminPack.Uc\\.block-definition.yml",
+      "filesCount": 34,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -66,10 +74,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 14276,
       "description": "Внутренняя часть сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Bundle",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Bundle\\.block-definition.yml",
+      "filesCount": 91,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -80,10 +90,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 6012,
       "description": "Контракты сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Contract",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Contract\\.block-definition.yml",
+      "filesCount": 78,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -95,10 +107,12 @@
         "Dal",
         "Oracle"
       ],
+      "codeLines": 10860,
       "description": "Реализация Oracle слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.Oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.Oracle\\.block-definition.yml",
+      "filesCount": 61,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -111,10 +125,12 @@
         "Oracle",
         "Tests"
       ],
+      "codeLines": 3119,
       "description": "Сценарии тестирования реализации Oracle слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.Oracle.Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.Oracle.Tests\\.block-definition.yml",
+      "filesCount": 16,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -126,10 +142,12 @@
         "Dal",
         "PostgreSql"
       ],
+      "codeLines": 5053,
       "description": "Реализация PostgreSql слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.PostgreSql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 49,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -142,10 +160,12 @@
         "PostgreSql",
         "Tests"
       ],
+      "codeLines": 2988,
       "description": "Сценарии тестирования реализации PostgreSql слоя Dal внутренней части сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Dal.PostgreSql.Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "filesCount": 16,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -156,10 +176,12 @@
       "blockPart": [
         "Importer"
       ],
+      "codeLines": 3592,
       "description": "Прикладная среда для выполнения задач миграции (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Importer",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Importer\\.block-definition.yml",
+      "filesCount": 22,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -171,10 +193,12 @@
         "BlobStorageProvider",
         "Dal"
       ],
+      "codeLines": 11202,
       "description": "Реализация PostgreSql слоя Dal BlobStorage провайдера документрано-транзитного хранилища (Document Flow Transition Storage, DFTS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrDfTs.Dal.PostgreSql",
       "extend": "MTR, DF",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrDfTs.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 98,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -187,10 +211,12 @@
         "Dal",
         "Tests"
       ],
+      "codeLines": 2079,
       "description": "Сценарии тестирования PostgreSql слоя Dal BlobStorage провайдера документрано-транзитного хранилища (Document Flow Transition Storage, DFTS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrDfTs.Dal.PostgreSql.Tests",
       "extend": "MTR, DF",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrDfTs.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "filesCount": 8,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -202,10 +228,12 @@
         "BlobStorageProvider",
         "Dal"
       ],
+      "codeLines": 8488,
       "description": "Реализация PostgreSql слоя Dal BlobStorage провайдера транзитного хранилища (Transition Storage, TS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrTs.Dal.PostgreSql",
       "extend": "MTR",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrTs.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 75,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -218,10 +246,12 @@
         "Dal",
         "Tests"
       ],
+      "codeLines": 863,
       "description": "Сценарии тестирования PostgreSql слоя Dal BlobStorage провайдера транзитного хранилища (Transition Storage, TS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.MtrTs.Dal.PostgreSql.Tests",
       "extend": "MTR",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.MtrTs.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "filesCount": 7,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -232,10 +262,12 @@
       "blockPart": [
         "Providers"
       ],
+      "codeLines": 466,
       "description": "Общие типы для провайдеров хранилищ блока Сервис доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -246,10 +278,12 @@
       "blockPart": [
         "BlobStorageProvider"
       ],
+      "codeLines": 3637,
       "description": "Провайдерная реализация BlobStorage транзитного хранилища (Transition Storage, TS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.Mtr",
       "extend": "MTR",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.Mtr\\.block-definition.yml",
+      "filesCount": 25,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -260,10 +294,12 @@
       "blockPart": [
         "BlobStorageProvider"
       ],
+      "codeLines": 4028,
       "description": "Провайдерная реализация BlobStorage документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.MtrDf",
       "extend": "MTR, DF",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.MtrDf\\.block-definition.yml",
+      "filesCount": 29,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -275,10 +311,12 @@
         "Providers",
         "Nfs"
       ],
+      "codeLines": 29387,
       "description": "Реализация взаимодействия BS с сетевой файловой системой (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.Nfs",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.Nfs\\.block-definition.yml",
+      "filesCount": 181,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -290,10 +328,12 @@
         "Providers",
         "S3"
       ],
+      "codeLines": 1599,
       "description": "Реализация взаимодействия BS с S3 хранилищем (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.S3",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.S3\\.block-definition.yml",
+      "filesCount": 12,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -306,10 +346,12 @@
         "S3",
         "Tests"
       ],
+      "codeLines": 4014,
       "description": "Сценарии тестирования реализации взаимодействия BS с S3 хранилищем (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.S3.Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.S3.Tests\\.block-definition.yml",
+      "filesCount": 14,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -321,10 +363,12 @@
         "Providers",
         "Server"
       ],
+      "codeLines": 2270,
       "description": "Базовая серверная реализация провайдеров хранилищ блока Сервис доступа к хранилищу бинарнах данных построенных поверх БД (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.Server",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.Server\\.block-definition.yml",
+      "filesCount": 7,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -336,10 +380,12 @@
         "Providers",
         "TatlinGrpc"
       ],
+      "codeLines": 5745,
       "description": "Реализация взаимодействия BS с Tatlin Grpc (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.TatlinGrpc",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.TatlinGrpc\\.block-definition.yml",
+      "filesCount": 36,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -352,10 +398,12 @@
         "TatlinGrpc",
         "Tests"
       ],
+      "codeLines": 2520,
       "description": "Сценарии тестирования реализации взаимодействия BS с Tatlin Grpc (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.TatlinGrpc.Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.TatlinGrpc.Tests\\.block-definition.yml",
+      "filesCount": 13,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -368,10 +416,12 @@
         "TatlinGrpc",
         "Net70Tests"
       ],
+      "codeLines": 4028,
       "description": "Сценарии тестирования реализации взаимодействия BS с Tatlin Grpc (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage/BlobStorage.Providers.TatlinGrpc.Tests.dotnet70",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\BlobStorage.Providers.TatlinGrpc.Tests.dotnet70\\.block-definition.yml",
+      "filesCount": 21,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -380,10 +430,12 @@
       "based": "",
       "blockName": "BS",
       "blockPart": [],
+      "codeLines": 138050,
       "description": "Сервис доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/BlobStorage",
       "extend": "",
       "filePath": "Abs4.0\\Source\\BlobStorage\\.block-definition.yml",
+      "filesCount": 929,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -394,10 +446,12 @@
       "blockPart": [
         "Configuration"
       ],
+      "codeLines": 804,
       "description": "Конфигурирование блока DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Configuration",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Configuration\\.block-definition.yml",
+      "filesCount": 18,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -408,10 +462,12 @@
       "blockPart": [
         "AutoTests"
       ],
+      "codeLines": 2266,
       "description": "Элементы автотестирования транзакций блока DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Dal2.DalTransaction.AutoTests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.DalTransaction.AutoTests\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -422,10 +478,12 @@
       "blockPart": [
         "TeradataDbProvider"
       ],
+      "codeLines": 380,
       "description": "TeradataDb провайдер DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Dal2.TeradataDbProvider",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.TeradataDbProvider\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -437,10 +495,12 @@
         "TransactionIntegration",
         "Linux"
       ],
+      "codeLines": 1003,
       "description": "Интеграция с Linux имплементацией транзакций блока Слой доступа к данным в части Универсальной платформы (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Dal2.Up.TransactionIntegration.Linux",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.Up.TransactionIntegration.Linux\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -452,10 +512,12 @@
         "TransactionIntegration",
         "Win"
       ],
+      "codeLines": 82,
       "description": "Интеграция с Windows имплементацией транзакций блока Слой доступа к данным в части Универсальной платформы (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Dal2.Up.TransactionIntegration.Win",
       "extend": "UC",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dal2.Up.TransactionIntegration.Win\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -466,10 +528,12 @@
       "blockPart": [
         "Dev"
       ],
+      "codeLines": 2102,
       "description": "Изолированная реализация сервиса DAL для тестирования (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Dev.Dal2",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Dev.Dal2\\.block-definition.yml",
+      "filesCount": 25,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -480,10 +544,12 @@
       "blockPart": [
         "Implementation"
       ],
+      "codeLines": 6663,
       "description": "Имплементация DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Implementation",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Implementation\\.block-definition.yml",
+      "filesCount": 22,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -494,10 +560,12 @@
       "blockPart": [
         "Library"
       ],
+      "codeLines": 5351,
       "description": "Блок Слой доступа к данным (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Library",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Library\\.block-definition.yml",
+      "filesCount": 61,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -508,10 +576,12 @@
       "blockPart": [
         "OracleDbProvider"
       ],
+      "codeLines": 497,
       "description": "Oracle провайдер DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/OracleDbProvider",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\OracleDbProvider\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -523,10 +593,12 @@
         "OracleDbProvider",
         "Nix"
       ],
+      "codeLines": 1856,
       "description": "Oracle провайдер DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/OracleDbProvider.Nix",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\OracleDbProvider.Nix\\.block-definition.yml",
+      "filesCount": 14,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -537,10 +609,12 @@
       "blockPart": [
         "PostgreSqlDbProvider"
       ],
+      "codeLines": 3428,
       "description": "PostgreSql провайдер DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/PostgreSqlDbProvider",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\PostgreSqlDbProvider\\.block-definition.yml",
+      "filesCount": 22,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -551,10 +625,12 @@
       "blockPart": [
         "SqlDbProvider"
       ],
+      "codeLines": 429,
       "description": "SQL провайдер DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/SqlDbProvider",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\SqlDbProvider\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -565,10 +641,12 @@
       "blockPart": [
         "Utils"
       ],
+      "codeLines": 4151,
       "description": "Публичные вспомогательные типы для работы с DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Utilites",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Utilites\\.block-definition.yml",
+      "filesCount": 35,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -580,10 +658,12 @@
         "Utils",
         "Nix"
       ],
+      "codeLines": 4157,
       "description": "Вспомогательные типы для работы с DAL (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Source/Utilites.Nix",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Source\\Utilites.Nix\\.block-definition.yml",
+      "filesCount": 35,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -594,10 +674,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 5748,
       "description": "Сценарии тестирования блока Слой доступа к данным (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2/Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\Tests\\.block-definition.yml",
+      "filesCount": 18,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -606,10 +688,12 @@
       "based": "",
       "blockName": "DAL",
       "blockPart": [],
+      "codeLines": 38940,
       "description": "Блок Слой доступа к данным (Data Access Layer, DAL)",
       "directory": "Abs4.0/Source/Dal2",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Dal2\\.block-definition.yml",
+      "filesCount": 289,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -622,10 +706,12 @@
         "csc",
         "Oracle"
       ],
+      "codeLines": 1923,
       "description": "SQL-скрипты создания Oracle сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/Database/Source/csc_blob_storage.oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Database\\Source\\csc_blob_storage.oracle\\.block-definition.yml",
+      "filesCount": 77,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -638,10 +724,12 @@
         "csc",
         "PostgreSql"
       ],
+      "codeLines": 1527,
       "description": "SQL-скрипты создания PostgreSql сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/Database/Source/csc_blob_storage.postgresql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Database\\Source\\csc_blob_storage.postgresql\\.block-definition.yml",
+      "filesCount": 55,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -654,10 +742,12 @@
         "csc",
         "PostgreSql"
       ],
+      "codeLines": 2128,
       "description": "SQL-скрипты создания PostgreSql сущностей документарно-транзитного хранилища (Document Flow Transition Storage)",
       "directory": "Abs4.0/Source/Database/Source/csc_mtr_df_ts.postgresql",
       "extend": "MTR, DF",
       "filePath": "Abs4.0\\Source\\Database\\Source\\csc_mtr_df_ts.postgresql\\.block-definition.yml",
+      "filesCount": 80,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -670,10 +760,12 @@
         "csc",
         "PostgreSql"
       ],
+      "codeLines": 1770,
       "description": "SQL-скрипты создания PostgreSql сущностей транзитного хранилища (Transition Storage)",
       "directory": "Abs4.0/Source/Database/Source/csc_mtr_ts.postgresql",
       "extend": "MTR",
       "filePath": "Abs4.0\\Source\\Database\\Source\\csc_mtr_ts.postgresql\\.block-definition.yml",
+      "filesCount": 63,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -685,10 +777,12 @@
         "DBScripts",
         "Oracle"
       ],
-      "description": "Sql-скрипты БД Oracle для обраотки и хранения пользовательских списков навигатора (Navigator, NAV)",
+      "codeLines": 1386,
+      "description": "Sql-скрипты БД Oracle для обработки и хранения пользовательских списков навигатора (Navigator, NAV)",
       "directory": "Abs4.0/Source/Database/Source/csc_navigator.oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Database\\Source\\csc_navigator.oracle\\.block-definition.yml",
+      "filesCount": 49,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -700,10 +794,12 @@
         "DBScripts",
         "PostgreSql"
       ],
-      "description": "Sql-скрипты БД PostgreSql для обраотки и хранения пользовательских списков навигатора (Navigator, NAV)",
+      "codeLines": 1225,
+      "description": "Sql-скрипты БД PostgreSql для обработки и хранения пользовательских списков навигатора (Navigator, NAV)",
       "directory": "Abs4.0/Source/Database/Source/csc_navigator.postgresql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Database\\Source\\csc_navigator.postgresql\\.block-definition.yml",
+      "filesCount": 49,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -716,10 +812,12 @@
         "tplt",
         "Oracle"
       ],
-      "description": "SQL-скрипты создания Oracle сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "codeLines": 4248,
+      "description": "Шаблоны SQL-скриптов Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/Database/Source/tplt_blob_storage.oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_blob_storage.oracle\\.block-definition.yml",
+      "filesCount": 86,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -732,10 +830,12 @@
         "tplt",
         "PostgreSql"
       ],
-      "description": "SQL-скрипты создания PostgreSql сущностей Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
+      "codeLines": 4656,
+      "description": "Шаблоны SQL-скриптов Сервиса доступа к хранилищу бинарнах данных (Blob Storage, BS)",
       "directory": "Abs4.0/Source/Database/Source/tplt_blob_storage.postgresql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_blob_storage.postgresql\\.block-definition.yml",
+      "filesCount": 130,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -748,10 +848,12 @@
         "tplt",
         "PostgreSql"
       ],
+      "codeLines": 8283,
       "description": "SQL-скрипты создания PostgreSql сущностей документарно-транзитного хранилища (Document Flow Transition Storage)",
       "directory": "Abs4.0/Source/Database/Source/tplt_mtr_df_ts.postgresql",
       "extend": "MTR, DF",
       "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_mtr_df_ts.postgresql\\.block-definition.yml",
+      "filesCount": 197,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -764,10 +866,12 @@
         "tplt",
         "PostgreSql"
       ],
+      "codeLines": 6229,
       "description": "SQL-скрипты создания PostgreSql сущностей транзитного хранилища (Transition Storage)",
       "directory": "Abs4.0/Source/Database/Source/tplt_mtr_ts.postgresql",
       "extend": "MTR",
       "filePath": "Abs4.0\\Source\\Database\\Source\\tplt_mtr_ts.postgresql\\.block-definition.yml",
+      "filesCount": 156,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -778,10 +882,12 @@
       "blockPart": [
         "Implementation"
       ],
+      "codeLines": 3006,
       "description": "Имплементация блока получения информации о пользователе (User Info, UI)",
       "directory": "Abs4.0/Source/Directory/Source/Directory",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Directory\\Source\\Directory\\.block-definition.yml",
+      "filesCount": 12,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -792,10 +898,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 403,
       "description": "Контракты блока получения информации о пользователе (User Info, UI)",
       "directory": "Abs4.0/Source/Directory/Source/Directory.Contract",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Directory\\Source\\Directory.Contract\\.block-definition.yml",
+      "filesCount": 8,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -806,10 +914,12 @@
       "blockPart": [
         "Proxy"
       ],
+      "codeLines": 593,
       "description": "Прокси веб-сервис блока получения информации о пользователе (User Info, UI)",
       "directory": "Abs4.0/Source/Directory/Source/UserInfoProxy",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Directory\\Source\\UserInfoProxy\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -818,10 +928,12 @@
       "based": "",
       "blockName": "UI",
       "blockPart": [],
+      "codeLines": 4294,
       "description": "Блок получения информации о пользователе (User Info, UI)",
       "directory": "Abs4.0/Source/Directory/Source",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Directory\\Source\\.block-definition.yml",
+      "filesCount": 35,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -832,10 +944,12 @@
       "blockPart": [
         "Integration"
       ],
+      "codeLines": 460,
       "description": "Интеграция блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Abs4.0/Source/Mtr/Mtr.Integration",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Mtr\\Mtr.Integration\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -844,10 +958,12 @@
       "based": "",
       "blockName": "MTR",
       "blockPart": [],
+      "codeLines": 483,
       "description": "Блок Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Abs4.0/Source/Mtr",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Mtr\\.block-definition.yml",
+      "filesCount": 7,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -858,10 +974,12 @@
       "blockPart": [
         "Client"
       ],
+      "codeLines": 22223,
       "description": "Клиентская часть блока Навигатор (Navigator, NAV)",
       "directory": "Abs4.0/Source/Navigator/Source/Navigator",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Navigator\\.block-definition.yml",
+      "filesCount": 79,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -872,10 +990,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 1659,
       "description": "Контракты блока шаблонов запросов (Templates Engine, TE)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Contract",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Contract\\.block-definition.yml",
+      "filesCount": 31,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -886,10 +1006,12 @@
       "blockPart": [
         "Engine"
       ],
+      "codeLines": 22559,
       "description": "Основная часть движка обработки шаблонов запросов (Templates Engine, TE)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Engine",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Engine\\.block-definition.yml",
+      "filesCount": 129,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -900,10 +1022,12 @@
       "blockPart": [
         "Navigator"
       ],
+      "codeLines": 6513,
       "description": "Движок обработки клиентских навигаторных запросов. Сборка содержит enpoint'ы для обработки web-запросов. (Templates Engine, Navigator, TE, NAV)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator\\.block-definition.yml",
+      "filesCount": 41,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -916,10 +1040,12 @@
         "Dal",
         "Oracle"
       ],
+      "codeLines": 1600,
       "description": "Провайдер обработки пользовательских списков для БД Oracle (Templates Engine, Navigator, TE, NAV)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator.Dal.Oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator.Dal.Oracle\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -932,10 +1058,12 @@
         "Dal",
         "PostgreSql"
       ],
+      "codeLines": 753,
       "description": "Провайдер обработки пользовательских списков для БД PostgreSql (Templates Engine, Navigator, TE, NAV)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator.Dal.PostgreSql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -947,10 +1075,12 @@
         "Navigator",
         "Server"
       ],
+      "codeLines": 3736,
       "description": "Движок исполнения клиентских навигаторных запросов (Templates Engine, Navigator, TE, NAV)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Navigator.Server",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Navigator.Server\\.block-definition.yml",
+      "filesCount": 19,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -961,10 +1091,12 @@
       "blockPart": [
         "Query"
       ],
+      "codeLines": 8900,
       "description": "Контракты парсинга шаблонов навигатора, компиляции запросов к БД. Классы по созданию заявок отчетной системы Аналитического навигатора. (Templates Engine, Navigator, Report Generator)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Query",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query\\.block-definition.yml",
+      "filesCount": 38,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -976,10 +1108,12 @@
         "Query",
         "Server"
       ],
+      "codeLines": 14091,
       "description": "Реализация серверной части компиляции шаблонов и исполнения запросов к БД. (Templates Engine, TE)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server\\.block-definition.yml",
+      "filesCount": 71,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -993,10 +1127,12 @@
         "Dal",
         "Oracle"
       ],
+      "codeLines": 784,
       "description": "Oracle провайдер исполнения запросов (Templates Engine, TE)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server.Dal.Oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server.Dal.Oracle\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1010,10 +1146,12 @@
         "Dal",
         "PostgreSql"
       ],
+      "codeLines": 281,
       "description": "PostgreSql провайдер исполнения запросов (Templates Engine, TE)",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server.Dal.PostgreSql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1028,10 +1166,12 @@
         "PostgreSql",
         "Tests"
       ],
+      "codeLines": 184,
       "description": "Unit-тесты для проверки работоспособности провайдера PostgreSql.",
       "directory": "Abs4.0/Source/Navigator/Source/Templates.Query.Server.Dal.PostgreSql.Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Source\\Templates.Query.Server.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "filesCount": 4,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1042,10 +1182,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 5672,
       "description": "Сценарии тестирования Блока навинатор (Navigator, NAV)",
       "directory": "Abs4.0/Source/Navigator/Tests",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\Tests\\.block-definition.yml",
+      "filesCount": 56,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1054,10 +1196,12 @@
       "based": "",
       "blockName": "NAV",
       "blockPart": [],
+      "codeLines": 92286,
       "description": "Блок навинатор (Navigator, NAV)",
       "directory": "Abs4.0/Source/Navigator",
       "extend": "",
       "filePath": "Abs4.0\\Source\\Navigator\\.block-definition.yml",
+      "filesCount": 532,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1068,10 +1212,12 @@
       "blockPart": [
         "Tool"
       ],
+      "codeLines": 13795,
       "description": "Утилита просмотра, импорта и экспорта журналов работы приложений, мониторинга в реальном времени (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor\\.block-definition.yml",
+      "filesCount": 73,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1083,10 +1229,12 @@
         "Catalog",
         "Index"
       ],
+      "codeLines": 4436,
       "description": "Расширение визуализации индекса каталога (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.CatalogIndex",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.CatalogIndex\\.block-definition.yml",
+      "filesCount": 43,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1098,10 +1246,12 @@
         "Catalog",
         "Log"
       ],
+      "codeLines": 9242,
       "description": "Расширение визуализации журнала индекса каталога (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.CatalogLog",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.CatalogLog\\.block-definition.yml",
+      "filesCount": 57,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1112,10 +1262,12 @@
       "blockPart": [
         "Controls"
       ],
+      "codeLines": 7731,
       "description": "Библиотека элементов управления RTM (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Controls",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Controls\\.block-definition.yml",
+      "filesCount": 58,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1126,10 +1278,12 @@
       "blockPart": [
         "Extensibility"
       ],
+      "codeLines": 3579,
       "description": "Библиотека элементов расширения (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Extensibility",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Extensibility\\.block-definition.yml",
+      "filesCount": 52,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1140,10 +1294,12 @@
       "blockPart": [
         "Monitoring"
       ],
+      "codeLines": 82472,
       "description": "Расширение иониторинга (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Monitoring",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Monitoring\\.block-definition.yml",
+      "filesCount": 372,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1154,10 +1310,12 @@
       "blockPart": [
         "Notifications"
       ],
+      "codeLines": 1555,
       "description": "Уведомления (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Notifications",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Notifications\\.block-definition.yml",
+      "filesCount": 13,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1168,10 +1326,12 @@
       "blockPart": [
         "PowerShell"
       ],
+      "codeLines": 7482,
       "description": "Расширение интеграции с PowerShell (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.PowerShell",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.PowerShell\\.block-definition.yml",
+      "filesCount": 49,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1182,10 +1342,12 @@
       "blockPart": [
         "Profiling"
       ],
+      "codeLines": 15217,
       "description": "Плагин профилирования (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Profiling",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Profiling\\.block-definition.yml",
+      "filesCount": 108,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1196,10 +1358,12 @@
       "blockPart": [
         "Resources"
       ],
+      "codeLines": 13633,
       "description": "Ресурсы (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Source/RealtimeMonitor.Resources",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Source\\RealtimeMonitor.Resources\\.block-definition.yml",
+      "filesCount": 71,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1210,10 +1374,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 1906,
       "description": "Сценарии тестирования RTM",
       "directory": "Abs4.0/Source/RealtimeMonitorTool/Test",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\Test\\.block-definition.yml",
+      "filesCount": 27,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1222,10 +1388,12 @@
       "based": "",
       "blockName": "RTM",
       "blockPart": [],
+      "codeLines": 407178,
       "description": "Утилита просмотра, импорта и экспорта журналов работы приложений, мониторинга в реальном времени (Real time monitoring, RTM)",
       "directory": "Abs4.0/Source/RealtimeMonitorTool",
       "extend": "",
       "filePath": "Abs4.0\\Source\\RealtimeMonitorTool\\.block-definition.yml",
+      "filesCount": 1023,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1236,10 +1404,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 1089,
       "description": "Контракты Блока работы со справочной информацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Contract",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Contract\\.block-definition.yml",
+      "filesCount": 24,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1250,10 +1420,12 @@
       "blockPart": [
         "Controls"
       ],
+      "codeLines": 7830,
       "description": "UI элементы Блока работы со справочной иформацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Controls",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Controls\\.block-definition.yml",
+      "filesCount": 60,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1264,10 +1436,12 @@
       "blockPart": [
         "Library"
       ],
+      "codeLines": 9447,
       "description": "Библиотека общей имплементации Блока работы со справочной информацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Library",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Library\\.block-definition.yml",
+      "filesCount": 82,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1279,10 +1453,12 @@
         "Library",
         "Configuration"
       ],
+      "codeLines": 2918,
       "description": "Конфигурирование библиотеки общей имплементации Блока работы со справочной информацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Library.Configuration",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Library.Configuration\\.block-definition.yml",
+      "filesCount": 29,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1293,10 +1469,12 @@
       "blockPart": [
         "Local"
       ],
+      "codeLines": 904,
       "description": "Имплементация локального сервиса Блока работы со справочной информацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Local",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Local\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1307,10 +1485,12 @@
       "blockPart": [
         "Server"
       ],
+      "codeLines": 3239,
       "description": "Серверная имплементация сервиса доступа к кэшированной справочной информации (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server\\.block-definition.yml",
+      "filesCount": 21,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1322,10 +1502,12 @@
         "Server",
         "Contract"
       ],
+      "codeLines": 171,
       "description": "Серверные контракты Блока работы со справочной информацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server.Contract",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server.Contract\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1337,10 +1519,12 @@
         "Server",
         "Oracle"
       ],
+      "codeLines": 475,
       "description": "Реализация серверного провайдера доступа к данным кэшированной справочной информации в БД Oracle. (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server.Oracle",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server.Oracle\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1352,10 +1536,12 @@
         "Server",
         "PostgreSql"
       ],
+      "codeLines": 441,
       "description": "Реализация серверного провайдера доступа к данным кэшированной справочной информации в БД PostgreSql. (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source/ThesAccess.Server.PostgreSql",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\ThesAccess.Server.PostgreSql\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1364,10 +1550,12 @@
       "based": "",
       "blockName": "TA",
       "blockPart": [],
+      "codeLines": 26790,
       "description": "Блок работы со справочной информацией (Thes Access, TA)",
       "directory": "Abs4.0/Source/ThesAccess/Source",
       "extend": "",
       "filePath": "Abs4.0\\Source\\ThesAccess\\Source\\.block-definition.yml",
+      "filesCount": 247,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1376,10 +1564,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 1112055,
       "description": "Прикладные блоки КПИ - выпуск 4.0 (Application Blocks, ABS)",
       "directory": "Abs4.0",
       "extend": "",
       "filePath": "Abs4.0\\.block-definition.yml",
+      "filesCount": 5938,
       "ignore": false,
       "scope": "/RGB/CSC/ABS"
     },
@@ -1390,10 +1580,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 1136,
       "description": "Контракты блока сервиса работы с кэшем (Cache Service, CS)",
       "directory": "Core/CorLib/CorLib/Cache",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\Cache\\.block-definition.yml",
+      "filesCount": 13,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1404,10 +1596,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 5079,
       "description": "Контракты блока Логический Каталог (Logical Catalog, LC)",
       "directory": "Core/CorLib/CorLib/Catalog",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\Catalog\\.block-definition.yml",
+      "filesCount": 40,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1419,10 +1613,12 @@
         "Contract",
         "CatalogAddress"
       ],
+      "codeLines": 4251,
       "description": "Контракты блока Логический Каталог (Logical Catalog, LC)",
       "directory": "Core/CorLib/CorLib/CatalogAddress",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\CatalogAddress\\.block-definition.yml",
+      "filesCount": 11,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1433,10 +1629,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 4048,
       "description": "Контракты блока DAL (Data Access Layer, DAL)",
       "directory": "Core/CorLib/CorLib/Dal2",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\Dal2\\.block-definition.yml",
+      "filesCount": 38,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1445,10 +1643,12 @@
       "based": "",
       "blockName": "DU",
       "blockPart": [],
+      "codeLines": 2226,
       "description": "Инфраструктура микроинтеграции по данным между задачами и ПП (Data Unit, DU)",
       "directory": "Core/CorLib/CorLib/GenericPlatform/EntitiesInfrastructure/DataUnits",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\GenericPlatform\\EntitiesInfrastructure\\DataUnits\\.block-definition.yml",
+      "filesCount": 21,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
     },
@@ -1457,10 +1657,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 8503,
       "description": "Инфраструктура сущностей (EntitiesInfrastructure)",
       "directory": "Core/CorLib/CorLib/GenericPlatform/EntitiesInfrastructure",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib\\GenericPlatform\\EntitiesInfrastructure\\.block-definition.yml",
+      "filesCount": 88,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
     },
@@ -1469,10 +1671,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 32313,
       "description": "Обобщенная часть платформы (Generic Platform)",
       "directory": "Core/CorLib/CorLib/GenericPlatform",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib\\GenericPlatform\\.block-definition.yml",
+      "filesCount": 334,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
@@ -1483,10 +1687,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 5975,
       "description": "Контракты блока Инструментирование (Instrumentation)",
       "directory": "Core/CorLib/CorLib/Instrumentation",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\Instrumentation\\.block-definition.yml",
+      "filesCount": 78,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1498,10 +1704,12 @@
         "Contract",
         "Rtm"
       ],
+      "codeLines": 80,
       "description": "Внутренние контракты блока Инструментирование (Instrumentation)",
       "directory": "Core/CorLib/CorLib/RealtimeMonitoring",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\RealtimeMonitoring\\.block-definition.yml",
+      "filesCount": 2,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1512,10 +1720,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 1804,
       "description": "Контракты генератора печатных форм (Report Generator, RG)",
       "directory": "Core/CorLib/CorLib/ReportGenerator",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\ReportGenerator\\.block-definition.yml",
+      "filesCount": 27,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1526,10 +1736,12 @@
       "blockPart": [
         "Transaction"
       ],
+      "codeLines": 62,
       "description": "Часть контрактов транзакций блока DAL (Data Access Layer, DAL)",
       "directory": "Core/CorLib/CorLib/Transaction",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib\\Transaction\\.block-definition.yml",
+      "filesCount": 2,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1540,10 +1752,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 1765,
       "description": "Контракты блока Логический Каталог (Cache Service, CS)",
       "directory": "Core/CorLib/CorLib.Bundle/Cache",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\Cache\\.block-definition.yml",
+      "filesCount": 31,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1554,10 +1768,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 76025,
       "description": "Внутренняя часть блока Логический Каталог (Logical Catalog, LC)",
       "directory": "Core/CorLib/CorLib.Bundle/Catalog2",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\Catalog2\\.block-definition.yml",
+      "filesCount": 136,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1568,10 +1784,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 644,
       "description": "Внутренняя часть блока DAL (Data Access Layer, DAL)",
       "directory": "Core/CorLib/CorLib.Bundle/Dal2",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\Dal2\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1580,10 +1798,12 @@
       "based": "",
       "blockName": "LC",
       "blockPart": [],
+      "codeLines": 816,
       "description": "Внутренние контракты блока Логический Каталог в части Обобщенной платформы (Logical Catalog, LC)",
       "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform/Catalog",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\Catalog\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
@@ -1592,10 +1812,12 @@
       "based": "",
       "blockName": "SM",
       "blockPart": [],
+      "codeLines": 197,
       "description": "Стратегия блока учета и управления сессиями в части обобщенной платформы (Session manager, SM)",
       "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform/SessionManager",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\SessionManager\\.block-definition.yml",
+      "filesCount": 2,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
@@ -1606,10 +1828,12 @@
       "blockPart": [
         "UpIntegration"
       ],
+      "codeLines": 844,
       "description": "Интеграция блока Логический Каталог с частью Универсальной платформы (Logical Catalog, LC)",
       "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform/UniversalPlatformIntegration",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\UniversalPlatformIntegration\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
@@ -1618,10 +1842,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 70895,
       "description": "Обобщенная часть платформы (Generic Platform)",
       "directory": "Core/CorLib/CorLib.Bundle/GenericPlatform",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\GenericPlatform\\.block-definition.yml",
+      "filesCount": 380,
       "ignore": false,
       "scope": "/RGB/CSC/Core/GenericPlatform"
     },
@@ -1632,10 +1858,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 6222,
       "description": "Внутренняя часть блока Инструментирование (Instrumentation)",
       "directory": "Core/CorLib/CorLib.Bundle/Instrumentation",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\Instrumentation\\.block-definition.yml",
+      "filesCount": 41,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1647,10 +1875,12 @@
         "Bundle",
         "Rtm"
       ],
+      "codeLines": 10602,
       "description": "Внутренняя часть блока Инструментирование (Instrumentation)",
       "directory": "Core/CorLib/CorLib.Bundle/RealtimeMonitoring",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\RealtimeMonitoring\\.block-definition.yml",
+      "filesCount": 29,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1661,10 +1891,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 8139,
       "description": "Внутренняя часть Генератора печатных форм (Report Generator, RG)",
       "directory": "Core/CorLib/CorLib.Bundle/ReportGenerator",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.Bundle\\ReportGenerator\\.block-definition.yml",
+      "filesCount": 62,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1675,10 +1907,12 @@
       "blockPart": [
         "Server"
       ],
+      "codeLines": 12365,
       "description": "Распределенная непрерывная машина состояний (Continues state machine, CSM)",
       "directory": "Core/CorLib/CorLib.Csm.Server",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib.Csm.Server\\.block-definition.yml",
+      "filesCount": 161,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1690,10 +1924,12 @@
         "Server",
         "Bundle"
       ],
+      "codeLines": 28918,
       "description": "Внутренняя часть распределенной непрерывной машины состояний (Continues state machine, CSM)",
       "directory": "Core/CorLib/CorLib.Csm.Server.Bundle",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib.Csm.Server.Bundle\\.block-definition.yml",
+      "filesCount": 171,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1705,10 +1941,12 @@
         "Server",
         "Storage"
       ],
+      "codeLines": 14789,
       "description": "Имплементация работы с хранилищем распределенной непрерывной машины состояний (Continues state machine, CSM)",
       "directory": "Core/CorLib/CorLib.Csm.Server.Storage",
       "extend": "",
       "filePath": "Core\\CorLib\\CorLib.Csm.Server.Storage\\.block-definition.yml",
+      "filesCount": 59,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1717,10 +1955,12 @@
       "based": "",
       "blockName": "SM",
       "blockPart": [],
+      "codeLines": 1972,
       "description": "Блок учета и управления сессиями в части основой платформы (Session manager, SM)",
       "directory": "Core/CorLib/CorLib.SessionManager",
       "extend": "UC",
       "filePath": "Core\\CorLib\\CorLib.SessionManager\\.block-definition.yml",
+      "filesCount": 20,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1732,10 +1972,12 @@
         "Server",
         "Bundle"
       ],
+      "codeLines": 2381,
       "description": "PLSQL скрипты блока распределенной непрерывной машины состояний (Continues state machine, CSM)",
       "directory": "Core/CorLib/Database/csc_csm.oracle",
       "extend": "",
       "filePath": "Core\\CorLib\\Database\\csc_csm.oracle\\.block-definition.yml",
+      "filesCount": 47,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1746,10 +1988,12 @@
       "blockPart": [
         "Integration"
       ],
+      "codeLines": 618,
       "description": "Интеграция Распределенной платформы обработки в Core (Distributed Processing Platform, Dpp)",
       "directory": "Core/CorLib/Dpp.Integration",
       "extend": "",
       "filePath": "Core\\CorLib\\Dpp.Integration\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1758,10 +2002,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 800832,
       "description": "Основная часть платформы (Common System Components, CSC)",
       "directory": "Core",
       "extend": "",
       "filePath": "Core\\.block-definition.yml",
+      "filesCount": 5216,
       "ignore": false,
       "scope": "/RGB/CSC/Core"
     },
@@ -1773,10 +2019,12 @@
         "DBScripts",
         "Oracle"
       ],
+      "codeLines": 15013,
       "description": "SQL скрипты блока Документооборот для БД Oracle (Document Flow, DF)",
       "directory": "Pf/Source/Database/csc_documentflow.oracle",
       "extend": "",
       "filePath": "Pf\\Source\\Database\\csc_documentflow.oracle\\.block-definition.yml",
+      "filesCount": 332,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1788,10 +2036,12 @@
         "DBScripts",
         "PostgreSql"
       ],
+      "codeLines": 10937,
       "description": "SQL скрипты блока Документооборот для БД PostgreSql (Document Flow, DF)",
       "directory": "Pf/Source/Database/csc_documentflow.postgresql",
       "extend": "",
       "filePath": "Pf\\Source\\Database\\csc_documentflow.postgresql\\.block-definition.yml",
+      "filesCount": 285,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1804,10 +2054,12 @@
         "Csm",
         "Oracle"
       ],
+      "codeLines": 1135,
       "description": "Oracle SQL скрипты распределенной машины состояний Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/Database/csc_documentflow_csm.oracle",
       "extend": "",
       "filePath": "Pf\\Source\\Database\\csc_documentflow_csm.oracle\\.block-definition.yml",
+      "filesCount": 43,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1818,10 +2070,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 9271,
       "description": "Внутренняя часть блока Документооборот (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle\\.block-definition.yml",
+      "filesCount": 38,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1833,10 +2087,12 @@
         "Bundle",
         "Client"
       ],
+      "codeLines": 6979,
       "description": "Клиентская внутренняя часть блока Документооборот (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle.Client",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle.Client\\.block-definition.yml",
+      "filesCount": 34,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1848,10 +2104,12 @@
         "Bundle",
         "Configuration"
       ],
+      "codeLines": 447,
       "description": "Конфигурирование блока Документооборот (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle.Configuration",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle.Configuration\\.block-definition.yml",
+      "filesCount": 7,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1863,10 +2121,12 @@
         "Bundle",
         "Server"
       ],
+      "codeLines": 17528,
       "description": "Серверная внутренняя часть блока Документооборот (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Bundle.Server",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Bundle.Server\\.block-definition.yml",
+      "filesCount": 82,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1877,10 +2137,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 14804,
       "description": "Контракты Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract\\.block-definition.yml",
+      "filesCount": 164,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1892,10 +2154,12 @@
         "Contract",
         "Client"
       ],
+      "codeLines": 1461,
       "description": "Клиентские контракты Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract.Client",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract.Client\\.block-definition.yml",
+      "filesCount": 18,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1907,10 +2171,12 @@
         "Contract",
         "Server"
       ],
+      "codeLines": 4037,
       "description": "Серверные контракты Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Contract.Server",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Contract.Server\\.block-definition.yml",
+      "filesCount": 33,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1921,10 +2187,12 @@
       "blockPart": [
         "Csm"
       ],
+      "codeLines": 1064,
       "description": "Распределенная машина состояний для Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Csm",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Csm\\.block-definition.yml",
+      "filesCount": 15,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1936,10 +2204,12 @@
         "Csm",
         "Bundle"
       ],
+      "codeLines": 974,
       "description": "Внутренняя часть распределенной машина состояний для Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Csm.Bundle",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Csm.Bundle\\.block-definition.yml",
+      "filesCount": 12,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1952,10 +2222,12 @@
         "Dal",
         "Oracle"
       ],
+      "codeLines": 2344,
       "description": "Слой DAL для распределенной машины состояний Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Csm.Dal.Oracle",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Csm.Dal.Oracle\\.block-definition.yml",
+      "filesCount": 17,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1967,10 +2239,12 @@
         "Dal",
         "Oracle"
       ],
+      "codeLines": 22899,
       "description": "Имплеметация слоя DAL блока Документооборот для БД Oracle (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.Oracle",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.Oracle\\.block-definition.yml",
+      "filesCount": 134,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1983,10 +2257,12 @@
         "Oracle",
         "Tests"
       ],
+      "codeLines": 3533,
       "description": "Сценарии тестирования слоя DAL блока Документооборот для БД Oracle (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.Oracle.Tests",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.Oracle.Tests\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -1998,10 +2274,12 @@
         "Dal",
         "PostgreSql"
       ],
+      "codeLines": 6438,
       "description": "Имплеметация слоя DAL блока Документооборот для БД PostgreSql (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.PostgreSql",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 64,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -2014,10 +2292,12 @@
         "PostgreSql",
         "Tests"
       ],
+      "codeLines": 2783,
       "description": "Сценарии тестирования слоя DAL блока Документооборот для БД PostgreSql (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Dal.PostgreSql.Tests",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Dal.PostgreSql.Tests\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -2029,10 +2309,12 @@
         "Dal",
         "PostgreSql"
       ],
+      "codeLines": 2355,
       "description": "Слой DAL документарно-транзитного хранилища Документооборота БД PostgreSql (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/Documentflow.MtrDfTs.Dal.PostgreSql",
       "extend": "",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\Documentflow.MtrDfTs.Dal.PostgreSql\\.block-definition.yml",
+      "filesCount": 22,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -2044,10 +2326,12 @@
         "Server",
         "Bundle"
       ],
+      "codeLines": 214,
       "description": "Имплементация транзитного провайдера Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Ts.Bundle.Server",
       "extend": "MTR",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Ts.Bundle.Server\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -2059,10 +2343,12 @@
         "Server",
         "Contract"
       ],
+      "codeLines": 147,
       "description": "Внутренние контракты транзитного провайдера Документооборота (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Ts.Contract.Server",
       "extend": "MTR",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Ts.Contract.Server\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
@@ -2073,24 +2359,28 @@
       "blockPart": [
         "Uc"
       ],
+      "codeLines": 15116,
       "description": "Набор компонентов ЕКП блока Документооборот (Document Flow, DF)",
       "directory": "Pf/Source/ProcessFlow/Source/DocumentFlow.Uc.Bundle",
       "extend": "UC",
       "filePath": "Pf\\Source\\ProcessFlow\\Source\\DocumentFlow.Uc.Bundle\\.block-definition.yml",
+      "filesCount": 69,
       "ignore": false,
       "scope": "/RGB/CSC"
     },
     {
       "aspects": "",
       "based": "",
-      "blockName": "PF",
+      "blockName": null,
       "blockPart": [],
+      "codeLines": 3390450,
       "description": "Группа блоков ИИБП (Process Flow, PF)",
       "directory": "Pf",
       "extend": "",
       "filePath": "Pf\\.block-definition.yml",
+      "filesCount": 8338,
       "ignore": false,
-      "scope": "/RGB/CSC"
+      "scope": "/RGB/CSC/PF"
     },
     {
       "aspects": "Internal",
@@ -2099,10 +2389,12 @@
       "blockPart": [
         "Agent"
       ],
+      "codeLines": 20496,
       "description": "Агент блока организации Raft-кластера",
       "directory": "Up/Blocks/Cluster/Cluster.Agent",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Cluster.Agent\\.block-definition.yml",
+      "filesCount": 152,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2114,10 +2406,12 @@
         "Agent",
         "Contract"
       ],
+      "codeLines": 106,
       "description": "Контракт взаимодействия с кластерным агентом",
       "directory": "Up/Blocks/Cluster/Cluster.Agent.Contract",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Cluster.Agent.Contract\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2128,10 +2422,12 @@
       "blockPart": [
         "Implementation"
       ],
+      "codeLines": 9150,
       "description": "Блок организации Mount Infection-Style Protocol кластера (Swim)",
       "directory": "Up/Blocks/Cluster/Cluster.Swim",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Cluster.Swim\\.block-definition.yml",
+      "filesCount": 69,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2142,10 +2438,12 @@
       "blockPart": [
         "Hub"
       ],
+      "codeLines": 458,
       "description": "Mount пакет блока организации Mount Infection-Style Protocol кластера (Swim)",
       "directory": "Up/Blocks/Cluster/Cluster.SwimHub",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Cluster.SwimHub\\.block-definition.yml",
+      "filesCount": 13,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2156,10 +2454,12 @@
       "blockPart": [
         "Core"
       ],
+      "codeLines": 845,
       "description": "Библиотека контрактов блока организации кольцевого кластера (Ring Cluster)",
       "directory": "Up/Blocks/Cluster/RingCluster.Core",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\RingCluster.Core\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2170,10 +2470,12 @@
       "blockPart": [
         "WebExtensions"
       ],
+      "codeLines": 306,
       "description": "Библиотека интеграции кольцевого кластера в asp.net core (Ring Cluster)",
       "directory": "Up/Blocks/Cluster/RingCluster.WebExtensions",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\RingCluster.WebExtensions\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2184,10 +2486,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 3111,
       "description": "Сценарии тестирования блока SWIM-кластер",
       "directory": "Up/Blocks/Cluster/Tests/Cluster.Swim.TestConsole",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Tests\\Cluster.Swim.TestConsole\\.block-definition.yml",
+      "filesCount": 14,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2199,10 +2503,12 @@
         "Tests",
         "Transport"
       ],
+      "codeLines": 275,
       "description": "Сценарии тестирования блока SWIM-кластер",
       "directory": "Up/Blocks/Cluster/Tests/Cluster.Swim.Transport.Test",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Tests\\Cluster.Swim.Transport.Test\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2214,10 +2520,12 @@
         "Tests",
         "Host"
       ],
+      "codeLines": 90,
       "description": "Сценарии тестирования блока SWIM-кластер",
       "directory": "Up/Blocks/Cluster/Tests/Swim.Host.TestConsole",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\Tests\\Swim.Host.TestConsole\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2226,10 +2534,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 35138,
       "description": "Блоки организации кластеров",
       "directory": "Up/Blocks/Cluster",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster\\.block-definition.yml",
+      "filesCount": 279,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2241,10 +2551,12 @@
         "Agent",
         "Tests"
       ],
+      "codeLines": 360,
       "description": "Сценарии тестирования блока организации Raft-кластера",
       "directory": "Up/Blocks/Cluster.Agent.Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Cluster.Agent.Tests\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/UP/Cluster"
     },
@@ -2253,10 +2565,12 @@
       "based": "",
       "blockName": "LC",
       "blockPart": [],
+      "codeLines": 380,
       "description": "Контракты блока логический каталог в части Универсальной платформы (Logical Catalog, LC)",
       "directory": "Up/Blocks/Core/CorLib/CommonComponents.Catalog.Units",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Core\\CorLib\\CommonComponents.Catalog.Units\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2265,10 +2579,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 287,
       "description": "Обобщенная часть платформы (Generic Platform)",
       "directory": "Up/Blocks/Core/CorLib/CommonComponents.GenericPlatform",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\CorLib\\CommonComponents.GenericPlatform\\.block-definition.yml",
+      "filesCount": 4,
       "ignore": false,
       "scope": "/RGB/UP/Core/GenericPlatform"
     },
@@ -2277,10 +2593,12 @@
       "based": "",
       "blockName": "Instrumentation",
       "blockPart": [],
+      "codeLines": 263,
       "description": "Блок Инструментирование (Instrumentation)",
       "directory": "Up/Blocks/Core/CorLib/CommonComponents.Instrumentation",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Core\\CorLib\\CommonComponents.Instrumentation\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2289,10 +2607,12 @@
       "based": "",
       "blockName": "ENV",
       "blockPart": [],
+      "codeLines": 12444,
       "description": "Блок подготовки сред исполнения (Composite Environment, ENV)",
       "directory": "Up/Blocks/Core/CorLib.Internal/UniversalServices",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Core\\CorLib.Internal\\UniversalServices\\.block-definition.yml",
+      "filesCount": 106,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2303,10 +2623,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 1598,
       "description": "Контракты блока слой доступа к данным (Data access layer, DAL)",
       "directory": "Up/Blocks/Core/Dal.Transaction.Contract",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Contract\\.block-definition.yml",
+      "filesCount": 27,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2317,10 +2639,12 @@
       "blockPart": [
         "Implementation"
       ],
+      "codeLines": 4290,
       "description": "Имплементация блока Управление незавершенными распределенными транзакциями (DTM, Distributed Transaction Manager)",
       "directory": "Up/Blocks/Core/Dal.Transaction.Linux/Dtm",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux\\Dtm\\.block-definition.yml",
+      "filesCount": 26,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2331,10 +2655,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 710,
       "description": "Управление незавершенными распределенными транзакциями (DTM, Distributed Transaction Manager)",
       "directory": "Up/Blocks/Core/Dal.Transaction.Linux/Interface",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux\\Interface\\.block-definition.yml",
+      "filesCount": 15,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2345,10 +2671,12 @@
       "blockPart": [
         "Linux"
       ],
+      "codeLines": 7699,
       "description": "Блок слоя доступа к данным Linux имплементация транзакций (Data access layer, DAL)",
       "directory": "Up/Blocks/Core/Dal.Transaction.Linux",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux\\.block-definition.yml",
+      "filesCount": 59,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2359,10 +2687,12 @@
       "blockPart": [
         "Rest"
       ],
+      "codeLines": 419,
       "description": "Веб интерфейс для администрирования DTM (Distributed Transaction Manager, DTM)",
       "directory": "Up/Blocks/Core/Dal.Transaction.Linux.Rest",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Linux.Rest\\.block-definition.yml",
+      "filesCount": 8,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2373,10 +2703,12 @@
       "blockPart": [
         "Win"
       ],
+      "codeLines": 669,
       "description": "Блок слоя доступа к данным Windows имплементация транзакций (Data access layer, DAL)",
       "directory": "Up/Blocks/Core/Dal.Transaction.Win",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Core\\Dal.Transaction.Win\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2387,10 +2719,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 4321,
       "description": "Сценарии тестирования блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\Tests\\.block-definition.yml",
+      "filesCount": 74,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2401,10 +2735,12 @@
       "blockPart": [
         "Abstractions"
       ],
+      "codeLines": 2299,
       "description": "Общие абстракции блока MTR (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Abstractions",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Abstractions\\.block-definition.yml",
+      "filesCount": 20,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2415,10 +2751,12 @@
       "blockPart": [
         "Abstractions"
       ],
+      "codeLines": 719,
       "description": "Общие абстракции документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Df.Abstractions",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Df.Abstractions\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2429,10 +2767,12 @@
       "blockPart": [
         "Extensions"
       ],
+      "codeLines": 313,
       "description": "Контракты команд документарно-транзитного хранилища (Document Flow Transition Storage, DFTS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Df.Extensions",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Df.Extensions\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2443,10 +2783,12 @@
       "blockPart": [
         "Plugin"
       ],
+      "codeLines": 1259,
       "description": "Имплементация команд документрано-транзитного хранилища (Document Flow Transition Storage, DFTS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Df.Plugin",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Df.Plugin\\.block-definition.yml",
+      "filesCount": 14,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2457,10 +2799,12 @@
       "blockPart": [
         "Extensions"
       ],
+      "codeLines": 71,
       "description": "Расширения для сервиса MTR (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Extensions",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Extensions\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2472,10 +2816,12 @@
         "Grpc",
         "Contracts"
       ],
+      "codeLines": 66,
       "description": "Внутренние Protobuf контракты блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Contracts",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Contracts\\.block-definition.yml",
+      "filesCount": 2,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2487,10 +2833,12 @@
         "Grpc",
         "Provider"
       ],
+      "codeLines": 5137,
       "description": "Клиентская имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Provider",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Provider\\.block-definition.yml",
+      "filesCount": 44,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2502,10 +2850,12 @@
         "Grpc",
         "Publisher"
       ],
+      "codeLines": 7981,
       "description": "Серверная имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Publisher",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Publisher\\.block-definition.yml",
+      "filesCount": 54,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2517,10 +2867,12 @@
         "Grpc",
         "Shared"
       ],
+      "codeLines": 2791,
       "description": "Общая часть имплементации коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Grpc.Shared",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Grpc.Shared\\.block-definition.yml",
+      "filesCount": 39,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2531,10 +2883,12 @@
       "blockPart": [
         "Implementation"
       ],
+      "codeLines": 3626,
       "description": "Имплементация блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Implementation",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Implementation\\.block-definition.yml",
+      "filesCount": 15,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2546,10 +2900,12 @@
         "Plugin",
         "Abstractions"
       ],
+      "codeLines": 543,
       "description": "Внутренние абстракции блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Plugin.Abstractions",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Plugin.Abstractions\\.block-definition.yml",
+      "filesCount": 16,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2561,10 +2917,12 @@
         "Publisher",
         "Abstractions"
       ],
+      "codeLines": 277,
       "description": "Внутренние контракты коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Abstractions",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Abstractions\\.block-definition.yml",
+      "filesCount": 8,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2576,10 +2934,12 @@
         "Publisher",
         "Extensions"
       ],
+      "codeLines": 73,
       "description": "Внутренние контракты-расширения коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Extensions",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Extensions\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2592,10 +2952,12 @@
         "Hosting",
         "Kestrel"
       ],
+      "codeLines": 707,
       "description": "Имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Hosting.Kestrel",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Hosting.Kestrel\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2608,10 +2970,12 @@
         "Hosting",
         "UpKestrel"
       ],
+      "codeLines": 712,
       "description": "Имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Hosting.UpKestrel",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Hosting.UpKestrel\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2623,10 +2987,12 @@
         "Publisher",
         "Implementation"
       ],
+      "codeLines": 120,
       "description": "Имплементация коммуникаций блока Многоцелевой репозиторий (Multitarget repository, MTR)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Publisher.Implementation",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Publisher.Implementation\\.block-definition.yml",
+      "filesCount": 4,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2637,10 +3003,12 @@
       "blockPart": [
         "Abstractions"
       ],
+      "codeLines": 371,
       "description": "Общие контракты блока Транзитное хранилище (Transition Storage, TS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Abstractions",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Abstractions\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2651,10 +3019,12 @@
       "blockPart": [
         "Extensions"
       ],
+      "codeLines": 254,
       "description": "Расширения-контракты команд блока Транзитное хранилище (Transition Storage, TS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Extensions",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Extensions\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2665,10 +3035,12 @@
       "blockPart": [
         "Plugin"
       ],
+      "codeLines": 131,
       "description": "Модуль блока Транзитное хранилище (Transition Storage, TS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Plugin",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Plugin\\.block-definition.yml",
+      "filesCount": 4,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2679,10 +3051,12 @@
       "blockPart": [
         "Shared"
       ],
+      "codeLines": 699,
       "description": "Имплементация команд блока Транзитное хранилище (Transition Storage, TS)",
       "directory": "Up/Blocks/Core/Mtr/UniversalPlatform.Mtr.Ts.Shared",
       "extend": "MTR",
       "filePath": "Up\\Blocks\\Core\\Mtr\\UniversalPlatform.Mtr.Ts.Shared\\.block-definition.yml",
+      "filesCount": 10,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2691,10 +3065,12 @@
       "based": "",
       "blockName": "MTR",
       "blockPart": [],
+      "codeLines": 33876,
       "description": "Multitarget repository",
       "directory": "Up/Blocks/Core/Mtr",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Mtr\\.block-definition.yml",
+      "filesCount": 381,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2705,10 +3081,12 @@
       "blockPart": [
         "ConsoleTests"
       ],
+      "codeLines": 149,
       "description": "Сценарии тестирования блока подготовки сред исполнения (Composite Environment, ENV)",
       "directory": "Up/Blocks/Core/Tests/EnviConsoleTest",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Tests\\EnviConsoleTest\\.block-definition.yml",
+      "filesCount": 4,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2719,10 +3097,12 @@
       "blockPart": [
         "Benchmarks"
       ],
+      "codeLines": 805,
       "description": "Бенчмарки блока подготовки сред исполнения (Composite Environment, ENV)",
       "directory": "Up/Blocks/Core/Tests/EnviTests",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Tests\\EnviTests\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2733,10 +3113,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 3339,
       "description": "Сценарии тестирования ТХ1 (Transition Blob, TB, ТХ1)",
       "directory": "Up/Blocks/Core/Tests/TransitionBlob.Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Tests\\TransitionBlob.Tests\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2747,10 +3129,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 627,
       "description": "Сценарии тестирования блока подготовки сред исполнения (Composite Environment, ENV)",
       "directory": "Up/Blocks/Core/Tests/UniversalPlatform.CorLib.Internal.Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Tests\\UniversalPlatform.CorLib.Internal.Tests\\.block-definition.yml",
+      "filesCount": 7,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2762,10 +3146,12 @@
         "Win",
         "Tests"
       ],
+      "codeLines": 196,
       "description": "Сценарии тестирования Windows имплементации транзакций блока слой доступа к данным (Data access layer, DAL)",
       "directory": "Up/Blocks/Core/Tests/UniversalPlatform.Dal.Transaction.Test",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\Tests\\UniversalPlatform.Dal.Transaction.Test\\.block-definition.yml",
+      "filesCount": 3,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2774,10 +3160,12 @@
       "based": "",
       "blockName": "TB",
       "blockPart": [],
+      "codeLines": 7818,
       "description": "Имплементация и публичные расширения блока Транзитное хранилище первого рода (Transition Blob, TB, ТХ1)",
       "directory": "Up/Blocks/Core/TransitionBlob",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\TransitionBlob\\.block-definition.yml",
+      "filesCount": 35,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2788,10 +3176,12 @@
       "blockPart": [
         "Integration"
       ],
+      "codeLines": 815,
       "description": "Библиотека интеграции ТХ1 (Transition Blob, TB)",
       "directory": "Up/Blocks/Core/TransitionBlob.Integration",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\TransitionBlob.Integration\\.block-definition.yml",
+      "filesCount": 9,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2800,10 +3190,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 85223,
       "description": "Основная часть Универсальная платформы (Core)",
       "directory": "Up/Blocks/Core",
       "extend": "",
       "filePath": "Up\\Blocks\\Core\\.block-definition.yml",
+      "filesCount": 754,
       "ignore": false,
       "scope": "/RGB/UP/Core"
     },
@@ -2814,10 +3206,12 @@
       "blockPart": [
         "Contracts"
       ],
+      "codeLines": 702,
       "description": "Контракты блока компонентов облегченных автоматических заданий распределенной платформы обработки (Light Job Engine, LJE)",
       "directory": "Up/Blocks/Dpp/Dpp.Contracts/Job",
       "extend": "Dpp",
       "filePath": "Up\\Blocks\\Dpp\\Dpp.Contracts\\Job\\.block-definition.yml",
+      "filesCount": 16,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2828,10 +3222,12 @@
       "blockPart": [
         "Contracts"
       ],
+      "codeLines": 1882,
       "description": "Контракты распределенной платформы обработки (Distributed Processing Platform, Dpp)",
       "directory": "Up/Blocks/Dpp/Dpp.Contracts",
       "extend": "",
       "filePath": "Up\\Blocks\\Dpp\\Dpp.Contracts\\.block-definition.yml",
+      "filesCount": 35,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2842,10 +3238,12 @@
       "blockPart": [
         "DppIntegration"
       ],
+      "codeLines": 4790,
       "description": "Интеграция Raft-кластера в платформу распределенной обработки",
       "directory": "Up/Blocks/Dpp/Dpp.Integration.Cluster",
       "extend": "Dpp",
       "filePath": "Up\\Blocks\\Dpp\\Dpp.Integration.Cluster\\.block-definition.yml",
+      "filesCount": 30,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2856,10 +3254,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 5155,
       "description": "Внутренняя часть блока компонентов автоматических заданий распределенной платформы обработки (Light Job Engine, LJE)",
       "directory": "Up/Blocks/Dpp/Dpp.Server.Bundle/Jobs",
       "extend": "Dpp",
       "filePath": "Up\\Blocks\\Dpp\\Dpp.Server.Bundle\\Jobs\\.block-definition.yml",
+      "filesCount": 38,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2870,10 +3270,12 @@
       "blockPart": [
         "Bundle"
       ],
+      "codeLines": 42626,
       "description": "Внутренняя часть распределенной платформы обработки (Distributed Processing Platform, Dpp)",
       "directory": "Up/Blocks/Dpp/Dpp.Server.Bundle",
       "extend": "",
       "filePath": "Up\\Blocks\\Dpp\\Dpp.Server.Bundle\\.block-definition.yml",
+      "filesCount": 235,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2884,10 +3286,12 @@
       "blockPart": [
         "Shared"
       ],
+      "codeLines": 522,
       "description": "Общие типы распределенной платформы обработки (Distributed Processing Platform, Dpp)",
       "directory": "Up/Blocks/Dpp/Dpp.Server.Shared",
       "extend": "",
       "filePath": "Up\\Blocks\\Dpp\\Dpp.Server.Shared\\.block-definition.yml",
+      "filesCount": 7,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2898,10 +3302,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 319401,
       "description": "Сценарии тестирования распределенной платформы обработки (Distributed Processing Platform, Dpp)",
       "directory": "Up/Blocks/Dpp/Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Dpp\\Tests\\.block-definition.yml",
+      "filesCount": 111,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2910,10 +3316,12 @@
       "based": "",
       "blockName": "Dpp",
       "blockPart": [],
+      "codeLines": 370322,
       "description": "Распределенная платформа обработки (Distributed Processing Platform, Dpp)",
       "directory": "Up/Blocks/Dpp",
       "extend": "",
       "filePath": "Up\\Blocks\\Dpp\\.block-definition.yml",
+      "filesCount": 426,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2922,10 +3330,12 @@
       "based": "",
       "blockName": "CM",
       "blockPart": [],
+      "codeLines": 3774,
       "description": "Служебный пакет, позволяющий передавать мониторинговую информацию на сервер ServerGrc.Mrc (Capturing monitor, CM)",
       "directory": "Up/Blocks/Instrumentation/CapturingMonitor",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\CapturingMonitor\\.block-definition.yml",
+      "filesCount": 44,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2936,10 +3346,12 @@
       "blockPart": [
         "Legacy"
       ],
+      "codeLines": 3449,
       "description": "Библиотека поддержки записи логов в формате RTM",
       "directory": "Up/Blocks/Instrumentation/CapturingMonitor.Legacy",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\CapturingMonitor.Legacy\\.block-definition.yml",
+      "filesCount": 17,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2950,10 +3362,12 @@
       "blockPart": [
         "Library"
       ],
+      "codeLines": 11735,
       "description": "Библиотека для работы с сообщениями инструментирования, сбора статистических данных и распределения конфигурации",
       "directory": "Up/Blocks/Instrumentation/CapturingMonitor.Library",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\CapturingMonitor.Library\\.block-definition.yml",
+      "filesCount": 68,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2964,10 +3378,12 @@
       "blockPart": [
         "Extensions"
       ],
+      "codeLines": 409,
       "description": "Провайдер логгирования для сервисных коллекций Microsoft",
       "directory": "Up/Blocks/Instrumentation/Extensions.Logging",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Instrumentation\\Extensions.Logging\\.block-definition.yml",
+      "filesCount": 5,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2978,10 +3394,12 @@
       "blockPart": [
         "Contract"
       ],
+      "codeLines": 4725,
       "description": "Контракты блока Инструментирования (Instrumentation)",
       "directory": "Up/Blocks/Instrumentation/Instrumentation",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Instrumentation\\Instrumentation\\.block-definition.yml",
+      "filesCount": 51,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -2993,10 +3411,12 @@
         "Log",
         "Analyzer"
       ],
+      "codeLines": 7565,
       "description": "API управления журналами, источниками, анализом данных",
       "directory": "Up/Blocks/Instrumentation/LogAnalyzer",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\LogAnalyzer\\.block-definition.yml",
+      "filesCount": 80,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3008,10 +3428,12 @@
         "Log",
         "Formatter"
       ],
+      "codeLines": 20542,
       "description": "Библиотека для записи лог-файлов",
       "directory": "Up/Blocks/Instrumentation/LogFormatter",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Instrumentation\\LogFormatter\\.block-definition.yml",
+      "filesCount": 146,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3023,10 +3445,12 @@
         "Log",
         "Processing"
       ],
+      "codeLines": 9087,
       "description": "Библиотека для записи лог-файлов",
       "directory": "Up/Blocks/Instrumentation/LogProcessing",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Instrumentation\\LogProcessing\\.block-definition.yml",
+      "filesCount": 69,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3038,10 +3462,12 @@
         "Log",
         "Store"
       ],
+      "codeLines": 1503,
       "description": "Библиотека реализаций провайдеров хранилищ логов",
       "directory": "Up/Blocks/Instrumentation/LogStore",
       "extend": "UC",
       "filePath": "Up\\Blocks\\Instrumentation\\LogStore\\.block-definition.yml",
+      "filesCount": 6,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3053,10 +3479,12 @@
         "Log",
         "Viewer"
       ],
+      "codeLines": 175018,
       "description": "Утилита анализа логов",
       "directory": "Up/Blocks/Instrumentation/LogViewer",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\LogViewer\\.block-definition.yml",
+      "filesCount": 154,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3068,10 +3496,12 @@
         "Log",
         "ViewerElectron"
       ],
+      "codeLines": 4186,
       "description": "Утилита анализа логов в Electron",
       "directory": "Up/Blocks/Instrumentation/LogViewerElectron",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\LogViewerElectron\\.block-definition.yml",
+      "filesCount": 64,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3083,10 +3513,12 @@
         "Monitoring",
         "Abstractions"
       ],
+      "codeLines": 201,
       "description": "Библиотека абстракций мониторинга",
       "directory": "Up/Blocks/Instrumentation/Monitoring.Abstractions",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\Monitoring.Abstractions\\.block-definition.yml",
+      "filesCount": 8,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3097,10 +3529,12 @@
       "blockPart": [
         "Profile"
       ],
+      "codeLines": 16406,
       "description": "Библиотека профилирования. TODO Пересмотреть, изучить глубже",
       "directory": "Up/Blocks/Instrumentation/Profile",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\Profile\\.block-definition.yml",
+      "filesCount": 137,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3111,10 +3545,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 7964,
       "description": "Сценарии тестирования блока Инструментирования (Instrumentation)",
       "directory": "Up/Blocks/Instrumentation/Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\Tests\\.block-definition.yml",
+      "filesCount": 49,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3123,10 +3559,12 @@
       "based": "",
       "blockName": "Instrumentation",
       "blockPart": [],
+      "codeLines": 266587,
       "description": "Сервис предоставляющий единый механизм фиксации различных событий, диагностической информации, счётчиков производительности в ходе выполнения программного кода (Instrumentation)",
       "directory": "Up/Blocks/Instrumentation",
       "extend": "",
       "filePath": "Up\\Blocks\\Instrumentation\\.block-definition.yml",
+      "filesCount": 899,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3137,10 +3575,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 5498,
       "description": "Сценарии тестирования композитного сервиса (Coral.Mount)",
       "directory": "Up/Blocks/Mount/Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\Mount\\Tests\\.block-definition.yml",
+      "filesCount": 107,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3151,10 +3591,12 @@
       "blockPart": [
         "Mount"
       ],
+      "codeLines": 4129,
       "description": "Кроссплатформенный загрузочный модуль композитного сервиса (Coral.Mount)",
       "directory": "Up/Blocks/Mount/UniversalPlatform.Mount",
       "extend": "",
       "filePath": "Up\\Blocks\\Mount\\UniversalPlatform.Mount\\.block-definition.yml",
+      "filesCount": 35,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3166,10 +3608,12 @@
         "Mount",
         "PackageManager"
       ],
+      "codeLines": 18141,
       "description": "Пакетный менеджер блока композитный сервис (Coral.Mount)",
       "directory": "Up/Blocks/Mount/UniversalPlatform.Mount.PackageManager",
       "extend": "",
       "filePath": "Up\\Blocks\\Mount\\UniversalPlatform.Mount.PackageManager\\.block-definition.yml",
+      "filesCount": 91,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3178,10 +3622,12 @@
       "based": "",
       "blockName": "CoralMount",
       "blockPart": [],
+      "codeLines": 79875,
       "description": "Блок композитный сервис (Coral.Mount)",
       "directory": "Up/Blocks/Mount",
       "extend": "",
       "filePath": "Up\\Blocks\\Mount\\.block-definition.yml",
+      "filesCount": 338,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3192,10 +3638,12 @@
       "blockPart": [
         "Server"
       ],
+      "codeLines": 10923,
       "description": "Сервер сессий, Mount пакет блока учета и управления сессиями (Session manager, SM)",
       "directory": "Up/Blocks/SessionManager/SessionManager",
       "extend": "",
       "filePath": "Up\\Blocks\\SessionManager\\SessionManager\\.block-definition.yml",
+      "filesCount": 80,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3206,10 +3654,12 @@
       "blockPart": [
         "Client"
       ],
+      "codeLines": 5746,
       "description": "Клиент сервера сессий",
       "directory": "Up/Blocks/SessionManager/SessionManager.Client",
       "extend": "UC",
       "filePath": "Up\\Blocks\\SessionManager\\SessionManager.Client\\.block-definition.yml",
+      "filesCount": 82,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3220,10 +3670,12 @@
       "blockPart": [
         "Tests"
       ],
+      "codeLines": 6963,
       "description": "Сценарии тестирования блока Учет и управления сессиями (Session manager, SM)",
       "directory": "Up/Blocks/SessionManager/Tests",
       "extend": "",
       "filePath": "Up\\Blocks\\SessionManager\\Tests\\.block-definition.yml",
+      "filesCount": 61,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3232,10 +3684,12 @@
       "based": "",
       "blockName": "SM",
       "blockPart": [],
+      "codeLines": 23655,
       "description": "Блок учета и управления сессиями (Session manager, SM)",
       "directory": "Up/Blocks/SessionManager",
       "extend": "",
       "filePath": "Up\\Blocks\\SessionManager\\.block-definition.yml",
+      "filesCount": 224,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3244,10 +3698,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 1271732,
       "description": "Универсальная часть платформы (Universal Platform, UP)",
       "directory": "Up",
       "extend": "",
       "filePath": "Up\\.block-definition.yml",
+      "filesCount": 6031,
       "ignore": false,
       "scope": "/RGB/UP"
     },
@@ -3256,10 +3712,12 @@
       "based": "",
       "blockName": null,
       "blockPart": [],
+      "codeLines": 8662584,
       "description": "Платформа КПИ (Компоненты прикладной инфраструктуры, КПИ, RGB)",
       "directory": "",
       "extend": "",
       "filePath": ".block-definition.yml",
+      "filesCount": 30086,
       "ignore": false,
       "scope": "/RGB"
     }
@@ -3536,29 +3994,39 @@
                   "children": [
                     {
                       "children": [],
+                      "codeLines": 8503,
                       "description": "Entities Infrastructure - инфраструктура сущностей",
+                      "filesCount": 88,
                       "name": "EntitiesInfrastructure",
                       "path": "/RGB/CSC/Core/GenericPlatform/EntitiesInfrastructure"
                     }
                   ],
+                  "codeLines": 32313,
                   "description": "Generic Platform - Обобщенная часть платформы",
+                  "filesCount": 334,
                   "name": "GenericPlatform",
                   "path": "/RGB/CSC/Core/GenericPlatform"
                 }
               ],
+              "codeLines": 800832,
               "description": "Core - Основная часть платформы, набор базовых блоков",
+              "filesCount": 5216,
               "name": "Core",
               "path": "/RGB/CSC/Core"
             },
             {
               "children": [],
+              "codeLines": 1112055,
               "description": "Application Blocks - Семейство блоков обеспечивающих решение отдельных общесистемных задач",
+              "filesCount": 5938,
               "name": "ABS",
               "path": "/RGB/CSC/ABS"
             },
             {
               "children": [],
+              "codeLines": 3390450,
               "description": "Process Flow - Группа блоков ИИБП",
+              "filesCount": 8338,
               "name": "PF",
               "path": "/RGB/CSC/PF"
             }
@@ -3573,28 +4041,38 @@
               "children": [
                 {
                   "children": [],
+                  "codeLines": 287,
                   "description": "Generic Platform - Обобщенная часть платформы",
+                  "filesCount": 4,
                   "name": "GenericPlatform",
                   "path": "/RGB/UP/Core/GenericPlatform"
                 }
               ],
+              "codeLines": 85223,
               "description": "Core - Основная часть платформы, набор базовых блоков",
+              "filesCount": 754,
               "name": "Core",
               "path": "/RGB/UP/Core"
             },
             {
               "children": [],
+              "codeLines": 35138,
               "description": "Cluster - Блоки организации кластеров",
+              "filesCount": 279,
               "name": "Cluster",
               "path": "/RGB/UP/Cluster"
             }
           ],
+          "codeLines": 1271732,
           "description": "Universal Platform - Универсальная часть платформы предоставляющая ПП единые централизованные и инфраструктурные сервисы",
+          "filesCount": 6031,
           "name": "UP",
           "path": "/RGB/UP"
         }
       ],
+      "codeLines": 8662584,
       "description": "Платформа КПИ",
+      "filesCount": 30086,
       "name": "RGB",
       "path": "/RGB"
     }
